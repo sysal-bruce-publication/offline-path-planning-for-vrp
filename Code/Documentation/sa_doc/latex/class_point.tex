@@ -1,0 +1,311 @@
+\hypertarget{class_point}{}\doxysection{Point$<$ T $>$ Class Template Reference}
+\label{class_point}\index{Point$<$ T $>$@{Point$<$ T $>$}}
+
+
+Implementation of {\itshape \mbox{\hyperlink{class_point}{Point}}} (class)  
+
+
+
+
+{\ttfamily \#include \char`\"{}point.\+h\char`\"{}}
+
+Inheritance diagram for Point$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_point}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_point_aea76b1130f1a203722d8f2254ced8e66}{Point}} ()
+\item 
+\mbox{\hyperlink{class_point_a5719bedb1ce3d59cb4fe9bafd5a34152}{Point}} (const float \&x, const float \&y)
+\begin{DoxyCompactList}\small\item\em Construct object with user-\/defined arguments. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_point_a958ecc6c4f20dc77fbaaf12498e61653}\label{class_point_a958ecc6c4f20dc77fbaaf12498e61653}} 
+\mbox{\hyperlink{class_point_a958ecc6c4f20dc77fbaaf12498e61653}{$\sim$\+Point}} ()
+\begin{DoxyCompactList}\small\item\em A default destructer. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{class_point_aae54e53975289666c9f592fa98cad5e7}{getX}} () const
+\begin{DoxyCompactList}\small\item\em Access {\ttfamily protected} member variable {\itshape x\+\_\+}. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{class_point_a6520580d609cdebbcf0f21360ce10d8b}{getY}} () const
+\begin{DoxyCompactList}\small\item\em Access {\ttfamily protected} member variable {\itshape y\+\_\+}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_a2b343b36513c5fd7458a5e7b6c6ec6de}{setX}} (const T \&x)
+\begin{DoxyCompactList}\small\item\em Set {\ttfamily protected} member variable {\itshape x\+\_\+} with {\ttfamily float} {\itshape x}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_a2555513662bdca4615b3ded09997f5a9}{setY}} (const T \&y)
+\begin{DoxyCompactList}\small\item\em Set {\ttfamily protected} member variable {\itshape y\+\_\+} with {\ttfamily float} {\itshape y}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_point_ab86aadaae4abbffdd571c37281d11f0c}{calc\+Dist}} (const \mbox{\hyperlink{class_point}{Point}}$<$ T $>$ \&p)
+\begin{DoxyCompactList}\small\item\em Calculate the distance between two points. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_point_aaf18fb5bf55eccb4d1ced9898560135f}{calc\+Dist}} (const float \&x, const float \&y)
+\begin{DoxyCompactList}\small\item\em Calculate the distance between one point and specified {\itshape x} and {\itshape y}. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_point_a0b32e793d4314d73801e68b2aee6421f}{calc\+Dist}} (const std\+::vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$ \&p\+\_\+list)
+\begin{DoxyCompactList}\small\item\em Calculate the list of distances between one point and a list of points. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_point_a5913b4a44906ae0c4c7e311df51657c7}{is\+Coincide}} (const \mbox{\hyperlink{class_point}{Point}}$<$ T $>$ \&p)
+\begin{DoxyCompactList}\small\item\em Determine if two points are overlapped. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_point_abb4c63149afa8537c181e8056ef2db70}\label{class_point_abb4c63149afa8537c181e8056ef2db70}} 
+void \mbox{\hyperlink{class_point_abb4c63149afa8537c181e8056ef2db70}{print\+Point\+Loc}} ()
+\begin{DoxyCompactList}\small\item\em print the point coordiante \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T \mbox{\hyperlink{class_point_a24a41ccfbe19d2318d94966128af271a}{x\+\_\+}}
+\begin{DoxyCompactList}\small\item\em section \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{class_point_a54b6f0a7faf44dd0263d57e332d266ad}{y\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Point$<$ T $>$}
+
+Implementation of {\itshape \mbox{\hyperlink{class_point}{Point}}} (class) 
+
+The {\itshape \mbox{\hyperlink{class_point}{Point}}} class includes the coordinate information, get and set function, calculate distance between two points or a list of points, and determine if two points are overlapped.
+
+\begin{DoxyAuthor}{Author}
+Qiuchen Qian 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+5 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2020 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+M\+IT Public License 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_point_aea76b1130f1a203722d8f2254ced8e66}\label{class_point_aea76b1130f1a203722d8f2254ced8e66}} 
+\index{Point$<$ T $>$@{Point$<$ T $>$}!Point@{Point}}
+\index{Point@{Point}!Point$<$ T $>$@{Point$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Point()}{Point()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_point}{Point}}$<$ T $>$\+::\mbox{\hyperlink{class_point}{Point}}}
+
+A default constructer with coordinate (0, 0). \mbox{\Hypertarget{class_point_a5719bedb1ce3d59cb4fe9bafd5a34152}\label{class_point_a5719bedb1ce3d59cb4fe9bafd5a34152}} 
+\index{Point$<$ T $>$@{Point$<$ T $>$}!Point@{Point}}
+\index{Point@{Point}!Point$<$ T $>$@{Point$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Point()}{Point()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_point}{Point}}$<$ T $>$\+::\mbox{\hyperlink{class_point}{Point}} (\begin{DoxyParamCaption}\item[{const float \&}]{x,  }\item[{const float \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Construct object with user-\/defined arguments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & A {\ttfamily float} variable to record position \\
+\hline
+{\em y} & A {\ttfamily float} variable to record position \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_point_aaf18fb5bf55eccb4d1ced9898560135f}\label{class_point_aaf18fb5bf55eccb4d1ced9898560135f}} 
+\index{Point$<$ T $>$@{Point$<$ T $>$}!calcDist@{calcDist}}
+\index{calcDist@{calcDist}!Point$<$ T $>$@{Point$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{calcDist()}{calcDist()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_point}{Point}}$<$ T $>$\+::calc\+Dist (\begin{DoxyParamCaption}\item[{const float \&}]{x,  }\item[{const float \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Calculate the distance between one point and specified {\itshape x} and {\itshape y}. 
+
+Related formula\+: Distance d = sqrt((x1 -\/ x2)$^\wedge$2 + (y1 + y2)$^\wedge$2) 
+\begin{DoxyParams}{Parameters}
+{\em x} & A {\ttfamily float} variable to calculate distance \\
+\hline
+{\em y} & A {\ttfamily float} variable to calculate distance \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data used to present point coordinates \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+The {\ttfamily float} distance 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_ab86aadaae4abbffdd571c37281d11f0c}\label{class_point_ab86aadaae4abbffdd571c37281d11f0c}} 
+\index{Point$<$ T $>$@{Point$<$ T $>$}!calcDist@{calcDist}}
+\index{calcDist@{calcDist}!Point$<$ T $>$@{Point$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{calcDist()}{calcDist()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_point}{Point}}$<$ T $>$\+::calc\+Dist (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}}$<$ T $>$ \&}]{p }\end{DoxyParamCaption})}
+
+
+
+Calculate the distance between two points. 
+
+Related formula\+: Distance d = sqrt((x1 -\/ x2)$^\wedge$2 + (y1 + y2)$^\wedge$2) 
+\begin{DoxyParams}{Parameters}
+{\em p} & A {\itshape \mbox{\hyperlink{class_point}{Point}}} object with {\ttfamily T} data type \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data used to present point coordinates \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+The distance between two points 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_a0b32e793d4314d73801e68b2aee6421f}\label{class_point_a0b32e793d4314d73801e68b2aee6421f}} 
+\index{Point$<$ T $>$@{Point$<$ T $>$}!calcDist@{calcDist}}
+\index{calcDist@{calcDist}!Point$<$ T $>$@{Point$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{calcDist()}{calcDist()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$\+::calc\+Dist (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$ \&}]{p\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+Calculate the list of distances between one point and a list of points. 
+
+Related formula\+: Distance d = sqrt((x1 -\/ x2)$^\wedge$2 + (y1 + y2)$^\wedge$2) 
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+list} & A {\ttfamily vector} of points with type {\ttfamily T} to be calculated \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data used to present point coordinates \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+A vector stored distances 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_aae54e53975289666c9f592fa98cad5e7}\label{class_point_aae54e53975289666c9f592fa98cad5e7}} 
+\index{Point$<$ T $>$@{Point$<$ T $>$}!getX@{getX}}
+\index{getX@{getX}!Point$<$ T $>$@{Point$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getX()}{getX()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \mbox{\hyperlink{class_point}{Point}}$<$ T $>$\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Access {\ttfamily protected} member variable {\itshape x\+\_\+}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily protected} member variable {\itshape x\+\_\+} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_a6520580d609cdebbcf0f21360ce10d8b}\label{class_point_a6520580d609cdebbcf0f21360ce10d8b}} 
+\index{Point$<$ T $>$@{Point$<$ T $>$}!getY@{getY}}
+\index{getY@{getY}!Point$<$ T $>$@{Point$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getY()}{getY()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \mbox{\hyperlink{class_point}{Point}}$<$ T $>$\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Access {\ttfamily protected} member variable {\itshape y\+\_\+}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily protected} member variable {\itshape y\+\_\+} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_a5913b4a44906ae0c4c7e311df51657c7}\label{class_point_a5913b4a44906ae0c4c7e311df51657c7}} 
+\index{Point$<$ T $>$@{Point$<$ T $>$}!isCoincide@{isCoincide}}
+\index{isCoincide@{isCoincide}!Point$<$ T $>$@{Point$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{isCoincide()}{isCoincide()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{class_point}{Point}}$<$ T $>$\+::is\+Coincide (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}}$<$ T $>$ \&}]{p }\end{DoxyParamCaption})}
+
+
+
+Determine if two points are overlapped. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & A {\itshape \mbox{\hyperlink{class_point}{Point}}} object with {\ttfamily T} data type \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data used to present point coordinates \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+true or false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_a2b343b36513c5fd7458a5e7b6c6ec6de}\label{class_point_a2b343b36513c5fd7458a5e7b6c6ec6de}} 
+\index{Point$<$ T $>$@{Point$<$ T $>$}!setX@{setX}}
+\index{setX@{setX}!Point$<$ T $>$@{Point$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setX()}{setX()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_point}{Point}}$<$ T $>$\+::setX (\begin{DoxyParamCaption}\item[{const T \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set {\ttfamily protected} member variable {\itshape x\+\_\+} with {\ttfamily float} {\itshape x}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & A variable to assign value to {\itshape x\+\_\+} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates \\
+\hline
+\end{DoxyTemplParams}
+\mbox{\Hypertarget{class_point_a2555513662bdca4615b3ded09997f5a9}\label{class_point_a2555513662bdca4615b3ded09997f5a9}} 
+\index{Point$<$ T $>$@{Point$<$ T $>$}!setY@{setY}}
+\index{setY@{setY}!Point$<$ T $>$@{Point$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setY()}{setY()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_point}{Point}}$<$ T $>$\+::setY (\begin{DoxyParamCaption}\item[{const T \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set {\ttfamily protected} member variable {\itshape y\+\_\+} with {\ttfamily float} {\itshape y}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & A variable to assign value to {\itshape y\+\_\+} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_point_a24a41ccfbe19d2318d94966128af271a}\label{class_point_a24a41ccfbe19d2318d94966128af271a}} 
+\index{Point$<$ T $>$@{Point$<$ T $>$}!x\_@{x\_}}
+\index{x\_@{x\_}!Point$<$ T $>$@{Point$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{x\_}{x\_}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \mbox{\hyperlink{class_point}{Point}}$<$ T $>$\+::x\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+section 
+
+x coordinate ({\ttfamily float} in default) \mbox{\Hypertarget{class_point_a54b6f0a7faf44dd0263d57e332d266ad}\label{class_point_a54b6f0a7faf44dd0263d57e332d266ad}} 
+\index{Point$<$ T $>$@{Point$<$ T $>$}!y\_@{y\_}}
+\index{y\_@{y\_}!Point$<$ T $>$@{Point$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{y\_}{y\_}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \mbox{\hyperlink{class_point}{Point}}$<$ T $>$\+::y\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+y coordinate ({\ttfamily float} in default) 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{point_8h}{point.\+h}}\item 
+\mbox{\hyperlink{point_8cpp}{point.\+cpp}}\end{DoxyCompactItemize}

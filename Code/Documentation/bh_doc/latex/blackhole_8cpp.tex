@@ -1,0 +1,135 @@
+\hypertarget{blackhole_8cpp}{}\doxysection{blackhole.\+cpp File Reference}
+\label{blackhole_8cpp}\index{blackhole.cpp@{blackhole.cpp}}
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$valarray$>$}\newline
+{\ttfamily \#include \char`\"{}blackhole.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pdv.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{blackhole_8cpp_af8fe28bd32418434e01b14c2c021bfa0}{get\+Rand\+Index}} (int limit)
+\begin{DoxyCompactList}\small\item\em Get a random integer ranging from 0 to {\itshape limit}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{blackhole_8cpp_a58fa055d96b4dfb5f772161d3fde0398}{get\+Rand\+Dou}} ()
+\item 
+double \mbox{\hyperlink{blackhole_8cpp_a77bb28626acfb07d8fcb2413fc20b090}{tanh\+Func}} (const double \&x)
+\begin{DoxyCompactList}\small\item\em Get value of tanh(x). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{blackhole_8cpp_af8526848766adfe652834b716ce77b34}{inv\+Tanh\+Func}} (const double \&x)
+\begin{DoxyCompactList}\small\item\em Get value of inv\+\_\+tanh(x). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{blackhole_8cpp_ac721ccd2338924ef6b0bdb71dbcb33ea}{check\+Duplicates}} (vector$<$ int $>$ source)
+\begin{DoxyCompactList}\small\item\em Check if there are duplicates in an integer vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{blackhole_8cpp_a372cebe1ac881558e44294750864ec62}\label{blackhole_8cpp_a372cebe1ac881558e44294750864ec62}} 
+const int \mbox{\hyperlink{blackhole_8cpp_a372cebe1ac881558e44294750864ec62}{coeff\+\_\+wsn\+\_\+eng}} = 50
+\begin{DoxyCompactList}\small\item\em Coefficient for charged energy of W\+SN in fitness function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{blackhole_8cpp_a122b3bcbf5f8734b3032150057d6cfd9}\label{blackhole_8cpp_a122b3bcbf5f8734b3032150057d6cfd9}} 
+const int \mbox{\hyperlink{blackhole_8cpp_a122b3bcbf5f8734b3032150057d6cfd9}{coeff\+\_\+pdv\+\_\+eng}} = 25
+\begin{DoxyCompactList}\small\item\em Coefficient for flight energy cost of \mbox{\hyperlink{class_p_d_v}{P\+DV}} in fitness function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{blackhole_8cpp_a2de2c17ab67f87e90ed9cc5fa5001b8f}\label{blackhole_8cpp_a2de2c17ab67f87e90ed9cc5fa5001b8f}} 
+const int \mbox{\hyperlink{blackhole_8cpp_a2de2c17ab67f87e90ed9cc5fa5001b8f}{coeff\+\_\+dist}} = 25
+\begin{DoxyCompactList}\small\item\em Coefficient for flight distance of \mbox{\hyperlink{class_p_d_v}{P\+DV}} in fitness function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{blackhole_8cpp_a4ffa4b1ab4d2059a38c8e577cb4dfcca}\label{blackhole_8cpp_a4ffa4b1ab4d2059a38c8e577cb4dfcca}} 
+const int \mbox{\hyperlink{blackhole_8cpp_a4ffa4b1ab4d2059a38c8e577cb4dfcca}{generation}} = 50
+\begin{DoxyCompactList}\small\item\em The number of total iterations. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{blackhole_8cpp_a5caf375cf45df240941651aeb481acf2}\label{blackhole_8cpp_a5caf375cf45df240941651aeb481acf2}} 
+const int \mbox{\hyperlink{blackhole_8cpp_a5caf375cf45df240941651aeb481acf2}{ar}} = 50
+\begin{DoxyCompactList}\small\item\em Attraction ratio. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{blackhole_8cpp_a27901046ea481e98a382a1d4163a5129}\label{blackhole_8cpp_a27901046ea481e98a382a1d4163a5129}} 
+const int \mbox{\hyperlink{blackhole_8cpp_a27901046ea481e98a382a1d4163a5129}{pop}} = 250
+\begin{DoxyCompactList}\small\item\em The number of population. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{blackhole_8cpp_a4026127d20e0799d5045494048e4b194}\label{blackhole_8cpp_a4026127d20e0799d5045494048e4b194}} 
+const int \mbox{\hyperlink{blackhole_8cpp_a4026127d20e0799d5045494048e4b194}{min\+\_\+req\+\_\+num}} = 20
+\begin{DoxyCompactList}\small\item\em The minimum number of a task. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{blackhole_8cpp_a2cfbc330fd89bbf005222f848bfdb23d}\label{blackhole_8cpp_a2cfbc330fd89bbf005222f848bfdb23d}} 
+const int \mbox{\hyperlink{blackhole_8cpp_a2cfbc330fd89bbf005222f848bfdb23d}{max\+\_\+num\+\_\+r}} = 5
+\begin{DoxyCompactList}\small\item\em The number of sensor nodes in the range. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyWarning}{Warning}
+This is the internal cpp file of the O\+DP project. Do not use it directly in other code. Copyright (C) Qiuchen Qian, 2020 Imperial College, London 
+\end{DoxyWarning}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{blackhole_8cpp_ac721ccd2338924ef6b0bdb71dbcb33ea}\label{blackhole_8cpp_ac721ccd2338924ef6b0bdb71dbcb33ea}} 
+\index{blackhole.cpp@{blackhole.cpp}!checkDuplicates@{checkDuplicates}}
+\index{checkDuplicates@{checkDuplicates}!blackhole.cpp@{blackhole.cpp}}
+\doxysubsubsection{\texorpdfstring{checkDuplicates()}{checkDuplicates()}}
+{\footnotesize\ttfamily bool check\+Duplicates (\begin{DoxyParamCaption}\item[{vector$<$ int $>$}]{source }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if there are duplicates in an integer vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & A vector to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True or False. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{blackhole_8cpp_a58fa055d96b4dfb5f772161d3fde0398}\label{blackhole_8cpp_a58fa055d96b4dfb5f772161d3fde0398}} 
+\index{blackhole.cpp@{blackhole.cpp}!getRandDou@{getRandDou}}
+\index{getRandDou@{getRandDou}!blackhole.cpp@{blackhole.cpp}}
+\doxysubsubsection{\texorpdfstring{getRandDou()}{getRandDou()}}
+{\footnotesize\ttfamily float get\+Rand\+Dou (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+initialize the random number generator with time-\/dependent seed
+
+initialize a uniform distribution between 0 and 1\mbox{\Hypertarget{blackhole_8cpp_af8fe28bd32418434e01b14c2c021bfa0}\label{blackhole_8cpp_af8fe28bd32418434e01b14c2c021bfa0}} 
+\index{blackhole.cpp@{blackhole.cpp}!getRandIndex@{getRandIndex}}
+\index{getRandIndex@{getRandIndex}!blackhole.cpp@{blackhole.cpp}}
+\doxysubsubsection{\texorpdfstring{getRandIndex()}{getRandIndex()}}
+{\footnotesize\ttfamily int get\+Rand\+Index (\begin{DoxyParamCaption}\item[{int}]{limit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a random integer ranging from 0 to {\itshape limit}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em limit} & upper limit of the generated integer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An integer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{blackhole_8cpp_af8526848766adfe652834b716ce77b34}\label{blackhole_8cpp_af8526848766adfe652834b716ce77b34}} 
+\index{blackhole.cpp@{blackhole.cpp}!invTanhFunc@{invTanhFunc}}
+\index{invTanhFunc@{invTanhFunc}!blackhole.cpp@{blackhole.cpp}}
+\doxysubsubsection{\texorpdfstring{invTanhFunc()}{invTanhFunc()}}
+{\footnotesize\ttfamily double inv\+Tanh\+Func (\begin{DoxyParamCaption}\item[{const double \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get value of inv\+\_\+tanh(x). 
+
+\begin{DoxyReturn}{Returns}
+Value of inv\+\_\+tanh(x). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{blackhole_8cpp_a77bb28626acfb07d8fcb2413fc20b090}\label{blackhole_8cpp_a77bb28626acfb07d8fcb2413fc20b090}} 
+\index{blackhole.cpp@{blackhole.cpp}!tanhFunc@{tanhFunc}}
+\index{tanhFunc@{tanhFunc}!blackhole.cpp@{blackhole.cpp}}
+\doxysubsubsection{\texorpdfstring{tanhFunc()}{tanhFunc()}}
+{\footnotesize\ttfamily double tanh\+Func (\begin{DoxyParamCaption}\item[{const double \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get value of tanh(x). 
+
+\begin{DoxyReturn}{Returns}
+Value of tanh(x). 
+\end{DoxyReturn}

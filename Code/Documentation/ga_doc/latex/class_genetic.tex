@@ -1,0 +1,525 @@
+\hypertarget{class_genetic}{}\doxysection{Genetic$<$ T $>$ Class Template Reference}
+\label{class_genetic}\index{Genetic$<$ T $>$@{Genetic$<$ T $>$}}
+
+
+Implementation of {\itshape \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}} class.  
+
+
+
+
+{\ttfamily \#include \char`\"{}genetic.\+h\char`\"{}}
+
+Inheritance diagram for Genetic$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_genetic}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_genetic_adc24b6b8b51b2e374ac10ec1722b448e}\label{class_genetic_adc24b6b8b51b2e374ac10ec1722b448e}} 
+\mbox{\hyperlink{class_genetic_adc24b6b8b51b2e374ac10ec1722b448e}{Genetic}} ()
+\begin{DoxyCompactList}\small\item\em A default constructer with {\itshape origin} (0, 0) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_genetic_a22bcd619dd47068e5aace57d19efadc6}{Genetic}} (int pop\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Construct object with user-\/defined arguments. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_genetic_a162a087e77671fdc21e0e300f9d6526b}\label{class_genetic_a162a087e77671fdc21e0e300f9d6526b}} 
+\mbox{\hyperlink{class_genetic_a162a087e77671fdc21e0e300f9d6526b}{$\sim$\+Genetic}} ()
+\begin{DoxyCompactList}\small\item\em A default destructer which will delete {\itshape origin}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_genetic_a85119fea72143d1e10f915f2b10b5a86}{init\+Params}} (vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ $\ast$ $>$ \&req\+\_\+sn\+\_\+ptr)
+\begin{DoxyCompactList}\small\item\em Initialize public member variables. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_genetic_aaf361bdd85807b48f883a01e6ea22fa0}{save\+Guess\+To\+Txt}} (int pop\+\_\+num, int pdv\+\_\+num, int sn\+\_\+num, vector$<$ int $>$ path\+\_\+to\+\_\+save)
+\begin{DoxyCompactList}\small\item\em Save initial guess to csv file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_genetic_ab88ca819c70453a91bc638c1bd8045e7}{calc\+Opt\+Pdv\+Num}} (vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ sn\+\_\+list, vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ $\ast$ $>$ req\+\_\+sn\+\_\+ptr, vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$ temp\+\_\+req\+\_\+p)
+\begin{DoxyCompactList}\small\item\em Calculate the minimum required number of needed P\+D\+Vs. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_genetic_af06a15f4f2daae6af12f14a83ab13d57}{calc\+Init\+Guess}} (const int \&r\+\_\+num, const int \&pdv\+\_\+num, const int \&pop\+\_\+num, vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ sn\+\_\+list, vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ $\ast$ $>$ req\+\_\+sn\+\_\+ptr, vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$ \mbox{\hyperlink{class_genetic_abb50e78408f0d424af78335bd251c4a4}{req\+\_\+ps}})
+\begin{DoxyCompactList}\small\item\em Initialize all target and trail vectors randomly with clusters solution from all sensors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_genetic_a42fd93219bdcbca23aaa9c43f669fcd3}{crossover}} (int cross\+\_\+ratio, int pop\+\_\+num, const bool \&is\+\_\+match, vector$<$ vector$<$ vector$<$ int $>$$>$$>$ tar\+\_\+vec, vector$<$ vector$<$ vector$<$ int $>$$>$$>$ \&trail\+\_\+vec, vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ sn\+\_\+list)
+\begin{DoxyCompactList}\small\item\em Implement \textquotesingle{}Crossover\textquotesingle{} and \textquotesingle{}Swap Mutation\textquotesingle{} to generate trail vectors. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_genetic_a6d60cea802e88fcdac53b2c67afbebce}{calc\+Far\+Neigh\+Dist}} (vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$ init\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Calculate the flight distance through finding the farest neighbour everytime. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_genetic_abdf6f0951dd1b14090b6dd29114f9e14}{calc\+Near\+Neigh\+Dist}} (vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$ init\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Calculate the flight distance through finding the nearest neighbour everytime. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_genetic_ae893969b33308813ed3211c0dfcdc008}{fitness\+Func}} (vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ sn\+\_\+list, vector$<$ int $>$ idx\+\_\+list)
+\begin{DoxyCompactList}\small\item\em Calculate the fitness of the possible solution. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_genetic_a5245b6cb70264d1208345802c1343b63}{get\+Best\+Sol}} (const int \&pdv\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Find the index of the best solution with the highest fitness metric value. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \mbox{\hyperlink{class_genetic_a8627a97ad6a3ef1c0feb2205cf2d2d59}{read\+Guess\+Data}} (int pop\+\_\+num, int pdv\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Read the data from stored initial guess. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_genetic_a739616c6b0416cdd1495ea3f8cd98173}{save\+Sub\+Path\+To\+Csv}} (vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ sn\+\_\+list, vector$<$ vector$<$ int $>$$>$ path\+\_\+to\+\_\+save)
+\begin{DoxyCompactList}\small\item\em Save sub paths with best metric. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_genetic_a77f6c9ff63679143c8295d183c2e4e35}{calc\+Final\+Path}} (vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ \&sn\+\_\+list, vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ $\ast$ $>$ candidates)
+\begin{DoxyCompactList}\small\item\em Implement all processes of the genetic algorithm. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_genetic_a5cc4a6993e689e506d9f731589da0616}{check\+Task}} (vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ \&sn\+\_\+list)
+\begin{DoxyCompactList}\small\item\em Check if the number of requested sensor nodes is larger than {\itshape M\+I\+N\+\_\+\+R\+E\+Q\+U\+E\+S\+TS} . \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_point}{Point}}$<$ T $>$ $\ast$ \mbox{\hyperlink{class_genetic_ac5f37a526dfdf34c4c6c61b424b294ce}{origin}} = nullptr
+\item 
+vector$<$ vector$<$ vector$<$ int $>$ $>$ $>$ \mbox{\hyperlink{class_genetic_a08c62c7d0966d15be177b234d638469d}{tars\+\_\+int}}
+\item 
+vector$<$ vector$<$ vector$<$ int $>$ $>$ $>$ \mbox{\hyperlink{class_genetic_a9d9332228a9c7edffb2c27624a2ce4e6}{trail\+\_\+int}}
+\item 
+vector$<$ vector$<$ double $>$ $>$ \mbox{\hyperlink{class_genetic_abc6ee461db553d913ae3fe3efba081bd}{targets\+\_\+metric}}
+\item 
+vector$<$ vector$<$ double $>$ $>$ \mbox{\hyperlink{class_genetic_a4eaef73bdeb0a60f5cfac84720283774}{trails\+\_\+metric}}
+\item 
+vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$ $>$ \mbox{\hyperlink{class_genetic_abb50e78408f0d424af78335bd251c4a4}{req\+\_\+ps}}
+\item 
+double \mbox{\hyperlink{class_genetic_a32f2460a7176c8483db51e1a20ce0ac7}{alg\+\_\+time}} = 0.
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Genetic$<$ T $>$}
+
+Implementation of {\itshape \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}} class. 
+
+The {\itshape \mbox{\hyperlink{class_genetic}{Genetic}}} class includes basic attributes like target, trail vectors, metric vectors, etc. and actions like Crossover, calculate fitness function etc.
+
+\begin{DoxyAuthor}{Author}
+Qiuchen Qian 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+5 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2020 
+\end{DoxyDate}
+\begin{DoxyWarning}{Warning}
+C4996 \textquotesingle{}strerror\textquotesingle{}\+: This function or variable may be unsafe. Consider using strerror\+\_\+s instead. 
+\end{DoxyWarning}
+\begin{DoxyCopyright}{Copyright}
+M\+IT Public License 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_genetic_a22bcd619dd47068e5aace57d19efadc6}\label{class_genetic_a22bcd619dd47068e5aace57d19efadc6}} 
+\index{Genetic$<$ T $>$@{Genetic$<$ T $>$}!Genetic@{Genetic}}
+\index{Genetic@{Genetic}!Genetic$<$ T $>$@{Genetic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Genetic()}{Genetic()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_genetic}{Genetic}}$<$ T $>$\+::\mbox{\hyperlink{class_genetic}{Genetic}} (\begin{DoxyParamCaption}\item[{int}]{pop\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Construct object with user-\/defined arguments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pop\+\_\+num} & The number of population \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_genetic_a6d60cea802e88fcdac53b2c67afbebce}\label{class_genetic_a6d60cea802e88fcdac53b2c67afbebce}} 
+\index{Genetic$<$ T $>$@{Genetic$<$ T $>$}!calcFarNeighDist@{calcFarNeighDist}}
+\index{calcFarNeighDist@{calcFarNeighDist}!Genetic$<$ T $>$@{Genetic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{calcFarNeighDist()}{calcFarNeighDist()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_genetic}{Genetic}}$<$ T $>$\+::calc\+Far\+Neigh\+Dist (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$}]{init\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Calculate the flight distance through finding the farest neighbour everytime. 
+
+Please note that this solution is used to convert the flight distance calculated in {\ttfamily fitness\+Fun()} around 0 or 1. The returned result should not be considered as the longest one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em init\+\_\+path} & The path to be calculated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the worst distance (predicted) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_genetic_a77f6c9ff63679143c8295d183c2e4e35}\label{class_genetic_a77f6c9ff63679143c8295d183c2e4e35}} 
+\index{Genetic$<$ T $>$@{Genetic$<$ T $>$}!calcFinalPath@{calcFinalPath}}
+\index{calcFinalPath@{calcFinalPath}!Genetic$<$ T $>$@{Genetic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{calcFinalPath()}{calcFinalPath()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_genetic}{Genetic}}$<$ T $>$\+::calc\+Final\+Path (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ \&}]{sn\+\_\+list,  }\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ $\ast$ $>$}]{candidates }\end{DoxyParamCaption})}
+
+
+
+Implement all processes of the genetic algorithm. 
+
+This function includes initialization of target and trail vectors, calculation of their fitness metric values, \textquotesingle{}Crossover\textquotesingle{}, \textquotesingle{}Swap Mutation\textquotesingle{}, \textquotesingle{}Selection\textquotesingle{}, genetic iterations. Please note that unlike normal GA, both target and trail vectors are generated from all sensor nodes as possible solutions. After comparsion of fitness metrics, the winner will survive for next generation, which will keep the \textquotesingle{}population\textquotesingle{} evolving towards to desired direction (converge to a trusted solution).
+
+
+\begin{DoxyParams}{Parameters}
+{\em sn\+\_\+list} & A vector of all sensor nodes. \\
+\hline
+{\em candidates} & A vector of pointers to requested sensor nodes. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+A vector of points (target flight position). 
+\end{DoxyReturn}
+Selection\mbox{\Hypertarget{class_genetic_af06a15f4f2daae6af12f14a83ab13d57}\label{class_genetic_af06a15f4f2daae6af12f14a83ab13d57}} 
+\index{Genetic$<$ T $>$@{Genetic$<$ T $>$}!calcInitGuess@{calcInitGuess}}
+\index{calcInitGuess@{calcInitGuess}!Genetic$<$ T $>$@{Genetic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{calcInitGuess()}{calcInitGuess()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{class_genetic}{Genetic}}$<$ T $>$\+::calc\+Init\+Guess (\begin{DoxyParamCaption}\item[{const int \&}]{r\+\_\+num,  }\item[{const int \&}]{pdv\+\_\+num,  }\item[{const int \&}]{pop\+\_\+num,  }\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$}]{sn\+\_\+list,  }\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ $\ast$ $>$}]{req\+\_\+sn\+\_\+ptr,  }\item[{vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$}]{req\+\_\+ps }\end{DoxyParamCaption})}
+
+
+
+Initialize all target and trail vectors randomly with clusters solution from all sensors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r\+\_\+num} & The number of shortest point index. \\
+\hline
+{\em pdv\+\_\+num} & The number of P\+D\+Vs. \\
+\hline
+{\em pop\+\_\+num} & The number of total population. \\
+\hline
+{\em sn\+\_\+list} & A vector of all sensor nodes. \\
+\hline
+{\em req\+\_\+sn\+\_\+ptr} & A vector of pointers to all sensor nodes to be recharged. \\
+\hline
+{\em req\+\_\+ps} & A vector of {\itshape \mbox{\hyperlink{class_point}{Point}}} objects of all sensor nodes to be recharged. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+If the number of nodes to be recharged can be divided exactly by {\itshape pdv\+\_\+num}, return true. 
+\end{DoxyReturn}
+The sub vector of {\itshape clsts\+\_\+list} 
+
+If not divisible, the last \mbox{\hyperlink{class_p_d_v}{P\+DV}} assignment should be different
+
+Find the index randomly (the {\ttfamily num}th shortest)
+
+Find the index randomly (the {\ttfamily num}th shortest)
+
+Re-\/initialize {\itshape temp\+\_\+req\+\_\+p} for each population\mbox{\Hypertarget{class_genetic_abdf6f0951dd1b14090b6dd29114f9e14}\label{class_genetic_abdf6f0951dd1b14090b6dd29114f9e14}} 
+\index{Genetic$<$ T $>$@{Genetic$<$ T $>$}!calcNearNeighDist@{calcNearNeighDist}}
+\index{calcNearNeighDist@{calcNearNeighDist}!Genetic$<$ T $>$@{Genetic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{calcNearNeighDist()}{calcNearNeighDist()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_genetic}{Genetic}}$<$ T $>$\+::calc\+Near\+Neigh\+Dist (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$}]{init\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Calculate the flight distance through finding the nearest neighbour everytime. 
+
+Please note that this solution is used to convert the flight distance calculated in {\ttfamily fitness\+Fun()} around 0 or 1. The returned result should not be considered as the shortest one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em init\+\_\+path} & The path to be calculated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the best distance (predicted) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_genetic_ab88ca819c70453a91bc638c1bd8045e7}\label{class_genetic_ab88ca819c70453a91bc638c1bd8045e7}} 
+\index{Genetic$<$ T $>$@{Genetic$<$ T $>$}!calcOptPdvNum@{calcOptPdvNum}}
+\index{calcOptPdvNum@{calcOptPdvNum}!Genetic$<$ T $>$@{Genetic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{calcOptPdvNum()}{calcOptPdvNum()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_genetic}{Genetic}}$<$ T $>$\+::calc\+Opt\+Pdv\+Num (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$}]{sn\+\_\+list,  }\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ $\ast$ $>$}]{req\+\_\+sn\+\_\+ptr,  }\item[{vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$}]{temp\+\_\+req\+\_\+p }\end{DoxyParamCaption})}
+
+
+
+Calculate the minimum required number of needed P\+D\+Vs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sn\+\_\+list} & A vector of all sensor nodes. \\
+\hline
+{\em req\+\_\+sn\+\_\+ptr} & A vector of pointers to all sensor nodes to be recharged. \\
+\hline
+{\em temp\+\_\+req\+\_\+p} & A vector of pointers to all {\itshape \mbox{\hyperlink{class_point}{Point}}} obejects of sensor nodes to be recharged. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+The optimised number of needed P\+D\+Vs. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_genetic_a5cc4a6993e689e506d9f731589da0616}\label{class_genetic_a5cc4a6993e689e506d9f731589da0616}} 
+\index{Genetic$<$ T $>$@{Genetic$<$ T $>$}!checkTask@{checkTask}}
+\index{checkTask@{checkTask}!Genetic$<$ T $>$@{Genetic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{checkTask()}{checkTask()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{class_genetic}{Genetic}}$<$ T $>$\+::check\+Task (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ \&}]{sn\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+Check if the number of requested sensor nodes is larger than {\itshape M\+I\+N\+\_\+\+R\+E\+Q\+U\+E\+S\+TS} . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sn\+\_\+list} & A vector of all sensor nodes. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em runtime\+\_\+error} & No such file or directory. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+If true, keep iterating until the requested number reaches the minimum value. If false, end iterating. 
+\end{DoxyReturn}
+Before genetic algorithm process, update weights of sensor nodes according to inputs.\mbox{\Hypertarget{class_genetic_a42fd93219bdcbca23aaa9c43f669fcd3}\label{class_genetic_a42fd93219bdcbca23aaa9c43f669fcd3}} 
+\index{Genetic$<$ T $>$@{Genetic$<$ T $>$}!crossover@{crossover}}
+\index{crossover@{crossover}!Genetic$<$ T $>$@{Genetic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{crossover()}{crossover()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_genetic}{Genetic}}$<$ T $>$\+::crossover (\begin{DoxyParamCaption}\item[{int}]{cross\+\_\+ratio,  }\item[{int}]{pop\+\_\+num,  }\item[{const bool \&}]{is\+\_\+match,  }\item[{vector$<$ vector$<$ vector$<$ int $>$$>$$>$}]{tar\+\_\+vec,  }\item[{vector$<$ vector$<$ vector$<$ int $>$$>$$>$ \&}]{trail\+\_\+vec,  }\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$}]{sn\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+Implement \textquotesingle{}Crossover\textquotesingle{} and \textquotesingle{}Swap Mutation\textquotesingle{} to generate trail vectors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cross\+\_\+ratio} & \\
+\hline
+{\em pop\+\_\+num} & The number of pop. \\
+\hline
+{\em is\+\_\+match} & If the number of S\+Ns can be divisible by minimum requireed \mbox{\hyperlink{class_p_d_v}{P\+DV}} number. \\
+\hline
+{\em tar\+\_\+vec} & Target vector. \\
+\hline
+{\em trail\+\_\+vec} & Trail vector. \\
+\hline
+{\em sn\+\_\+list} & A vector of all sensor nodes. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates. \\
+\hline
+\end{DoxyTemplParams}
+Find the index randomly (the {\ttfamily num}th shortest)\mbox{\Hypertarget{class_genetic_ae893969b33308813ed3211c0dfcdc008}\label{class_genetic_ae893969b33308813ed3211c0dfcdc008}} 
+\index{Genetic$<$ T $>$@{Genetic$<$ T $>$}!fitnessFunc@{fitnessFunc}}
+\index{fitnessFunc@{fitnessFunc}!Genetic$<$ T $>$@{Genetic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{fitnessFunc()}{fitnessFunc()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_genetic}{Genetic}}$<$ T $>$\+::fitness\+Func (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$}]{sn\+\_\+list,  }\item[{vector$<$ int $>$}]{idx\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+Calculate the fitness of the possible solution. 
+
+The criteria is based on the amount of recharged energy and the distance of flight. Related formula\+: Fitness M = alpha $\ast$ tanh(E\+\_\+\{wsn\}) + beta $\ast$ inv\+\_\+tanh(d\+\_\+\{pdv\}) + gamma $\ast$ inv\+\_\+tanh(E\+\_\+\{pdv\})
+
+
+\begin{DoxyParams}{Parameters}
+{\em sn\+\_\+list} & A vector of all sensor nodes. \\
+\hline
+{\em idx\+\_\+list} & A vector of clusters to be calculated (can be one target or trail vector). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+The fitness metric value. 
+\end{DoxyReturn}
+Calculate the total distance of a trusted bad and good solution
+
+Implement inductive power transfer to the center node.
+
+Update I\+PT energy cost
+
+Implement center node acoustic power trannsfer.
+
+Return to home process
+
+Wh
+
+km
+
+Wh\mbox{\Hypertarget{class_genetic_a5245b6cb70264d1208345802c1343b63}\label{class_genetic_a5245b6cb70264d1208345802c1343b63}} 
+\index{Genetic$<$ T $>$@{Genetic$<$ T $>$}!getBestSol@{getBestSol}}
+\index{getBestSol@{getBestSol}!Genetic$<$ T $>$@{Genetic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getBestSol()}{getBestSol()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_genetic}{Genetic}}$<$ T $>$\+::get\+Best\+Sol (\begin{DoxyParamCaption}\item[{const int \&}]{pdv\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Find the index of the best solution with the highest fitness metric value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdv\+\_\+num} & The number of P\+D\+Vs. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The index of the best solution. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_genetic_a85119fea72143d1e10f915f2b10b5a86}\label{class_genetic_a85119fea72143d1e10f915f2b10b5a86}} 
+\index{Genetic$<$ T $>$@{Genetic$<$ T $>$}!initParams@{initParams}}
+\index{initParams@{initParams}!Genetic$<$ T $>$@{Genetic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{initParams()}{initParams()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_genetic}{Genetic}}$<$ T $>$\+::init\+Params (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ $\ast$ $>$ \&}]{req\+\_\+sn\+\_\+ptr }\end{DoxyParamCaption})}
+
+
+
+Initialize public member variables. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req\+\_\+sn\+\_\+ptr} & A vector of pointers to all sensor nodes to be recharged. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates. \\
+\hline
+\end{DoxyTemplParams}
+\mbox{\Hypertarget{class_genetic_a8627a97ad6a3ef1c0feb2205cf2d2d59}\label{class_genetic_a8627a97ad6a3ef1c0feb2205cf2d2d59}} 
+\index{Genetic$<$ T $>$@{Genetic$<$ T $>$}!readGuessData@{readGuessData}}
+\index{readGuessData@{readGuessData}!Genetic$<$ T $>$@{Genetic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{readGuessData()}{readGuessData()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+vector$<$ int $>$ \mbox{\hyperlink{class_genetic}{Genetic}}$<$ T $>$\+::read\+Guess\+Data (\begin{DoxyParamCaption}\item[{int}]{pop\+\_\+num,  }\item[{int}]{pdv\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Read the data from stored initial guess. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pop\+\_\+num} & The population id. \\
+\hline
+{\em pdv\+\_\+num} & The \mbox{\hyperlink{class_p_d_v}{P\+DV}} id. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of solution (index of sensor nodes) with {\itshape pop\+\_\+num} and {\itshape pdv\+\_\+num} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_genetic_aaf361bdd85807b48f883a01e6ea22fa0}\label{class_genetic_aaf361bdd85807b48f883a01e6ea22fa0}} 
+\index{Genetic$<$ T $>$@{Genetic$<$ T $>$}!saveGuessToTxt@{saveGuessToTxt}}
+\index{saveGuessToTxt@{saveGuessToTxt}!Genetic$<$ T $>$@{Genetic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{saveGuessToTxt()}{saveGuessToTxt()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_genetic}{Genetic}}$<$ T $>$\+::save\+Guess\+To\+Txt (\begin{DoxyParamCaption}\item[{int}]{pop\+\_\+num,  }\item[{int}]{pdv\+\_\+num,  }\item[{int}]{sn\+\_\+num,  }\item[{vector$<$ int $>$}]{path\+\_\+to\+\_\+save }\end{DoxyParamCaption})}
+
+
+
+Save initial guess to csv file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pop\+\_\+num} & The number of population in generation. \\
+\hline
+{\em pdv\+\_\+num} & The number of pdv id. \\
+\hline
+{\em sn\+\_\+num} & The number of S\+Ns. \\
+\hline
+{\em path\+\_\+to\+\_\+save} & The path to be saved. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates. \\
+\hline
+\end{DoxyTemplParams}
+\mbox{\Hypertarget{class_genetic_a739616c6b0416cdd1495ea3f8cd98173}\label{class_genetic_a739616c6b0416cdd1495ea3f8cd98173}} 
+\index{Genetic$<$ T $>$@{Genetic$<$ T $>$}!saveSubPathToCsv@{saveSubPathToCsv}}
+\index{saveSubPathToCsv@{saveSubPathToCsv}!Genetic$<$ T $>$@{Genetic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{saveSubPathToCsv()}{saveSubPathToCsv()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_genetic}{Genetic}}$<$ T $>$\+::save\+Sub\+Path\+To\+Csv (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$}]{sn\+\_\+list,  }\item[{vector$<$ vector$<$ int $>$$>$}]{path\+\_\+to\+\_\+save }\end{DoxyParamCaption})}
+
+
+
+Save sub paths with best metric. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sn\+\_\+list} & A vector of all sensor nodes. \\
+\hline
+{\em path\+\_\+to\+\_\+save} & The 2-\/D vector to save. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_genetic_a32f2460a7176c8483db51e1a20ce0ac7}\label{class_genetic_a32f2460a7176c8483db51e1a20ce0ac7}} 
+\index{Genetic$<$ T $>$@{Genetic$<$ T $>$}!alg\_time@{alg\_time}}
+\index{alg\_time@{alg\_time}!Genetic$<$ T $>$@{Genetic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{alg\_time}{alg\_time}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_genetic}{Genetic}}$<$ T $>$\+::alg\+\_\+time = 0.}
+
+Algorithm execution time \mbox{\Hypertarget{class_genetic_ac5f37a526dfdf34c4c6c61b424b294ce}\label{class_genetic_ac5f37a526dfdf34c4c6c61b424b294ce}} 
+\index{Genetic$<$ T $>$@{Genetic$<$ T $>$}!origin@{origin}}
+\index{origin@{origin}!Genetic$<$ T $>$@{Genetic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{origin}{origin}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_point}{Point}}$<$T$>$$\ast$ \mbox{\hyperlink{class_genetic}{Genetic}}$<$ T $>$\+::origin = nullptr}
+
+The coordiante of BS \mbox{\Hypertarget{class_genetic_abb50e78408f0d424af78335bd251c4a4}\label{class_genetic_abb50e78408f0d424af78335bd251c4a4}} 
+\index{Genetic$<$ T $>$@{Genetic$<$ T $>$}!req\_ps@{req\_ps}}
+\index{req\_ps@{req\_ps}!Genetic$<$ T $>$@{Genetic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{req\_ps}{req\_ps}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+vector$<$\mbox{\hyperlink{class_point}{Point}}$<$T$>$ $>$ \mbox{\hyperlink{class_genetic}{Genetic}}$<$ T $>$\+::req\+\_\+ps}
+
+{\itshape \mbox{\hyperlink{class_point}{Point}}} vector of S\+Ns to be recharged \mbox{\Hypertarget{class_genetic_abc6ee461db553d913ae3fe3efba081bd}\label{class_genetic_abc6ee461db553d913ae3fe3efba081bd}} 
+\index{Genetic$<$ T $>$@{Genetic$<$ T $>$}!targets\_metric@{targets\_metric}}
+\index{targets\_metric@{targets\_metric}!Genetic$<$ T $>$@{Genetic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{targets\_metric}{targets\_metric}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+vector$<$vector$<$double$>$ $>$ \mbox{\hyperlink{class_genetic}{Genetic}}$<$ T $>$\+::targets\+\_\+metric}
+
+Fitness metric vector of target vector \mbox{\Hypertarget{class_genetic_a08c62c7d0966d15be177b234d638469d}\label{class_genetic_a08c62c7d0966d15be177b234d638469d}} 
+\index{Genetic$<$ T $>$@{Genetic$<$ T $>$}!tars\_int@{tars\_int}}
+\index{tars\_int@{tars\_int}!Genetic$<$ T $>$@{Genetic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{tars\_int}{tars\_int}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+vector$<$vector$<$vector$<$int$>$ $>$ $>$ \mbox{\hyperlink{class_genetic}{Genetic}}$<$ T $>$\+::tars\+\_\+int}
+
+Target vector, 3D\+: pop, pdv and sub path \mbox{\Hypertarget{class_genetic_a9d9332228a9c7edffb2c27624a2ce4e6}\label{class_genetic_a9d9332228a9c7edffb2c27624a2ce4e6}} 
+\index{Genetic$<$ T $>$@{Genetic$<$ T $>$}!trail\_int@{trail\_int}}
+\index{trail\_int@{trail\_int}!Genetic$<$ T $>$@{Genetic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{trail\_int}{trail\_int}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+vector$<$vector$<$vector$<$int$>$ $>$ $>$ \mbox{\hyperlink{class_genetic}{Genetic}}$<$ T $>$\+::trail\+\_\+int}
+
+Corresponding trail vector \mbox{\Hypertarget{class_genetic_a4eaef73bdeb0a60f5cfac84720283774}\label{class_genetic_a4eaef73bdeb0a60f5cfac84720283774}} 
+\index{Genetic$<$ T $>$@{Genetic$<$ T $>$}!trails\_metric@{trails\_metric}}
+\index{trails\_metric@{trails\_metric}!Genetic$<$ T $>$@{Genetic$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{trails\_metric}{trails\_metric}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+vector$<$vector$<$double$>$ $>$ \mbox{\hyperlink{class_genetic}{Genetic}}$<$ T $>$\+::trails\+\_\+metric}
+
+Fitness metric vector of trail vector 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{genetic_8h}{genetic.\+h}}\item 
+\mbox{\hyperlink{genetic_8cpp}{genetic.\+cpp}}\end{DoxyCompactItemize}

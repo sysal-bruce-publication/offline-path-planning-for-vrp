@@ -1,0 +1,473 @@
+\hypertarget{class_p_d_v}{}\doxysection{P\+DV$<$ T $>$ Class Template Reference}
+\label{class_p_d_v}\index{PDV$<$ T $>$@{PDV$<$ T $>$}}
+
+
+Implementation of {\itshape \mbox{\hyperlink{class_p_d_v}{P\+DV}}} class.  
+
+
+
+
+{\ttfamily \#include \char`\"{}pdv.\+h\char`\"{}}
+
+Inheritance diagram for P\+DV$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_p_d_v}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_p_d_v_a5c8a4bf8a7471e2584c2868f4a92889b}\label{class_p_d_v_a5c8a4bf8a7471e2584c2868f4a92889b}} 
+\mbox{\hyperlink{class_p_d_v_a5c8a4bf8a7471e2584c2868f4a92889b}{P\+DV}} ()
+\begin{DoxyCompactList}\small\item\em A default constructer with coordinate(0, 0), 0 flight time and full energy. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_p_d_v_a4ead69720cd2f55aa791562103885971}\label{class_p_d_v_a4ead69720cd2f55aa791562103885971}} 
+\mbox{\hyperlink{class_p_d_v_a4ead69720cd2f55aa791562103885971}{$\sim$\+P\+DV}} ()
+\begin{DoxyCompactList}\small\item\em A default destructer which sets \mbox{\hyperlink{class_p_d_v}{P\+DV}} attributes to initial state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_p_d_v_a85a252b37d65b48b5e37c3dbb5d6481e}\label{class_p_d_v_a85a252b37d65b48b5e37c3dbb5d6481e}} 
+void \mbox{\hyperlink{class_p_d_v_a85a252b37d65b48b5e37c3dbb5d6481e}{reset\+Pdv\+Status}} ()
+\begin{DoxyCompactList}\small\item\em Reset \mbox{\hyperlink{class_p_d_v}{P\+DV}} status to initial value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_d_v_a70f2d2df87a9f2ac4fc758d63bd44e2b}{get\+Pdv\+Energy}} () const
+\begin{DoxyCompactList}\small\item\em Access {\ttfamily protected} member variable {\itshape pdv\+\_\+energy\+\_\+}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_d_v_abfbfb27a266f8438d43cceb375fae842}{get\+Pdv\+Time}} () const
+\begin{DoxyCompactList}\small\item\em Access {\ttfamily protected} member variable {\itshape flight\+\_\+time\+\_\+}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_d_v_aef8f22c30506b62df1598306892aa3de}{get\+Pdv\+Distance}} () const
+\begin{DoxyCompactList}\small\item\em Access {\ttfamily protected} member variable {\itshape flight\+\_\+distance\+\_\+}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_p_d_v_a7c6fc16fc33e0790848f3a2bf1d1542e}{get\+Rand\+Offset}} () const
+\begin{DoxyCompactList}\small\item\em Get randomly generated {\ttfamily float} variable ranging from -\/3 to 3. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_p_d_v_a963ec03be8c1e709544601e092dc899b}{task\+Check}} (std\+::vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ \&sn\+\_\+list)
+\begin{DoxyCompactList}\small\item\em Check if the number of requested sensor nodes is larger than {\itshape M\+I\+N\+\_\+\+R\+E\+Q\+U\+E\+S\+TS} . \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_d_v_ad36ff8b78ee2fc476b05ee9b19c54580}{calc\+Energy\+Cost}} (const double \&t) const
+\begin{DoxyCompactList}\small\item\em Calculate energy consumption according to power and spent time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_d_v_a13adfe3b002faaca52bea7bd46288df1}{ascent\+Energy\+Cost}} (double \&t, double \&e)
+\begin{DoxyCompactList}\small\item\em Calculate energy consumption after ascent. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_d_v_a55d667b8da7105991eace1dea8cf9c96}{descent\+Energy\+Cost}} (double \&t, double \&e)
+\begin{DoxyCompactList}\small\item\em Calculate energy consumption after descent. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_d_v_a74db626f6b547bbe01199ba1d9d18597}{uwb\+Energy\+Cost}} (const float \&rand\+\_\+offset, double \&t, double \&e)
+\begin{DoxyCompactList}\small\item\em Calculate energy consumption after U\+WB approaching. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_d_v_aea03a6c18a09090edb0c691dbd87e84a}{gps\+Energy\+Cost}} (const float \&rand\+\_\+offset, const \mbox{\hyperlink{class_point}{Point}}$<$ T $>$ \&next\+\_\+p, double \&t, double \&e)
+\begin{DoxyCompactList}\small\item\em Calculate energy consumption after G\+PS approaching. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_d_v_a27b67682ec5b8527cee2ed1bd40d4559}{rth\+Energy\+Cost}} (const float \&rand\+\_\+offset, \mbox{\hyperlink{class_point}{Point}}$<$ T $>$ next\+\_\+p, double \&t, double \&e)
+\begin{DoxyCompactList}\small\item\em Pre-\/calculate energy consumption from next target point to origin point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_d_v_af6890ba248d87a031ca643457918d0a6}{ipt\+Energy\+Cost}} (const \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ \&next\+\_\+sn, double \&e)
+\begin{DoxyCompactList}\small\item\em Calculate energy consumption after inductive power transfer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_d_v_ac18e4c227f2acef4cb739b7e3400e476}{update\+Flight\+Time}} (const double \&t)
+\begin{DoxyCompactList}\small\item\em Update {\itshape flight\+\_\+time\+\_\+} according to {\itshape t} . \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_d_v_ad3b78e634d247c32a1eb71ab31235c97}{update\+Flight\+Time}} (const double \&t1, const double \&t2)
+\begin{DoxyCompactList}\small\item\em Update {\itshape flight\+\_\+time\+\_\+} according to {\itshape t1} and {\itshape t2} . \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_d_v_acaa686a0dd64abde32829162a552ed5f}{update\+Energy}} (const double \&e)
+\begin{DoxyCompactList}\small\item\em Update {\itshape pdv\+\_\+energy\+\_\+} according to {\itshape e} . \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_d_v_a26dc0df987f8ada6f367071a840a3668}{update\+Energy}} (const double \&e1, const double \&e2)
+\begin{DoxyCompactList}\small\item\em Update {\itshape pdv\+\_\+energy\+\_\+} according to {\itshape e1} and {\itshape e2} . \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_d_v_a830f6110672abcaf56bf28223bcdd570}{update\+Flight\+Dist}} (const double \&d)
+\begin{DoxyCompactList}\small\item\em Update {\itshape flight\+\_\+distance\+\_\+} according to {\itshape d} . \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_d_v_a87e946c730c29650c4144797ffa261fa}{update\+Pos}} (const \mbox{\hyperlink{class_point}{Point}}$<$ T $>$ \&p)
+\begin{DoxyCompactList}\small\item\em Update {\itshape pos} according to {\itshape p} . \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_p_d_v_aa7789330f321e6f196b1805275d6ee15}{flight\+Simulation}} (double \&charged\+\_\+e, double \&pdv\+\_\+t, std\+::vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ \&sn\+\_\+list, std\+::vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$ \&path)
+\begin{DoxyCompactList}\small\item\em Simulate the whole process. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_point}{Point}}$<$ T $>$ \mbox{\hyperlink{class_p_d_v_a6251f40ff392292ee057b07382797f32}{pos}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class P\+D\+V$<$ T $>$}
+
+Implementation of {\itshape \mbox{\hyperlink{class_p_d_v}{P\+DV}}} class. 
+
+The {\itshape \mbox{\hyperlink{class_p_d_v}{P\+DV}}} class includes basic attributes like \mbox{\hyperlink{class_p_d_v}{P\+DV}} position, flight time and energy. Some \mbox{\hyperlink{class_p_d_v}{P\+DV}} actions like fly approaching to next target node through G\+PS localization and U\+WB localization, return-\/to-\/home process, inductive power transfer and flight simulation are included as well.
+
+\begin{DoxyAuthor}{Author}
+Qiuchen Qian 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+5 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2020 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+M\+IT Public License 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_p_d_v_a13adfe3b002faaca52bea7bd46288df1}\label{class_p_d_v_a13adfe3b002faaca52bea7bd46288df1}} 
+\index{PDV$<$ T $>$@{PDV$<$ T $>$}!ascentEnergyCost@{ascentEnergyCost}}
+\index{ascentEnergyCost@{ascentEnergyCost}!PDV$<$ T $>$@{PDV$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ascentEnergyCost()}{ascentEnergyCost()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_p_d_v}{P\+DV}}$<$ T $>$\+::ascent\+Energy\+Cost (\begin{DoxyParamCaption}\item[{double \&}]{t,  }\item[{double \&}]{e }\end{DoxyParamCaption})}
+
+
+
+Calculate energy consumption after ascent. 
+
+Related formula\+: Time t = 20 / V\+\_\+\{asc\}
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Spent time \mbox{[}h\mbox{]}. \\
+\hline
+{\em e} & Energy variable to be updated \mbox{[}Wh\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_p_d_v_ad36ff8b78ee2fc476b05ee9b19c54580}\label{class_p_d_v_ad36ff8b78ee2fc476b05ee9b19c54580}} 
+\index{PDV$<$ T $>$@{PDV$<$ T $>$}!calcEnergyCost@{calcEnergyCost}}
+\index{calcEnergyCost@{calcEnergyCost}!PDV$<$ T $>$@{PDV$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{calcEnergyCost()}{calcEnergyCost()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_p_d_v}{P\+DV}}$<$ T $>$\+::calc\+Energy\+Cost (\begin{DoxyParamCaption}\item[{const double \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculate energy consumption according to power and spent time. 
+
+Related formula\+: Energy E = P $\ast$ t
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Spent time \mbox{[}h\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the consumed energy \mbox{[}Wh\mbox{]}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_p_d_v_a55d667b8da7105991eace1dea8cf9c96}\label{class_p_d_v_a55d667b8da7105991eace1dea8cf9c96}} 
+\index{PDV$<$ T $>$@{PDV$<$ T $>$}!descentEnergyCost@{descentEnergyCost}}
+\index{descentEnergyCost@{descentEnergyCost}!PDV$<$ T $>$@{PDV$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{descentEnergyCost()}{descentEnergyCost()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_p_d_v}{P\+DV}}$<$ T $>$\+::descent\+Energy\+Cost (\begin{DoxyParamCaption}\item[{double \&}]{t,  }\item[{double \&}]{e }\end{DoxyParamCaption})}
+
+
+
+Calculate energy consumption after descent. 
+
+Related formula\+: Time t = 20 / V\+\_\+\{des\}
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Spent time \mbox{[}h\mbox{]}. \\
+\hline
+{\em e} & Energy variable to be updated \mbox{[}Wh\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_p_d_v_aa7789330f321e6f196b1805275d6ee15}\label{class_p_d_v_aa7789330f321e6f196b1805275d6ee15}} 
+\index{PDV$<$ T $>$@{PDV$<$ T $>$}!flightSimulation@{flightSimulation}}
+\index{flightSimulation@{flightSimulation}!PDV$<$ T $>$@{PDV$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{flightSimulation()}{flightSimulation()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+float \mbox{\hyperlink{class_p_d_v}{P\+DV}}$<$ T $>$\+::flight\+Simulation (\begin{DoxyParamCaption}\item[{double \&}]{charged\+\_\+e,  }\item[{double \&}]{pdv\+\_\+t,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ \&}]{sn\+\_\+list,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$ \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Simulate the whole process. 
+
+The \mbox{\hyperlink{class_p_d_v}{P\+DV}} will depart from the base station and visit the sensor nodes in {\itshape path} one by one, and once it completed all targets in the recharging list, it will return to the base station. Everytime before the \mbox{\hyperlink{class_p_d_v}{P\+DV}} visiting the next target sensor node, it will check its remain energy, if not enough for next visit, power transfer and R\+TH implementation, it execute R\+TH immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em charged\+\_\+e} & Total charged energy to be recorded. \\
+\hline
+{\em pdv\+\_\+t} & Total flight time of the \mbox{\hyperlink{class_p_d_v}{P\+DV}}. \\
+\hline
+{\em sn\+\_\+list} & A vector of all sensor nodes \\
+\hline
+{\em path} & A vector of all points to visit \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Task achievement percenetage \mbox{[}\%\mbox{]} 
+\end{DoxyReturn}
+Implement center node acoustic power trannsfer.
+
+Return to home process
+
+Descent process\mbox{\Hypertarget{class_p_d_v_aef8f22c30506b62df1598306892aa3de}\label{class_p_d_v_aef8f22c30506b62df1598306892aa3de}} 
+\index{PDV$<$ T $>$@{PDV$<$ T $>$}!getPdvDistance@{getPdvDistance}}
+\index{getPdvDistance@{getPdvDistance}!PDV$<$ T $>$@{PDV$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getPdvDistance()}{getPdvDistance()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_p_d_v}{P\+DV}}$<$ T $>$\+::get\+Pdv\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Access {\ttfamily protected} member variable {\itshape flight\+\_\+distance\+\_\+}. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily protected} member variable {\itshape flight\+\_\+distance\+\_\+} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_p_d_v_a70f2d2df87a9f2ac4fc758d63bd44e2b}\label{class_p_d_v_a70f2d2df87a9f2ac4fc758d63bd44e2b}} 
+\index{PDV$<$ T $>$@{PDV$<$ T $>$}!getPdvEnergy@{getPdvEnergy}}
+\index{getPdvEnergy@{getPdvEnergy}!PDV$<$ T $>$@{PDV$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getPdvEnergy()}{getPdvEnergy()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_p_d_v}{P\+DV}}$<$ T $>$\+::get\+Pdv\+Energy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Access {\ttfamily protected} member variable {\itshape pdv\+\_\+energy\+\_\+}. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily protected} member variable {\itshape pdv\+\_\+energy\+\_\+} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_p_d_v_abfbfb27a266f8438d43cceb375fae842}\label{class_p_d_v_abfbfb27a266f8438d43cceb375fae842}} 
+\index{PDV$<$ T $>$@{PDV$<$ T $>$}!getPdvTime@{getPdvTime}}
+\index{getPdvTime@{getPdvTime}!PDV$<$ T $>$@{PDV$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getPdvTime()}{getPdvTime()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_p_d_v}{P\+DV}}$<$ T $>$\+::get\+Pdv\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Access {\ttfamily protected} member variable {\itshape flight\+\_\+time\+\_\+}. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily protected} member variable {\itshape flight\+\_\+time\+\_\+} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_p_d_v_a7c6fc16fc33e0790848f3a2bf1d1542e}\label{class_p_d_v_a7c6fc16fc33e0790848f3a2bf1d1542e}} 
+\index{PDV$<$ T $>$@{PDV$<$ T $>$}!getRandOffset@{getRandOffset}}
+\index{getRandOffset@{getRandOffset}!PDV$<$ T $>$@{PDV$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getRandOffset()}{getRandOffset()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+float \mbox{\hyperlink{class_p_d_v}{P\+DV}}$<$ T $>$\+::get\+Rand\+Offset}
+
+
+
+Get randomly generated {\ttfamily float} variable ranging from -\/3 to 3. 
+
+Please note that the function is used to simulate the error due to G\+PS localization precision. The offset around 1 m is a reasonable range in real life.
+
+\begin{DoxyReturn}{Returns}
+Random {\ttfamily float} variable ranging from -\/1 to 1 \mbox{[}m\mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_p_d_v_aea03a6c18a09090edb0c691dbd87e84a}\label{class_p_d_v_aea03a6c18a09090edb0c691dbd87e84a}} 
+\index{PDV$<$ T $>$@{PDV$<$ T $>$}!gpsEnergyCost@{gpsEnergyCost}}
+\index{gpsEnergyCost@{gpsEnergyCost}!PDV$<$ T $>$@{PDV$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{gpsEnergyCost()}{gpsEnergyCost()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_p_d_v}{P\+DV}}$<$ T $>$\+::gps\+Energy\+Cost (\begin{DoxyParamCaption}\item[{const float \&}]{rand\+\_\+offset,  }\item[{const \mbox{\hyperlink{class_point}{Point}}$<$ T $>$ \&}]{next\+\_\+p,  }\item[{double \&}]{t,  }\item[{double \&}]{e }\end{DoxyParamCaption})}
+
+
+
+Calculate energy consumption after G\+PS approaching. 
+
+Related formula\+: Time t = (d -\/ (10 -\/ offset)) / V\+\_\+\{gps\}
+
+
+\begin{DoxyParams}{Parameters}
+{\em rand\+\_\+offset} & Random {\ttfamily float} variable ranging from -\/1 to 1 \mbox{[}m\mbox{]} \\
+\hline
+{\em next\+\_\+p} & Next target position \\
+\hline
+{\em t} & Spent time \mbox{[}h\mbox{]}. \\
+\hline
+{\em e} & Energy variable to be updated \mbox{[}Wh\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_p_d_v_af6890ba248d87a031ca643457918d0a6}\label{class_p_d_v_af6890ba248d87a031ca643457918d0a6}} 
+\index{PDV$<$ T $>$@{PDV$<$ T $>$}!iptEnergyCost@{iptEnergyCost}}
+\index{iptEnergyCost@{iptEnergyCost}!PDV$<$ T $>$@{PDV$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{iptEnergyCost()}{iptEnergyCost()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_p_d_v}{P\+DV}}$<$ T $>$\+::ipt\+Energy\+Cost (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ \&}]{next\+\_\+sn,  }\item[{double \&}]{e }\end{DoxyParamCaption})}
+
+
+
+Calculate energy consumption after inductive power transfer. 
+
+Related formula\+: Energy E = 1 / (2 $\ast$ n\+\_\+\{rf2dc\} $\ast$ 3600) $\ast$ C $\ast$ (V\+\_\+\{max\} -\/ V)$^\wedge$2
+
+
+\begin{DoxyParams}{Parameters}
+{\em next\+\_\+sn} & The next target sensor node to charge \\
+\hline
+{\em e} & Energy variable to be updated \mbox{[}Wh\mbox{]}. \\
+\hline
+\end{DoxyParams}
+$<$ Convert J to Wh\mbox{\Hypertarget{class_p_d_v_a27b67682ec5b8527cee2ed1bd40d4559}\label{class_p_d_v_a27b67682ec5b8527cee2ed1bd40d4559}} 
+\index{PDV$<$ T $>$@{PDV$<$ T $>$}!rthEnergyCost@{rthEnergyCost}}
+\index{rthEnergyCost@{rthEnergyCost}!PDV$<$ T $>$@{PDV$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{rthEnergyCost()}{rthEnergyCost()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_p_d_v}{P\+DV}}$<$ T $>$\+::rth\+Energy\+Cost (\begin{DoxyParamCaption}\item[{const float \&}]{rand\+\_\+offset,  }\item[{\mbox{\hyperlink{class_point}{Point}}$<$ T $>$}]{next\+\_\+p,  }\item[{double \&}]{t,  }\item[{double \&}]{e }\end{DoxyParamCaption})}
+
+
+
+Pre-\/calculate energy consumption from next target point to origin point. 
+
+Related formula\+: Time t = (d -\/ (10 -\/ offset))(V\+\_\+\{gps\})
+
+
+\begin{DoxyParams}{Parameters}
+{\em rand\+\_\+offset} & Random {\ttfamily float} variable ranging from -\/1 to 1 \mbox{[}m\mbox{]}. \\
+\hline
+{\em next\+\_\+p} & Next target position. \\
+\hline
+{\em t} & Spent time \mbox{[}h\mbox{]}. \\
+\hline
+{\em e} & Energy variable to be updated \mbox{[}Wh\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_p_d_v_a963ec03be8c1e709544601e092dc899b}\label{class_p_d_v_a963ec03be8c1e709544601e092dc899b}} 
+\index{PDV$<$ T $>$@{PDV$<$ T $>$}!taskCheck@{taskCheck}}
+\index{taskCheck@{taskCheck}!PDV$<$ T $>$@{PDV$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{taskCheck()}{taskCheck()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{class_p_d_v}{P\+DV}}$<$ T $>$\+::task\+Check (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ \&}]{sn\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+Check if the number of requested sensor nodes is larger than {\itshape M\+I\+N\+\_\+\+R\+E\+Q\+U\+E\+S\+TS} . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sn\+\_\+list} & A vector of all sensor nodes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If true, the \mbox{\hyperlink{class_p_d_v}{P\+DV}} can fly for one task. If false, end the process. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_p_d_v_acaa686a0dd64abde32829162a552ed5f}\label{class_p_d_v_acaa686a0dd64abde32829162a552ed5f}} 
+\index{PDV$<$ T $>$@{PDV$<$ T $>$}!updateEnergy@{updateEnergy}}
+\index{updateEnergy@{updateEnergy}!PDV$<$ T $>$@{PDV$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{updateEnergy()}{updateEnergy()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_p_d_v}{P\+DV}}$<$ T $>$\+::update\+Energy (\begin{DoxyParamCaption}\item[{const double \&}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Update {\itshape pdv\+\_\+energy\+\_\+} according to {\itshape e} . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Energy consumption \mbox{[}Wh\mbox{]} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_p_d_v_a26dc0df987f8ada6f367071a840a3668}\label{class_p_d_v_a26dc0df987f8ada6f367071a840a3668}} 
+\index{PDV$<$ T $>$@{PDV$<$ T $>$}!updateEnergy@{updateEnergy}}
+\index{updateEnergy@{updateEnergy}!PDV$<$ T $>$@{PDV$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{updateEnergy()}{updateEnergy()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_p_d_v}{P\+DV}}$<$ T $>$\+::update\+Energy (\begin{DoxyParamCaption}\item[{const double \&}]{e1,  }\item[{const double \&}]{e2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Update {\itshape pdv\+\_\+energy\+\_\+} according to {\itshape e1} and {\itshape e2} . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e1} & Energy consumption \mbox{[}Wh\mbox{]} \\
+\hline
+{\em e2} & Energy consumption \mbox{[}Wh\mbox{]} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_p_d_v_a830f6110672abcaf56bf28223bcdd570}\label{class_p_d_v_a830f6110672abcaf56bf28223bcdd570}} 
+\index{PDV$<$ T $>$@{PDV$<$ T $>$}!updateFlightDist@{updateFlightDist}}
+\index{updateFlightDist@{updateFlightDist}!PDV$<$ T $>$@{PDV$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{updateFlightDist()}{updateFlightDist()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_p_d_v}{P\+DV}}$<$ T $>$\+::update\+Flight\+Dist (\begin{DoxyParamCaption}\item[{const double \&}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Update {\itshape flight\+\_\+distance\+\_\+} according to {\itshape d} . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & Flight distance \mbox{[}m\mbox{]} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_p_d_v_ac18e4c227f2acef4cb739b7e3400e476}\label{class_p_d_v_ac18e4c227f2acef4cb739b7e3400e476}} 
+\index{PDV$<$ T $>$@{PDV$<$ T $>$}!updateFlightTime@{updateFlightTime}}
+\index{updateFlightTime@{updateFlightTime}!PDV$<$ T $>$@{PDV$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{updateFlightTime()}{updateFlightTime()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_p_d_v}{P\+DV}}$<$ T $>$\+::update\+Flight\+Time (\begin{DoxyParamCaption}\item[{const double \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Update {\itshape flight\+\_\+time\+\_\+} according to {\itshape t} . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Spent time \mbox{[}h\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_p_d_v_ad3b78e634d247c32a1eb71ab31235c97}\label{class_p_d_v_ad3b78e634d247c32a1eb71ab31235c97}} 
+\index{PDV$<$ T $>$@{PDV$<$ T $>$}!updateFlightTime@{updateFlightTime}}
+\index{updateFlightTime@{updateFlightTime}!PDV$<$ T $>$@{PDV$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{updateFlightTime()}{updateFlightTime()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_p_d_v}{P\+DV}}$<$ T $>$\+::update\+Flight\+Time (\begin{DoxyParamCaption}\item[{const double \&}]{t1,  }\item[{const double \&}]{t2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Update {\itshape flight\+\_\+time\+\_\+} according to {\itshape t1} and {\itshape t2} . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t1} & Spent time \mbox{[}h\mbox{]}. \\
+\hline
+{\em t2} & Spent time \mbox{[}h\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_p_d_v_a87e946c730c29650c4144797ffa261fa}\label{class_p_d_v_a87e946c730c29650c4144797ffa261fa}} 
+\index{PDV$<$ T $>$@{PDV$<$ T $>$}!updatePos@{updatePos}}
+\index{updatePos@{updatePos}!PDV$<$ T $>$@{PDV$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{updatePos()}{updatePos()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_p_d_v}{P\+DV}}$<$ T $>$\+::update\+Pos (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}}$<$ T $>$ \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Update {\itshape pos} according to {\itshape p} . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & A {\itshape \mbox{\hyperlink{class_point}{Point}}} object for updating position \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_p_d_v_a74db626f6b547bbe01199ba1d9d18597}\label{class_p_d_v_a74db626f6b547bbe01199ba1d9d18597}} 
+\index{PDV$<$ T $>$@{PDV$<$ T $>$}!uwbEnergyCost@{uwbEnergyCost}}
+\index{uwbEnergyCost@{uwbEnergyCost}!PDV$<$ T $>$@{PDV$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{uwbEnergyCost()}{uwbEnergyCost()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_p_d_v}{P\+DV}}$<$ T $>$\+::uwb\+Energy\+Cost (\begin{DoxyParamCaption}\item[{const float \&}]{rand\+\_\+offset,  }\item[{double \&}]{t,  }\item[{double \&}]{e }\end{DoxyParamCaption})}
+
+
+
+Calculate energy consumption after U\+WB approaching. 
+
+Related formula\+: Time t = (10 -\/ offset) / V\+\_\+\{uwb\}
+
+
+\begin{DoxyParams}{Parameters}
+{\em rand\+\_\+offset} & Random {\ttfamily float} variable ranging from -\/1 to 1 \mbox{[}m\mbox{]} \\
+\hline
+{\em t} & Spent time \mbox{[}h\mbox{]}. \\
+\hline
+{\em e} & Energy variable to be updated \mbox{[}Wh\mbox{]}. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_p_d_v_a6251f40ff392292ee057b07382797f32}\label{class_p_d_v_a6251f40ff392292ee057b07382797f32}} 
+\index{PDV$<$ T $>$@{PDV$<$ T $>$}!pos@{pos}}
+\index{pos@{pos}!PDV$<$ T $>$@{PDV$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pos}{pos}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_point}{Point}}$<$T$>$ \mbox{\hyperlink{class_p_d_v}{P\+DV}}$<$ T $>$\+::pos}
+
+A {\itshape \mbox{\hyperlink{class_point}{Point}}} object with data type {\ttfamily T} for sensor node position \mbox{[}m\mbox{]} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pdv_8h}{pdv.\+h}}\item 
+\mbox{\hyperlink{pdv_8cpp}{pdv.\+cpp}}\end{DoxyCompactItemize}

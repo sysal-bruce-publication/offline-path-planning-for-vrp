@@ -1,0 +1,99 @@
+\hypertarget{class_cluster}{}\doxysection{Cluster$<$ T $>$ Class Template Reference}
+\label{class_cluster}\index{Cluster$<$ T $>$@{Cluster$<$ T $>$}}
+
+
+End of class \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}.  
+
+
+
+
+{\ttfamily \#include \char`\"{}sensornode.\+h\char`\"{}}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_cluster_adc74649eade8cc610ff6b376e393ea22}\label{class_cluster_adc74649eade8cc610ff6b376e393ea22}} 
+\mbox{\hyperlink{class_cluster_adc74649eade8cc610ff6b376e393ea22}{Cluster}} ()
+\begin{DoxyCompactList}\small\item\em A default constructer with default {\itshape \mbox{\hyperlink{class_point}{Point}}} and {\itshape \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}} constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_cluster_a9ffe29a799d37046279f6e5badc0b06d}\label{class_cluster_a9ffe29a799d37046279f6e5badc0b06d}} 
+\mbox{\hyperlink{class_cluster_a9ffe29a799d37046279f6e5badc0b06d}{$\sim$\+Cluster}} ()
+\begin{DoxyCompactList}\small\item\em A default destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cluster_a0ba3b4fb5c6ae1348865f17a4a2e5c3a}{assign\+End\+Nodes}} (std\+::vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ \&sn\+\_\+list)
+\begin{DoxyCompactList}\small\item\em Assign end nodes to one center node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_point}{Point}}$<$ T $>$ $\ast$ \mbox{\hyperlink{class_cluster_a1596e04f7ea633a73a931d165d10a0b9}{center}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ $\ast$ $>$ \mbox{\hyperlink{class_cluster_a0ac3620f726e5c50ac61718a899858da}{contains}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Cluster$<$ T $>$}
+
+End of class \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}. 
+
+Implementation of {\ttfamily \mbox{\hyperlink{class_cluster}{Cluster}}} class
+
+The {\ttfamily \mbox{\hyperlink{class_cluster}{Cluster}}} class includes a center node and a list of end nodes (if in acoustic distance limit). Note that for better memory management, pointers are used .This class is created for further genetic algorithm and necessary acoustic energy transfer.
+
+\begin{DoxyAuthor}{Author}
+Qiuchen Qian 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+3 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2020 
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000001}{Bug}}]Current version cannot delete pointers in the class properly. \end{DoxyRefDesc}
+\begin{DoxyWarning}{Warning}
+If delete pointers as commented in destructor, {\ttfamily \+\_\+\+Ctrls\+Valid\+Heap\+Pointer(block)} {\ttfamily is\+\_\+block\+\_\+type\+\_\+valid}(header-\/$>$\+\_\+block\+\_\+use) error will be reported by the debugger. 
+\end{DoxyWarning}
+\begin{DoxyCopyright}{Copyright}
+M\+IT Public License 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_cluster_a0ba3b4fb5c6ae1348865f17a4a2e5c3a}\label{class_cluster_a0ba3b4fb5c6ae1348865f17a4a2e5c3a}} 
+\index{Cluster$<$ T $>$@{Cluster$<$ T $>$}!assignEndNodes@{assignEndNodes}}
+\index{assignEndNodes@{assignEndNodes}!Cluster$<$ T $>$@{Cluster$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{assignEndNodes()}{assignEndNodes()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_cluster}{Cluster}}$<$ T $>$\+::assign\+End\+Nodes (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ \&}]{sn\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+Assign end nodes to one center node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sn\+\_\+list} & A vector of all sensor nodes \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_cluster_a1596e04f7ea633a73a931d165d10a0b9}\label{class_cluster_a1596e04f7ea633a73a931d165d10a0b9}} 
+\index{Cluster$<$ T $>$@{Cluster$<$ T $>$}!center@{center}}
+\index{center@{center}!Cluster$<$ T $>$@{Cluster$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{center}{center}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_point}{Point}}$<$T$>$$\ast$ \mbox{\hyperlink{class_cluster}{Cluster}}$<$ T $>$\+::center}
+
+Position of the center node \mbox{\Hypertarget{class_cluster_a0ac3620f726e5c50ac61718a899858da}\label{class_cluster_a0ac3620f726e5c50ac61718a899858da}} 
+\index{Cluster$<$ T $>$@{Cluster$<$ T $>$}!contains@{contains}}
+\index{contains@{contains}!Cluster$<$ T $>$@{Cluster$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{contains}{contains}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+std\+::vector$<$\mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$T$>$$\ast$$>$ \mbox{\hyperlink{class_cluster}{Cluster}}$<$ T $>$\+::contains}
+
+Pointers of contained end nodes 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sensornode_8h}{sensornode.\+h}}\end{DoxyCompactItemize}

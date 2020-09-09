@@ -1,0 +1,62 @@
+\hypertarget{main_8cpp}{}\doxysection{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.cpp@{main.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}point.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sensornode.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pdv.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}annealing.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}point.\+cpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sensornode.\+cpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pdv.\+cpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}annealing.\+cpp\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8cpp_a07ee2ca97b0d30b5c4cc87b2cce5281b}\label{main_8cpp_a07ee2ca97b0d30b5c4cc87b2cce5281b}} 
+\#define {\bfseries N\+O\+D\+E\+\_\+\+N\+UM}~1500
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8cpp_a31d1e868fbbe1128063891a503fa5467}\label{main_8cpp_a31d1e868fbbe1128063891a503fa5467}} 
+vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ float $>$ $>$ {\bfseries read\+Full\+Data} (int pdv\+\_\+num, string fname=\char`\"{}\char`\"{})
+\item 
+\mbox{\Hypertarget{main_8cpp_a6896fbeac9108798b2d68454bd407061}\label{main_8cpp_a6896fbeac9108798b2d68454bd407061}} 
+vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ float $>$ $>$ {\bfseries read\+Sub\+Data} (int num, string fname=\char`\"{}\char`\"{})
+\item 
+\mbox{\Hypertarget{main_8cpp_a98848c7ff49478d5508a3cef6300c5cf}\label{main_8cpp_a98848c7ff49478d5508a3cef6300c5cf}} 
+vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ float $>$ $>$ {\bfseries read\+Sub\+Path} (int pdv\+\_\+num, string fname=\char`\"{}\char`\"{})
+\item 
+\mbox{\Hypertarget{main_8cpp_a3ad7eb213742d1716cacf21a92574806}\label{main_8cpp_a3ad7eb213742d1716cacf21a92574806}} 
+{\footnotesize template$<$class T $>$ }\\void {\bfseries save\+Data\+To\+Csv} (int pdv\+\_\+num, float $\ast$pct\+\_\+list, double $\ast$pdv\+\_\+eng\+\_\+cost, double $\ast$charged\+\_\+eng, double $\ast$flight\+\_\+ds, double spent\+\_\+t, vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ sn\+\_\+list, string fname=\char`\"{}\char`\"{}, string info\+\_\+fname=\char`\"{}\char`\"{})
+\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Implement the main process. Read inputs -\/$>$ SA -\/$>$ \mbox{\hyperlink{class_p_d_v}{P\+DV}} simulation -\/$>$ Save data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyWarning}{Warning}
+This is the internal header of the O\+DP project. Do not use it directly in other code.
+\end{DoxyWarning}
+Copyright (C) Qiuchen Qian, 2020 Imperial College, London Users should ensure that there are no overlapped sensor nodes.
+
+\begin{DoxyPrecond}{Precondition}
+Total number of sensor nodes {\itshape N\+O\+D\+E\+\_\+\+N\+UM} needs to be set at the beginning. \textbackslash{} C++ language version I\+SO C++17. \textbackslash{} Set S\+DL check to NO. 
+\end{DoxyPrecond}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Implement the main process. Read inputs -\/$>$ SA -\/$>$ \mbox{\hyperlink{class_p_d_v}{P\+DV}} simulation -\/$>$ Save data. 
+
+Update all Sensor Energy

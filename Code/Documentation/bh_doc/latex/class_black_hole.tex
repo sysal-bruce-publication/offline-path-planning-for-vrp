@@ -1,0 +1,502 @@
+\hypertarget{class_black_hole}{}\doxysection{Black\+Hole$<$ T $>$ Class Template Reference}
+\label{class_black_hole}\index{BlackHole$<$ T $>$@{BlackHole$<$ T $>$}}
+
+
+Implementation of {\itshape \mbox{\hyperlink{class_black_hole}{Black\+Hole}}} class.  
+
+
+
+
+{\ttfamily \#include \char`\"{}blackhole.\+h\char`\"{}}
+
+Inheritance diagram for Black\+Hole$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_black_hole}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_black_hole_abddb5afcb1f99349413da6c42c3085c1}\label{class_black_hole_abddb5afcb1f99349413da6c42c3085c1}} 
+\mbox{\hyperlink{class_black_hole_abddb5afcb1f99349413da6c42c3085c1}{Black\+Hole}} ()
+\begin{DoxyCompactList}\small\item\em A default constructer with {\itshape origin} (0, 0) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_black_hole_a9481ac147fea96a4875e7c83136b39dd}\label{class_black_hole_a9481ac147fea96a4875e7c83136b39dd}} 
+\mbox{\hyperlink{class_black_hole_a9481ac147fea96a4875e7c83136b39dd}{$\sim$\+Black\+Hole}} ()
+\begin{DoxyCompactList}\small\item\em A default destructer which will delete {\itshape origin}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_black_hole_ad0c25879d418edf40eb3ad30ed95ea65}{init\+Params}} (vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ $\ast$ $>$ req\+\_\+sn\+\_\+ptr)
+\begin{DoxyCompactList}\small\item\em Allocate memory to public variables and initialize them. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_black_hole_a6f959b648dc47927d03c7081a1ef7e9d}{init\+One\+Sol}} (const int \&pdv\+\_\+num, vector$<$ vector$<$ int $>$$>$ \&idx\+\_\+list, vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$ \mbox{\hyperlink{class_black_hole_ac00e03055fecdb930ce1b2b7bf99fc4a}{req\+\_\+ps}}, vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ sn\+\_\+list, vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ $\ast$ $>$ req\+\_\+sn\+\_\+ptr)
+\begin{DoxyCompactList}\small\item\em According to current target vector, re-\/generate a new one. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_black_hole_a6669bf60d6d3ca53a0fc4fb1893bcb99}{save\+Guess\+To\+Txt}} (int pop\+\_\+num, int pdv\+\_\+num\+\_\+txt, int sn\+\_\+num, vector$<$ int $>$ path\+\_\+to\+\_\+save)
+\begin{DoxyCompactList}\small\item\em Save initial guess to csv file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_black_hole_a4b05db6dcfa186856af069d9ae94ec01}{calc\+Opt\+Pdv\+Num}} (vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ sn\+\_\+list, vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ $\ast$ $>$ req\+\_\+sn\+\_\+ptr, vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$ temp\+\_\+req\+\_\+p)
+\begin{DoxyCompactList}\small\item\em Calculate the minimum required number of needed P\+D\+Vs. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_black_hole_a93392a0907b75b4f970850f4eb0df813}{calc\+Init\+Guess}} (const int \&r\+\_\+num, const int \&pdv\+\_\+num, const int \&pop\+\_\+num, vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ sn\+\_\+list, vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ $\ast$ $>$ req\+\_\+sn\+\_\+ptr, vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$ \mbox{\hyperlink{class_black_hole_ac00e03055fecdb930ce1b2b7bf99fc4a}{req\+\_\+ps}})
+\begin{DoxyCompactList}\small\item\em Initialize all target and trail vectors randomly with clusters solution from all sensors. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_black_hole_accba5ccf7d87ed6b0c27683f481ca71b}{calc\+Far\+Neigh\+Dist}} (vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$ init\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Calculate the flight distance through finding the farest neighbour everytime. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_black_hole_ada8feaaf98100773693b5ce30157f3b8}{calc\+Near\+Neigh\+Dist}} (vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$ init\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Calculate the flight distance through finding the nearest neighbour everytime. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_black_hole_ad387329a2ea4a6aee7c67d861055f7ce}{fitness\+Func}} (vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ sn\+\_\+list, vector$<$ int $>$ idx\+\_\+list)
+\begin{DoxyCompactList}\small\item\em Calculate the fitness of the possible solution. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \mbox{\hyperlink{class_black_hole_a292a8f9924f92b8f528e66415e1f3c7a}{read\+Guess\+Data}} (int pop\+\_\+num, int pdv\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Read the data from stored initial guess. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_black_hole_ad778f96dc15b327081df1f9aba4ee61f}{save\+Sub\+Path\+To\+Csv}} (vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ sn\+\_\+list, vector$<$ vector$<$ int $>$$>$ path\+\_\+to\+\_\+save)
+\begin{DoxyCompactList}\small\item\em Save sub paths with best metric. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_black_hole_ab4184e2359e45e71f4ad29fcaa70b9ae}{attraction}} (int cur\+\_\+gen, int cur\+\_\+pdv, const int \&bh\+\_\+num, vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ sn\+\_\+list, vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$ \mbox{\hyperlink{class_black_hole_ac00e03055fecdb930ce1b2b7bf99fc4a}{req\+\_\+ps}}, vector$<$ vector$<$ int $>$$>$ \&tar\+\_\+vec)
+\begin{DoxyCompactList}\small\item\em Implement \textquotesingle{}Attraction\textquotesingle{} to generate trail vectors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_black_hole_aee9082153063d8272905247c8223f4b0}{calc\+Final\+Path}} (vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ sn\+\_\+list, vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ $\ast$ $>$ candidates)
+\begin{DoxyCompactList}\small\item\em Implement all processes of the genetic algorithm. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_black_hole_a669dd3d03a024c1ca5161e8310515637}{check\+Task}} (vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ \&sn\+\_\+list)
+\begin{DoxyCompactList}\small\item\em Check if the number of requested sensor nodes is larger than {\itshape min\+\_\+req\+\_\+num}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_point}{Point}}$<$ T $>$ $\ast$ \mbox{\hyperlink{class_black_hole_a9ac7a372087b1ce39566249e1fbfbc75}{origin}} = nullptr
+\item 
+vector$<$ vector$<$ vector$<$ int $>$ $>$ $>$ \mbox{\hyperlink{class_black_hole_aa42430b89e9c56cabbe7ea2c3ec3075a}{tars\+\_\+idx}}
+\item 
+vector$<$ vector$<$ double $>$ $>$ \mbox{\hyperlink{class_black_hole_a5dd55e5d1aee49740ececfd0e9511099}{tars\+\_\+metric}}
+\item 
+vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$ $>$ \mbox{\hyperlink{class_black_hole_ac00e03055fecdb930ce1b2b7bf99fc4a}{req\+\_\+ps}}
+\item 
+double \mbox{\hyperlink{class_black_hole_a816f1cabd6e2fee52eb2e1ae1b278ba5}{alg\+\_\+time}} = 0.
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Black\+Hole$<$ T $>$}
+
+Implementation of {\itshape \mbox{\hyperlink{class_black_hole}{Black\+Hole}}} class. 
+
+The {\itshape \mbox{\hyperlink{class_black_hole}{Black\+Hole}}} class includes basic attributes like target, trail vectors, metric vectors, etc. and actions like Attraction, calculate fitness function etc.
+
+\begin{DoxyAuthor}{Author}
+Qiuchen Qian 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+5 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2020 
+\end{DoxyDate}
+\begin{DoxyWarning}{Warning}
+C4996 \textquotesingle{}strerror\textquotesingle{}\+: This function or variable may be unsafe. Consider using strerror\+\_\+s instead. 
+\end{DoxyWarning}
+\begin{DoxyCopyright}{Copyright}
+M\+IT Public License 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_black_hole_ab4184e2359e45e71f4ad29fcaa70b9ae}\label{class_black_hole_ab4184e2359e45e71f4ad29fcaa70b9ae}} 
+\index{BlackHole$<$ T $>$@{BlackHole$<$ T $>$}!attraction@{attraction}}
+\index{attraction@{attraction}!BlackHole$<$ T $>$@{BlackHole$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{attraction()}{attraction()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_black_hole}{Black\+Hole}}$<$ T $>$\+::attraction (\begin{DoxyParamCaption}\item[{int}]{cur\+\_\+gen,  }\item[{int}]{cur\+\_\+pdv,  }\item[{const int \&}]{bh\+\_\+num,  }\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$}]{sn\+\_\+list,  }\item[{vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$}]{req\+\_\+ps,  }\item[{vector$<$ vector$<$ int $>$$>$ \&}]{tar\+\_\+vec }\end{DoxyParamCaption})}
+
+
+
+Implement \textquotesingle{}Attraction\textquotesingle{} to generate trail vectors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cur\+\_\+gen} & Current generation id. \\
+\hline
+{\em cur\+\_\+pdv} & Current \mbox{\hyperlink{class_p_d_v}{P\+DV}} id. \\
+\hline
+{\em bh\+\_\+num} & The index of the black hole. \\
+\hline
+{\em sn\+\_\+list} & A vector of all sensor nodes. \\
+\hline
+{\em req\+\_\+ps} & A vector of {\itshape \mbox{\hyperlink{class_point}{Point}}} objects to be recharged. \\
+\hline
+{\em tar\+\_\+vec} & The target vector at specific population id. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates. \\
+\hline
+\end{DoxyTemplParams}
+\mbox{\Hypertarget{class_black_hole_accba5ccf7d87ed6b0c27683f481ca71b}\label{class_black_hole_accba5ccf7d87ed6b0c27683f481ca71b}} 
+\index{BlackHole$<$ T $>$@{BlackHole$<$ T $>$}!calcFarNeighDist@{calcFarNeighDist}}
+\index{calcFarNeighDist@{calcFarNeighDist}!BlackHole$<$ T $>$@{BlackHole$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{calcFarNeighDist()}{calcFarNeighDist()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_black_hole}{Black\+Hole}}$<$ T $>$\+::calc\+Far\+Neigh\+Dist (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$}]{init\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Calculate the flight distance through finding the farest neighbour everytime. 
+
+Please note that this solution is used to convert the flight distance calculated in {\ttfamily fitness\+Fun()} around 0 or 1. The returned result should not be considered as the longest one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em init\+\_\+path} & The path to be calculated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the worst distance (predicted) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_black_hole_aee9082153063d8272905247c8223f4b0}\label{class_black_hole_aee9082153063d8272905247c8223f4b0}} 
+\index{BlackHole$<$ T $>$@{BlackHole$<$ T $>$}!calcFinalPath@{calcFinalPath}}
+\index{calcFinalPath@{calcFinalPath}!BlackHole$<$ T $>$@{BlackHole$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{calcFinalPath()}{calcFinalPath()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_black_hole}{Black\+Hole}}$<$ T $>$\+::calc\+Final\+Path (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$}]{sn\+\_\+list,  }\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ $\ast$ $>$}]{candidates }\end{DoxyParamCaption})}
+
+
+
+Implement all processes of the genetic algorithm. 
+
+This function includes initialization of target and trail vectors, calculation of their fitness metric values, \textquotesingle{}Attraction\textquotesingle{} and iterations. Please note that unlike normal BH, both target and trail vectors are generated from all sensor nodes as possible solutions. After comparsion of the black hole bound, the winner star will survive for next generation, which will keep the \textquotesingle{}population\textquotesingle{} evolving towards to desired direction (converge to a trusted solution).
+
+
+\begin{DoxyParams}{Parameters}
+{\em sn\+\_\+list} & A vector of all sensor nodes. \\
+\hline
+{\em candidates} & A vector of pointers to requested sensor nodes. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+A vector of points (target flight position). 
+\end{DoxyReturn}
+Initialization
+
+Black hole\mbox{\Hypertarget{class_black_hole_a93392a0907b75b4f970850f4eb0df813}\label{class_black_hole_a93392a0907b75b4f970850f4eb0df813}} 
+\index{BlackHole$<$ T $>$@{BlackHole$<$ T $>$}!calcInitGuess@{calcInitGuess}}
+\index{calcInitGuess@{calcInitGuess}!BlackHole$<$ T $>$@{BlackHole$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{calcInitGuess()}{calcInitGuess()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{class_black_hole}{Black\+Hole}}$<$ T $>$\+::calc\+Init\+Guess (\begin{DoxyParamCaption}\item[{const int \&}]{r\+\_\+num,  }\item[{const int \&}]{pdv\+\_\+num,  }\item[{const int \&}]{pop\+\_\+num,  }\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$}]{sn\+\_\+list,  }\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ $\ast$ $>$}]{req\+\_\+sn\+\_\+ptr,  }\item[{vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$}]{req\+\_\+ps }\end{DoxyParamCaption})}
+
+
+
+Initialize all target and trail vectors randomly with clusters solution from all sensors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r\+\_\+num} & The number of shortest point index. \\
+\hline
+{\em pdv\+\_\+num} & The number of P\+D\+Vs. \\
+\hline
+{\em pop\+\_\+num} & The number of total population. \\
+\hline
+{\em sn\+\_\+list} & A vector of all sensor nodes. \\
+\hline
+{\em req\+\_\+sn\+\_\+ptr} & A vector of pointers to all sensor nodes to be recharged. \\
+\hline
+{\em req\+\_\+ps} & A vector of {\itshape \mbox{\hyperlink{class_point}{Point}}} objects of all sensor nodes to be recharged. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+If the number of nodes to be recharged can be divided exactly by {\itshape pdv\+\_\+num}, return true. 
+\end{DoxyReturn}
+The sub vector of {\itshape clsts\+\_\+list} 
+
+If not divisible, the last \mbox{\hyperlink{class_p_d_v}{P\+DV}} assignment should be different
+
+Find the index randomly (the {\ttfamily num}th shortest)
+
+Find the index randomly (the {\ttfamily num}th shortest)
+
+Re-\/initialize {\itshape temp\+\_\+req\+\_\+p} for each population\mbox{\Hypertarget{class_black_hole_ada8feaaf98100773693b5ce30157f3b8}\label{class_black_hole_ada8feaaf98100773693b5ce30157f3b8}} 
+\index{BlackHole$<$ T $>$@{BlackHole$<$ T $>$}!calcNearNeighDist@{calcNearNeighDist}}
+\index{calcNearNeighDist@{calcNearNeighDist}!BlackHole$<$ T $>$@{BlackHole$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{calcNearNeighDist()}{calcNearNeighDist()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_black_hole}{Black\+Hole}}$<$ T $>$\+::calc\+Near\+Neigh\+Dist (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$}]{init\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Calculate the flight distance through finding the nearest neighbour everytime. 
+
+Please note that this solution is used to convert the flight distance calculated in {\ttfamily fitness\+Fun()} around 0 or 1. The returned result should not be considered as the shortest one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em init\+\_\+path} & The path to be calculated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the best distance (predicted) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_black_hole_a4b05db6dcfa186856af069d9ae94ec01}\label{class_black_hole_a4b05db6dcfa186856af069d9ae94ec01}} 
+\index{BlackHole$<$ T $>$@{BlackHole$<$ T $>$}!calcOptPdvNum@{calcOptPdvNum}}
+\index{calcOptPdvNum@{calcOptPdvNum}!BlackHole$<$ T $>$@{BlackHole$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{calcOptPdvNum()}{calcOptPdvNum()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_black_hole}{Black\+Hole}}$<$ T $>$\+::calc\+Opt\+Pdv\+Num (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$}]{sn\+\_\+list,  }\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ $\ast$ $>$}]{req\+\_\+sn\+\_\+ptr,  }\item[{vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$}]{temp\+\_\+req\+\_\+p }\end{DoxyParamCaption})}
+
+
+
+Calculate the minimum required number of needed P\+D\+Vs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sn\+\_\+list} & A vector of all sensor nodes. \\
+\hline
+{\em req\+\_\+sn\+\_\+ptr} & A vector of pointers to all sensor nodes to be recharged. \\
+\hline
+{\em temp\+\_\+req\+\_\+p} & A vector of pointers to all {\itshape \mbox{\hyperlink{class_point}{Point}}} obejects of sensor nodes to be recharged. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+The optimised number of needed P\+D\+Vs. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_black_hole_a669dd3d03a024c1ca5161e8310515637}\label{class_black_hole_a669dd3d03a024c1ca5161e8310515637}} 
+\index{BlackHole$<$ T $>$@{BlackHole$<$ T $>$}!checkTask@{checkTask}}
+\index{checkTask@{checkTask}!BlackHole$<$ T $>$@{BlackHole$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{checkTask()}{checkTask()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{class_black_hole}{Black\+Hole}}$<$ T $>$\+::check\+Task (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ \&}]{sn\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+Check if the number of requested sensor nodes is larger than {\itshape min\+\_\+req\+\_\+num}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sn\+\_\+list} & A vector of all sensor nodes. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em runtime\+\_\+error} & No such file or directory. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+If true, keep iterating until the requested number reaches the minimum value. If false, end iterating. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_black_hole_ad387329a2ea4a6aee7c67d861055f7ce}\label{class_black_hole_ad387329a2ea4a6aee7c67d861055f7ce}} 
+\index{BlackHole$<$ T $>$@{BlackHole$<$ T $>$}!fitnessFunc@{fitnessFunc}}
+\index{fitnessFunc@{fitnessFunc}!BlackHole$<$ T $>$@{BlackHole$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{fitnessFunc()}{fitnessFunc()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_black_hole}{Black\+Hole}}$<$ T $>$\+::fitness\+Func (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$}]{sn\+\_\+list,  }\item[{vector$<$ int $>$}]{idx\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+Calculate the fitness of the possible solution. 
+
+The criteria is based on the amount of recharged energy and the distance of flight. Related formula\+: Fitness M = alpha $\ast$ tanh(E\+\_\+\{wsn\}) + beta $\ast$ inv\+\_\+tanh(d\+\_\+\{pdv\}) + gamma $\ast$ inv\+\_\+tanh(E\+\_\+\{pdv\})
+
+
+\begin{DoxyParams}{Parameters}
+{\em sn\+\_\+list} & A vector of all sensor nodes. \\
+\hline
+{\em idx\+\_\+list} & A index vector of targets to be calculated. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+The fitness metric value. 
+\end{DoxyReturn}
+Calculate the total distance of a trusted bad and good solution
+
+Implement inductive power transfer to the center node.
+
+Update I\+PT energy cost
+
+Implement center node acoustic power trannsfer.
+
+Return to home process
+
+Wh
+
+km
+
+Wh\mbox{\Hypertarget{class_black_hole_a6f959b648dc47927d03c7081a1ef7e9d}\label{class_black_hole_a6f959b648dc47927d03c7081a1ef7e9d}} 
+\index{BlackHole$<$ T $>$@{BlackHole$<$ T $>$}!initOneSol@{initOneSol}}
+\index{initOneSol@{initOneSol}!BlackHole$<$ T $>$@{BlackHole$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{initOneSol()}{initOneSol()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_black_hole}{Black\+Hole}}$<$ T $>$\+::init\+One\+Sol (\begin{DoxyParamCaption}\item[{const int \&}]{pdv\+\_\+num,  }\item[{vector$<$ vector$<$ int $>$$>$ \&}]{idx\+\_\+list,  }\item[{vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$}]{req\+\_\+ps,  }\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$}]{sn\+\_\+list,  }\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ $\ast$ $>$}]{req\+\_\+sn\+\_\+ptr }\end{DoxyParamCaption})}
+
+
+
+According to current target vector, re-\/generate a new one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdv\+\_\+num} & The number of P\+D\+Vs. \\
+\hline
+{\em idx\+\_\+list} & The target vector at specific \mbox{\hyperlink{class_p_d_v}{P\+DV}} id. \\
+\hline
+{\em req\+\_\+ps} & A vector of {\itshape \mbox{\hyperlink{class_point}{Point}}} objects to be recharged. \\
+\hline
+{\em sn\+\_\+list} & A vector of all sensor nodes. \\
+\hline
+{\em req\+\_\+sn\+\_\+ptr} & A vector of pointer to {\itshape \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}} objects to be recharged. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates. \\
+\hline
+\end{DoxyTemplParams}
+If not divisible, the last \mbox{\hyperlink{class_p_d_v}{P\+DV}} assignment should be different
+
+Find the index randomly (the {\ttfamily num}th shortest)
+
+Find the index randomly (the {\ttfamily num}th shortest)\mbox{\Hypertarget{class_black_hole_ad0c25879d418edf40eb3ad30ed95ea65}\label{class_black_hole_ad0c25879d418edf40eb3ad30ed95ea65}} 
+\index{BlackHole$<$ T $>$@{BlackHole$<$ T $>$}!initParams@{initParams}}
+\index{initParams@{initParams}!BlackHole$<$ T $>$@{BlackHole$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{initParams()}{initParams()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_black_hole}{Black\+Hole}}$<$ T $>$\+::init\+Params (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ $\ast$ $>$}]{req\+\_\+sn\+\_\+ptr }\end{DoxyParamCaption})}
+
+
+
+Allocate memory to public variables and initialize them. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req\+\_\+sn\+\_\+ptr} & A vector of pointer to {\itshape \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}} objects to be recharged. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates. \\
+\hline
+\end{DoxyTemplParams}
+\mbox{\Hypertarget{class_black_hole_a292a8f9924f92b8f528e66415e1f3c7a}\label{class_black_hole_a292a8f9924f92b8f528e66415e1f3c7a}} 
+\index{BlackHole$<$ T $>$@{BlackHole$<$ T $>$}!readGuessData@{readGuessData}}
+\index{readGuessData@{readGuessData}!BlackHole$<$ T $>$@{BlackHole$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{readGuessData()}{readGuessData()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+vector$<$ int $>$ \mbox{\hyperlink{class_black_hole}{Black\+Hole}}$<$ T $>$\+::read\+Guess\+Data (\begin{DoxyParamCaption}\item[{int}]{pop\+\_\+num,  }\item[{int}]{pdv\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Read the data from stored initial guess. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pop\+\_\+num} & The population id. \\
+\hline
+{\em pdv\+\_\+num} & The \mbox{\hyperlink{class_p_d_v}{P\+DV}} id. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of solution (index of sensor nodes) with {\itshape pop\+\_\+num} and {\itshape pdv\+\_\+num} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_black_hole_a6669bf60d6d3ca53a0fc4fb1893bcb99}\label{class_black_hole_a6669bf60d6d3ca53a0fc4fb1893bcb99}} 
+\index{BlackHole$<$ T $>$@{BlackHole$<$ T $>$}!saveGuessToTxt@{saveGuessToTxt}}
+\index{saveGuessToTxt@{saveGuessToTxt}!BlackHole$<$ T $>$@{BlackHole$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{saveGuessToTxt()}{saveGuessToTxt()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_black_hole}{Black\+Hole}}$<$ T $>$\+::save\+Guess\+To\+Txt (\begin{DoxyParamCaption}\item[{int}]{pop\+\_\+num,  }\item[{int}]{pdv\+\_\+num\+\_\+txt,  }\item[{int}]{sn\+\_\+num,  }\item[{vector$<$ int $>$}]{path\+\_\+to\+\_\+save }\end{DoxyParamCaption})}
+
+
+
+Save initial guess to csv file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pop\+\_\+num} & The number of population in generation. \\
+\hline
+{\em pdv\+\_\+num\+\_\+txt} & The number of pdv id. \\
+\hline
+{\em sn\+\_\+num} & The number of S\+Ns. \\
+\hline
+{\em path\+\_\+to\+\_\+save} & The path to be saved. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates. \\
+\hline
+\end{DoxyTemplParams}
+\mbox{\Hypertarget{class_black_hole_ad778f96dc15b327081df1f9aba4ee61f}\label{class_black_hole_ad778f96dc15b327081df1f9aba4ee61f}} 
+\index{BlackHole$<$ T $>$@{BlackHole$<$ T $>$}!saveSubPathToCsv@{saveSubPathToCsv}}
+\index{saveSubPathToCsv@{saveSubPathToCsv}!BlackHole$<$ T $>$@{BlackHole$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{saveSubPathToCsv()}{saveSubPathToCsv()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_black_hole}{Black\+Hole}}$<$ T $>$\+::save\+Sub\+Path\+To\+Csv (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$}]{sn\+\_\+list,  }\item[{vector$<$ vector$<$ int $>$$>$}]{path\+\_\+to\+\_\+save }\end{DoxyParamCaption})}
+
+
+
+Save sub paths with best metric. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sn\+\_\+list} & A vector of all sensor nodes. \\
+\hline
+{\em path\+\_\+to\+\_\+save} & The 2-\/D vector to save. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_black_hole_a816f1cabd6e2fee52eb2e1ae1b278ba5}\label{class_black_hole_a816f1cabd6e2fee52eb2e1ae1b278ba5}} 
+\index{BlackHole$<$ T $>$@{BlackHole$<$ T $>$}!alg\_time@{alg\_time}}
+\index{alg\_time@{alg\_time}!BlackHole$<$ T $>$@{BlackHole$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{alg\_time}{alg\_time}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_black_hole}{Black\+Hole}}$<$ T $>$\+::alg\+\_\+time = 0.}
+
+Algorithm execution time \mbox{\Hypertarget{class_black_hole_a9ac7a372087b1ce39566249e1fbfbc75}\label{class_black_hole_a9ac7a372087b1ce39566249e1fbfbc75}} 
+\index{BlackHole$<$ T $>$@{BlackHole$<$ T $>$}!origin@{origin}}
+\index{origin@{origin}!BlackHole$<$ T $>$@{BlackHole$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{origin}{origin}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_point}{Point}}$<$T$>$$\ast$ \mbox{\hyperlink{class_black_hole}{Black\+Hole}}$<$ T $>$\+::origin = nullptr}
+
+The coordiante of BS \mbox{\Hypertarget{class_black_hole_ac00e03055fecdb930ce1b2b7bf99fc4a}\label{class_black_hole_ac00e03055fecdb930ce1b2b7bf99fc4a}} 
+\index{BlackHole$<$ T $>$@{BlackHole$<$ T $>$}!req\_ps@{req\_ps}}
+\index{req\_ps@{req\_ps}!BlackHole$<$ T $>$@{BlackHole$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{req\_ps}{req\_ps}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+vector$<$\mbox{\hyperlink{class_point}{Point}}$<$T$>$ $>$ \mbox{\hyperlink{class_black_hole}{Black\+Hole}}$<$ T $>$\+::req\+\_\+ps}
+
+{\itshape \mbox{\hyperlink{class_point}{Point}}} vector of S\+Ns to be recharged \mbox{\Hypertarget{class_black_hole_aa42430b89e9c56cabbe7ea2c3ec3075a}\label{class_black_hole_aa42430b89e9c56cabbe7ea2c3ec3075a}} 
+\index{BlackHole$<$ T $>$@{BlackHole$<$ T $>$}!tars\_idx@{tars\_idx}}
+\index{tars\_idx@{tars\_idx}!BlackHole$<$ T $>$@{BlackHole$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{tars\_idx}{tars\_idx}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+vector$<$vector$<$vector$<$int$>$ $>$ $>$ \mbox{\hyperlink{class_black_hole}{Black\+Hole}}$<$ T $>$\+::tars\+\_\+idx}
+
+Target vector of index, 3D\+: pop, pdv and sub path \mbox{\Hypertarget{class_black_hole_a5dd55e5d1aee49740ececfd0e9511099}\label{class_black_hole_a5dd55e5d1aee49740ececfd0e9511099}} 
+\index{BlackHole$<$ T $>$@{BlackHole$<$ T $>$}!tars\_metric@{tars\_metric}}
+\index{tars\_metric@{tars\_metric}!BlackHole$<$ T $>$@{BlackHole$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{tars\_metric}{tars\_metric}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+vector$<$vector$<$double$>$ $>$ \mbox{\hyperlink{class_black_hole}{Black\+Hole}}$<$ T $>$\+::tars\+\_\+metric}
+
+Corresponding trail vector 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{blackhole_8h}{blackhole.\+h}}\item 
+\mbox{\hyperlink{blackhole_8cpp}{blackhole.\+cpp}}\end{DoxyCompactItemize}

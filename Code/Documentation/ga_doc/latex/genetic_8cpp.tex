@@ -1,0 +1,180 @@
+\hypertarget{genetic_8cpp}{}\doxysection{genetic.\+cpp File Reference}
+\label{genetic_8cpp}\index{genetic.cpp@{genetic.cpp}}
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$valarray$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include \char`\"{}pdv.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}genetic.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{genetic_8cpp_af8fe28bd32418434e01b14c2c021bfa0}{get\+Rand\+Index}} (int limit)
+\begin{DoxyCompactList}\small\item\em Get a random integer ranging from 0 to {\itshape limit}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{genetic_8cpp_a77bb28626acfb07d8fcb2413fc20b090}{tanh\+Func}} (const double \&x)
+\begin{DoxyCompactList}\small\item\em Get value of tanh(x). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{genetic_8cpp_af8526848766adfe652834b716ce77b34}{inv\+Tanh\+Func}} (const double \&x)
+\begin{DoxyCompactList}\small\item\em Get value of inv\+\_\+tanh(x). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{genetic_8cpp_ac721ccd2338924ef6b0bdb71dbcb33ea}{check\+Duplicates}} (vector$<$ int $>$ source)
+\begin{DoxyCompactList}\small\item\em Check if there are duplicates in an integer vector. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{genetic_8cpp_aa70c37504796e2e936b296203aaae8e7}{del\+Duplicates}} (\mbox{\hyperlink{class_cluster}{Cluster}}$<$ T $>$ \&cluster)
+\begin{DoxyCompactList}\small\item\em For single {\itshape \mbox{\hyperlink{class_cluster}{Cluster}}} object, delete duplicates in {\itshape contains}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{genetic_8cpp_a3d3f9b9407fe9ae62cdb5aa765847b3a}{del\+Duplicates}} (vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$ \&p\+\_\+list)
+\begin{DoxyCompactList}\small\item\em For a vector of {\itshape \mbox{\hyperlink{class_point}{Point}}} objects, delete duplicate points. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{genetic_8cpp_afcc19d146fd3bdf298c093d72928d3ed}{del\+Duplicates}} (vector$<$ int $>$ \&idx\+\_\+list)
+\begin{DoxyCompactList}\small\item\em For an integer vector, delete duplicate points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{genetic_8cpp_a372cebe1ac881558e44294750864ec62}\label{genetic_8cpp_a372cebe1ac881558e44294750864ec62}} 
+const int \mbox{\hyperlink{genetic_8cpp_a372cebe1ac881558e44294750864ec62}{coeff\+\_\+wsn\+\_\+eng}} = 50
+\begin{DoxyCompactList}\small\item\em Coefficient for charged energy of W\+SN in fitness function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{genetic_8cpp_a122b3bcbf5f8734b3032150057d6cfd9}\label{genetic_8cpp_a122b3bcbf5f8734b3032150057d6cfd9}} 
+const int \mbox{\hyperlink{genetic_8cpp_a122b3bcbf5f8734b3032150057d6cfd9}{coeff\+\_\+pdv\+\_\+eng}} = 25
+\begin{DoxyCompactList}\small\item\em Coefficient for flight energy cost of \mbox{\hyperlink{class_p_d_v}{P\+DV}} in fitness function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{genetic_8cpp_a2de2c17ab67f87e90ed9cc5fa5001b8f}\label{genetic_8cpp_a2de2c17ab67f87e90ed9cc5fa5001b8f}} 
+const int \mbox{\hyperlink{genetic_8cpp_a2de2c17ab67f87e90ed9cc5fa5001b8f}{coeff\+\_\+dist}} = 25
+\begin{DoxyCompactList}\small\item\em Coefficient for flight distance of \mbox{\hyperlink{class_p_d_v}{P\+DV}} in fitness function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{genetic_8cpp_a4ffa4b1ab4d2059a38c8e577cb4dfcca}\label{genetic_8cpp_a4ffa4b1ab4d2059a38c8e577cb4dfcca}} 
+const int \mbox{\hyperlink{genetic_8cpp_a4ffa4b1ab4d2059a38c8e577cb4dfcca}{generation}} = 50
+\begin{DoxyCompactList}\small\item\em The number of total iterations. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{genetic_8cpp_a27901046ea481e98a382a1d4163a5129}\label{genetic_8cpp_a27901046ea481e98a382a1d4163a5129}} 
+const int \mbox{\hyperlink{genetic_8cpp_a27901046ea481e98a382a1d4163a5129}{pop}} = 250
+\begin{DoxyCompactList}\small\item\em The number of population. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{genetic_8cpp_a3fc5c629ddcd8e194c7e75e2660ab6a2}\label{genetic_8cpp_a3fc5c629ddcd8e194c7e75e2660ab6a2}} 
+const int \mbox{\hyperlink{genetic_8cpp_a3fc5c629ddcd8e194c7e75e2660ab6a2}{cr}} = 50
+\begin{DoxyCompactList}\small\item\em Crossover ratio. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{genetic_8cpp_a4026127d20e0799d5045494048e4b194}\label{genetic_8cpp_a4026127d20e0799d5045494048e4b194}} 
+const int \mbox{\hyperlink{genetic_8cpp_a4026127d20e0799d5045494048e4b194}{min\+\_\+req\+\_\+num}} = 20
+\begin{DoxyCompactList}\small\item\em The minimum number of a task. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{genetic_8cpp_a2cfbc330fd89bbf005222f848bfdb23d}\label{genetic_8cpp_a2cfbc330fd89bbf005222f848bfdb23d}} 
+const int \mbox{\hyperlink{genetic_8cpp_a2cfbc330fd89bbf005222f848bfdb23d}{max\+\_\+num\+\_\+r}} = 5
+\begin{DoxyCompactList}\small\item\em The number of sensor nodes in the range. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyWarning}{Warning}
+This is the internal header of the O\+DP project. Do not use it directly in other code. Please note that this file is based on the open source code from \href{https://github.com/achu6393/dynamicWeightedClustering}{\texttt{ dynamic\+Weighted\+Clustering }} Copyright (C) Qiuchen Qian, 2020 Imperial College, London 
+\end{DoxyWarning}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{genetic_8cpp_ac721ccd2338924ef6b0bdb71dbcb33ea}\label{genetic_8cpp_ac721ccd2338924ef6b0bdb71dbcb33ea}} 
+\index{genetic.cpp@{genetic.cpp}!checkDuplicates@{checkDuplicates}}
+\index{checkDuplicates@{checkDuplicates}!genetic.cpp@{genetic.cpp}}
+\doxysubsubsection{\texorpdfstring{checkDuplicates()}{checkDuplicates()}}
+{\footnotesize\ttfamily bool check\+Duplicates (\begin{DoxyParamCaption}\item[{vector$<$ int $>$}]{source }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if there are duplicates in an integer vector. 
+
+\begin{DoxyReturn}{Returns}
+True or False. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{genetic_8cpp_aa70c37504796e2e936b296203aaae8e7}\label{genetic_8cpp_aa70c37504796e2e936b296203aaae8e7}} 
+\index{genetic.cpp@{genetic.cpp}!delDuplicates@{delDuplicates}}
+\index{delDuplicates@{delDuplicates}!genetic.cpp@{genetic.cpp}}
+\doxysubsubsection{\texorpdfstring{delDuplicates()}{delDuplicates()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void del\+Duplicates (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_cluster}{Cluster}}$<$ T $>$ \&}]{cluster }\end{DoxyParamCaption})}
+
+
+
+For single {\itshape \mbox{\hyperlink{class_cluster}{Cluster}}} object, delete duplicates in {\itshape contains}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cluster} & {\itshape \mbox{\hyperlink{class_cluster}{Cluster}}} object to be processed. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates. \\
+\hline
+\end{DoxyTemplParams}
+If found two same points, delete one\mbox{\Hypertarget{genetic_8cpp_afcc19d146fd3bdf298c093d72928d3ed}\label{genetic_8cpp_afcc19d146fd3bdf298c093d72928d3ed}} 
+\index{genetic.cpp@{genetic.cpp}!delDuplicates@{delDuplicates}}
+\index{delDuplicates@{delDuplicates}!genetic.cpp@{genetic.cpp}}
+\doxysubsubsection{\texorpdfstring{delDuplicates()}{delDuplicates()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void del\+Duplicates (\begin{DoxyParamCaption}\item[{vector$<$ int $>$ \&}]{idx\+\_\+list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+For an integer vector, delete duplicate points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx\+\_\+list} & An integer vector to be processed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{genetic_8cpp_a3d3f9b9407fe9ae62cdb5aa765847b3a}\label{genetic_8cpp_a3d3f9b9407fe9ae62cdb5aa765847b3a}} 
+\index{genetic.cpp@{genetic.cpp}!delDuplicates@{delDuplicates}}
+\index{delDuplicates@{delDuplicates}!genetic.cpp@{genetic.cpp}}
+\doxysubsubsection{\texorpdfstring{delDuplicates()}{delDuplicates()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void del\+Duplicates (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$ \&}]{p\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+For a vector of {\itshape \mbox{\hyperlink{class_point}{Point}}} objects, delete duplicate points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+list} & A vector of {\itshape Points} to be processed. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates. \\
+\hline
+\end{DoxyTemplParams}
+\mbox{\Hypertarget{genetic_8cpp_af8fe28bd32418434e01b14c2c021bfa0}\label{genetic_8cpp_af8fe28bd32418434e01b14c2c021bfa0}} 
+\index{genetic.cpp@{genetic.cpp}!getRandIndex@{getRandIndex}}
+\index{getRandIndex@{getRandIndex}!genetic.cpp@{genetic.cpp}}
+\doxysubsubsection{\texorpdfstring{getRandIndex()}{getRandIndex()}}
+{\footnotesize\ttfamily int get\+Rand\+Index (\begin{DoxyParamCaption}\item[{int}]{limit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a random integer ranging from 0 to {\itshape limit}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em limit} & upper limit of the generated integer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An integer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{genetic_8cpp_af8526848766adfe652834b716ce77b34}\label{genetic_8cpp_af8526848766adfe652834b716ce77b34}} 
+\index{genetic.cpp@{genetic.cpp}!invTanhFunc@{invTanhFunc}}
+\index{invTanhFunc@{invTanhFunc}!genetic.cpp@{genetic.cpp}}
+\doxysubsubsection{\texorpdfstring{invTanhFunc()}{invTanhFunc()}}
+{\footnotesize\ttfamily double inv\+Tanh\+Func (\begin{DoxyParamCaption}\item[{const double \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get value of inv\+\_\+tanh(x). 
+
+\begin{DoxyReturn}{Returns}
+Value of inv\+\_\+tanh(x). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{genetic_8cpp_a77bb28626acfb07d8fcb2413fc20b090}\label{genetic_8cpp_a77bb28626acfb07d8fcb2413fc20b090}} 
+\index{genetic.cpp@{genetic.cpp}!tanhFunc@{tanhFunc}}
+\index{tanhFunc@{tanhFunc}!genetic.cpp@{genetic.cpp}}
+\doxysubsubsection{\texorpdfstring{tanhFunc()}{tanhFunc()}}
+{\footnotesize\ttfamily double tanh\+Func (\begin{DoxyParamCaption}\item[{const double \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get value of tanh(x). 
+
+\begin{DoxyReturn}{Returns}
+Value of tanh(x). 
+\end{DoxyReturn}

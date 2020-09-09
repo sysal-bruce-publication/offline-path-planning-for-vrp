@@ -1,0 +1,568 @@
+\hypertarget{class_sensor_node}{}\doxysection{Sensor\+Node$<$ T $>$ Class Template Reference}
+\label{class_sensor_node}\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+
+
+Implementation of {\itshape \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}} class.  
+
+
+
+
+{\ttfamily \#include \char`\"{}sensornode.\+h\char`\"{}}
+
+Inheritance diagram for Sensor\+Node$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_sensor_node}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sensor_node_a94ac95f0bea41267647c1e718f1ecab7}{Sensor\+Node}} ()
+\item 
+\mbox{\hyperlink{class_sensor_node_a92fb9cb7449b838227be60b6f5603386}{Sensor\+Node}} (const float \&x, const float \&y, const double \&v, int w, bool p\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Construct object with user-\/defined arguments. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_sensor_node_aa6c41d50c021d85b69cc7e06167e55c4}\label{class_sensor_node_aa6c41d50c021d85b69cc7e06167e55c4}} 
+\mbox{\hyperlink{class_sensor_node_aa6c41d50c021d85b69cc7e06167e55c4}{$\sim$\+Sensor\+Node}} ()
+\begin{DoxyCompactList}\small\item\em A default destructer. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_sensor_node_ab1eb81b0d605149f5e65abc8acd8b57d}{get\+Min\+Volt}} () const
+\begin{DoxyCompactList}\small\item\em Access {\ttfamily protected} member variable {\itshape S\+C\+\_\+\+Vmin}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_sensor_node_a31b1f787c83c9c4fc556ed0129347d24}{get\+Max\+Volt}} () const
+\begin{DoxyCompactList}\small\item\em Access {\ttfamily protected} member variable {\itshape S\+C\+\_\+\+Vmax}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_sensor_node_a56f0459636f3f93bcc8638b4d79865fb}{get\+Critical\+Volt}} () const
+\begin{DoxyCompactList}\small\item\em Access {\ttfamily protected} member variable {\itshape S\+C\+\_\+\+Vcritical}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_sensor_node_ab22b3763090a62e37832f3951f60933f}{get\+Sense\+Volt}} () const
+\begin{DoxyCompactList}\small\item\em Access {\ttfamily protected} member variable {\itshape V\+\_\+sense}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_sensor_node_af59a382a92cbfae5b9c08762f5fed6c8}{get\+Idle\+Amp}} () const
+\begin{DoxyCompactList}\small\item\em Access {\ttfamily protected} member variable {\itshape I\+\_\+idle}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_sensor_node_ad433eeaf10e589a38b186c3c9cbd38b5}{get\+Idle\+Cycle}} () const
+\begin{DoxyCompactList}\small\item\em Access {\ttfamily protected} member variable {\itshape idle\+\_\+cycle}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_sensor_node_a1fd649b2661e813b56547109955b0fc9}{get\+Time\+To\+Reset}} () const
+\begin{DoxyCompactList}\small\item\em Access {\ttfamily protected} member variable {\itshape time\+\_\+to\+\_\+reset}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_sensor_node_a35a653b81263c6a7b39730c5e4a7c162}{get\+Capacitance}} () const
+\begin{DoxyCompactList}\small\item\em Access {\ttfamily protected} member variable {\itshape S\+C\+\_\+C}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_sensor_node_a6f28aa7188de0a936a91d9c1c898b8b1}{get\+Fails}} () const
+\begin{DoxyCompactList}\small\item\em Access {\ttfamily protected} member variable {\itshape fails}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_sensor_node_a300a013c89fd2cecc7ce49015edf6091}\label{class_sensor_node_a300a013c89fd2cecc7ce49015edf6091}} 
+void \mbox{\hyperlink{class_sensor_node_a300a013c89fd2cecc7ce49015edf6091}{add\+One\+Fail}} ()
+\begin{DoxyCompactList}\small\item\em Auto-\/increment of {\ttfamily protected} member variable {\itshape fails}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_sensor_node_a8dd93155a12c09acbc478705516b7cd3}\label{class_sensor_node_a8dd93155a12c09acbc478705516b7cd3}} 
+void \mbox{\hyperlink{class_sensor_node_a8dd93155a12c09acbc478705516b7cd3}{reset\+Fail}} ()
+\begin{DoxyCompactList}\small\item\em Reset {\ttfamily protected} member variable {\itshape fails}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_sensor_node_a7d48244c6abd7b629751d1e3af8483f2}{calc\+Package}} ()
+\begin{DoxyCompactList}\small\item\em Calculate needed energy to fully recharge a Sensor from its current volatge. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_sensor_node_acf74f8ae67aa5d66fa6fb6160997ce09}{calc\+Max\+Energy}} ()
+\begin{DoxyCompactList}\small\item\em Calculate maximum energy a sensor node could have. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sensor_node_acafbda77634f042ae34ded4727f0162b}{update\+Volt}} (double \&v)
+\begin{DoxyCompactList}\small\item\em Update voltage according to current energy. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_sensor_node_ace8d59be79e28b920aa8717fd712b33d}{update\+Energy}} (double \&e)
+\begin{DoxyCompactList}\small\item\em Update energy according to current voltage. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_sensor_node_aad7d54f519393ee78991a3358c02d942}{update\+Energy}} (const double \&t, double \&e)
+\begin{DoxyCompactList}\small\item\em Update sensor node energy according to spent time \mbox{[}s\mbox{]}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sensor_node_aff83eca579b69820bd60bba1b1999575}{update\+Weight}} (const double \&v, int \&w)
+\begin{DoxyCompactList}\small\item\em Update weight according to current voltage. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_sensor_node_a9b474232c07ba4ecccb29feb3564a2e1}{acous\+Transfer}} (const double \&d)
+\begin{DoxyCompactList}\small\item\em Implement acoustic energy transfer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_sensor_node_ae897cc18f4e73da37e693a17728d7be9}\label{class_sensor_node_ae897cc18f4e73da37e693a17728d7be9}} 
+void \mbox{\hyperlink{class_sensor_node_ae897cc18f4e73da37e693a17728d7be9}{print\+Sensor\+Node\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Print all information about sensor nodes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_point}{Point}}$<$ T $>$ \mbox{\hyperlink{class_sensor_node_ac7b2981e9a44364e6bd5cf0e3998ebfb}{pos}}
+\item 
+double \mbox{\hyperlink{class_sensor_node_a5835ec0a730fa7def02960adee10250f}{S\+C\+\_\+V}} = 3.\+4
+\item 
+double \mbox{\hyperlink{class_sensor_node_ac81bb284b27b916fbcbc4d05a156b581}{S\+C\+\_\+E}} = 17.\+34
+\item 
+int \mbox{\hyperlink{class_sensor_node_a822472a47175d916fbc962ac1d86616f}{weight}} = 10
+\item 
+int \mbox{\hyperlink{class_sensor_node_aa04b2c7d88f20034286b616d88e7d3b0}{time\+\_\+to\+\_\+change}} = 1
+\item 
+bool \mbox{\hyperlink{class_sensor_node_a1fcf21fb71b14c3b8d5aacb17c694bee}{p\+\_\+sensor\+\_\+type}} = true
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_sensor_node_a6888b2875877b14a2481fef51c3abc21}{fails}} = 0
+\item 
+int \mbox{\hyperlink{class_sensor_node_a7c4d038433718ca4aeea6c7b09ab812e}{time\+\_\+to\+\_\+reset}} = 1
+\item 
+int \mbox{\hyperlink{class_sensor_node_a805d4252580a18799526cab9a37db2cf}{S\+C\+\_\+C}} = 3
+\item 
+double \mbox{\hyperlink{class_sensor_node_ab8644c06e2a27ca314816a88d6976025}{S\+C\+\_\+\+Vmax}} = 5.
+\item 
+double \mbox{\hyperlink{class_sensor_node_a800ebdaaec94b9ad79d9a339ab7b7c55}{S\+C\+\_\+\+Vmin}} = 3.\+5
+\item 
+double \mbox{\hyperlink{class_sensor_node_a570451e987ecf5510975408fb082af99}{S\+C\+\_\+\+Vcritical}} = 3.\+3
+\item 
+double \mbox{\hyperlink{class_sensor_node_ab8b60808e3caad85a11939d27760f422}{V\+\_\+sense}} = 3.\+3
+\item 
+double \mbox{\hyperlink{class_sensor_node_aed6898d66fb9cdba59bcb025ac32143f}{I\+\_\+sense}} = 1.\+2e-\/3
+\item 
+double \mbox{\hyperlink{class_sensor_node_ab90ce6344b21c2c72bb32125502e27f9}{I\+\_\+idle}} = 4e-\/6
+\item 
+double \mbox{\hyperlink{class_sensor_node_ab94759253ecf056ab81a9110d83b1a7f}{sense\+\_\+cycle}} = 2e-\/3
+\item 
+double \mbox{\hyperlink{class_sensor_node_a594b2c81c546bafb2b20337c5bd19f4a}{idle\+\_\+cycle}} = 9.\+498
+\item 
+double \mbox{\hyperlink{class_sensor_node_a3d807d40920d4e4340d05a30bba1c122}{comm\+\_\+cycle}} = 0.\+5
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Sensor\+Node$<$ T $>$}
+
+Implementation of {\itshape \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}} class. 
+
+The {\itshape \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}} class includes basic attributes like voltage, energy, weight, etc. and actions like simulating energy consumption, updating weight, etc.
+
+\begin{DoxyAuthor}{Author}
+Qiuchen Qian 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+5 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2020 
+\end{DoxyDate}
+\begin{DoxyWarning}{Warning}
+C4996 \textquotesingle{}strerror\textquotesingle{}\+: This function or variable may be unsafe. Consider using strerror\+\_\+s instead. 
+\end{DoxyWarning}
+\begin{DoxyCopyright}{Copyright}
+M\+IT Public License 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sensor_node_a94ac95f0bea41267647c1e718f1ecab7}\label{class_sensor_node_a94ac95f0bea41267647c1e718f1ecab7}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!SensorNode@{SensorNode}}
+\index{SensorNode@{SensorNode}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SensorNode()}{SensorNode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::\mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}}
+
+A default constructer with coordinate (0, 0), 3.\+4 V voltage, 17.\+34 J energy, full weight, 0 sensing fail time and p-\/type sense duration \mbox{\Hypertarget{class_sensor_node_a92fb9cb7449b838227be60b6f5603386}\label{class_sensor_node_a92fb9cb7449b838227be60b6f5603386}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!SensorNode@{SensorNode}}
+\index{SensorNode@{SensorNode}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SensorNode()}{SensorNode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::\mbox{\hyperlink{class_sensor_node}{Sensor\+Node}} (\begin{DoxyParamCaption}\item[{const float \&}]{x,  }\item[{const float \&}]{y,  }\item[{const double \&}]{v,  }\item[{int}]{w,  }\item[{bool}]{p\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Construct object with user-\/defined arguments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & A {\ttfamily float} variable to record position \\
+\hline
+{\em y} & A {\ttfamily float} variable to record position \\
+\hline
+{\em v} & A {\ttfamily double} variable to record voltage \\
+\hline
+{\em w} & A {\ttfamily int} variable to record weight \\
+\hline
+{\em p\+\_\+type} & A {\ttfamily bool} variable to record sensor type \\
+\hline
+\end{DoxyParams}
+Specific public member variables
+
+Protected member variables
+
+Public member variables
+
+Protected member variables
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sensor_node_a9b474232c07ba4ecccb29feb3564a2e1}\label{class_sensor_node_a9b474232c07ba4ecccb29feb3564a2e1}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!acousTransfer@{acousTransfer}}
+\index{acousTransfer@{acousTransfer}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{acousTransfer()}{acousTransfer()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::acous\+Transfer (\begin{DoxyParamCaption}\item[{const double \&}]{d }\end{DoxyParamCaption})}
+
+
+
+Implement acoustic energy transfer. 
+
+Energy of end nodes will be increased with transferred acoustic energy. Updates for energy and voltage will be implemented as well. To calculate the acoustic channel loss co-\/efficient, angular frequency of acoustic waves should be calculated first. Parameters were picked from the research of M.\+E. Kiziroglou et al. See the paper for more information\+: \href{https://www.sciencedirect.com/science/article/pii/S0041624X17300471}{\texttt{ Acoustic power delivery to pipeline monitoring wireless sensors }} Related formulas\+: Angular frequency omega = 2 $\ast$ pi $\ast$ f Acoustic channel loss co-\/efficient g = e$^\wedge$(-\/ omega$^\wedge$(n\+\_\+\{acous\}) $\ast$ d $\ast$ alpha) Sent acoustic energy E\+\_\+t = n\+\_\+\{piz\} $\ast$ g $\ast$ E\+\_\+\{aco\} Received acoustic energy E\+\_\+r = n\+\_\+\{piz\} $\ast$ n\+\_\+\{piz to dc\} $\ast$ E\+\_\+t
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & Distance between two sensor nodes \\
+\hline
+\end{DoxyParams}
+Acoustic frequency is 4.\+75 k\+Hz, the unit of d is meter.
+
+Total voltage cannot exceed the maximum voltage level.\mbox{\Hypertarget{class_sensor_node_acf74f8ae67aa5d66fa6fb6160997ce09}\label{class_sensor_node_acf74f8ae67aa5d66fa6fb6160997ce09}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!calcMaxEnergy@{calcMaxEnergy}}
+\index{calcMaxEnergy@{calcMaxEnergy}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{calcMaxEnergy()}{calcMaxEnergy()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::calc\+Max\+Energy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculate maximum energy a sensor node could have. 
+
+Related formula\+: energy change dE = 0.\+5 $\ast$ C $\ast$ V\+\_\+\{max\}$^\wedge$2
+
+\begin{DoxyReturn}{Returns}
+Maximum energy 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sensor_node_a7d48244c6abd7b629751d1e3af8483f2}\label{class_sensor_node_a7d48244c6abd7b629751d1e3af8483f2}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!calcPackage@{calcPackage}}
+\index{calcPackage@{calcPackage}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{calcPackage()}{calcPackage()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::calc\+Package (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculate needed energy to fully recharge a Sensor from its current volatge. 
+
+Related formula\+: energy change dE = 0.\+5 $\ast$ C $\ast$ (V\+\_\+\{max\} -\/ V)$^\wedge$2
+
+\begin{DoxyReturn}{Returns}
+Needed energy 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sensor_node_a35a653b81263c6a7b39730c5e4a7c162}\label{class_sensor_node_a35a653b81263c6a7b39730c5e4a7c162}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!getCapacitance@{getCapacitance}}
+\index{getCapacitance@{getCapacitance}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getCapacitance()}{getCapacitance()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::get\+Capacitance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Access {\ttfamily protected} member variable {\itshape S\+C\+\_\+C}. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily protected} member variable {\itshape S\+C\+\_\+C} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sensor_node_a56f0459636f3f93bcc8638b4d79865fb}\label{class_sensor_node_a56f0459636f3f93bcc8638b4d79865fb}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!getCriticalVolt@{getCriticalVolt}}
+\index{getCriticalVolt@{getCriticalVolt}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getCriticalVolt()}{getCriticalVolt()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::get\+Critical\+Volt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Access {\ttfamily protected} member variable {\itshape S\+C\+\_\+\+Vcritical}. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily protected} member variable {\itshape S\+C\+\_\+\+Vcritical} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sensor_node_a6f28aa7188de0a936a91d9c1c898b8b1}\label{class_sensor_node_a6f28aa7188de0a936a91d9c1c898b8b1}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!getFails@{getFails}}
+\index{getFails@{getFails}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getFails()}{getFails()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::get\+Fails (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Access {\ttfamily protected} member variable {\itshape fails}. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily protected} member variable {\itshape fails} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sensor_node_af59a382a92cbfae5b9c08762f5fed6c8}\label{class_sensor_node_af59a382a92cbfae5b9c08762f5fed6c8}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!getIdleAmp@{getIdleAmp}}
+\index{getIdleAmp@{getIdleAmp}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getIdleAmp()}{getIdleAmp()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::get\+Idle\+Amp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Access {\ttfamily protected} member variable {\itshape I\+\_\+idle}. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily protected} member variable {\itshape I\+\_\+idle} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sensor_node_ad433eeaf10e589a38b186c3c9cbd38b5}\label{class_sensor_node_ad433eeaf10e589a38b186c3c9cbd38b5}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!getIdleCycle@{getIdleCycle}}
+\index{getIdleCycle@{getIdleCycle}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getIdleCycle()}{getIdleCycle()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::get\+Idle\+Cycle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Access {\ttfamily protected} member variable {\itshape idle\+\_\+cycle}. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily protected} member variable {\itshape idle\+\_\+cycle} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sensor_node_a31b1f787c83c9c4fc556ed0129347d24}\label{class_sensor_node_a31b1f787c83c9c4fc556ed0129347d24}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!getMaxVolt@{getMaxVolt}}
+\index{getMaxVolt@{getMaxVolt}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getMaxVolt()}{getMaxVolt()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::get\+Max\+Volt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Access {\ttfamily protected} member variable {\itshape S\+C\+\_\+\+Vmax}. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily protected} member variable {\itshape S\+C\+\_\+\+Vmax} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sensor_node_ab1eb81b0d605149f5e65abc8acd8b57d}\label{class_sensor_node_ab1eb81b0d605149f5e65abc8acd8b57d}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!getMinVolt@{getMinVolt}}
+\index{getMinVolt@{getMinVolt}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getMinVolt()}{getMinVolt()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::get\+Min\+Volt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Access {\ttfamily protected} member variable {\itshape S\+C\+\_\+\+Vmin}. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily protected} member variable {\itshape S\+C\+\_\+\+Vmin} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sensor_node_ab22b3763090a62e37832f3951f60933f}\label{class_sensor_node_ab22b3763090a62e37832f3951f60933f}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!getSenseVolt@{getSenseVolt}}
+\index{getSenseVolt@{getSenseVolt}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getSenseVolt()}{getSenseVolt()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::get\+Sense\+Volt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Access {\ttfamily protected} member variable {\itshape V\+\_\+sense}. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily protected} member variable {\itshape V\+\_\+sense} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sensor_node_a1fd649b2661e813b56547109955b0fc9}\label{class_sensor_node_a1fd649b2661e813b56547109955b0fc9}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!getTimeToReset@{getTimeToReset}}
+\index{getTimeToReset@{getTimeToReset}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getTimeToReset()}{getTimeToReset()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::get\+Time\+To\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Access {\ttfamily protected} member variable {\itshape time\+\_\+to\+\_\+reset}. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily protected} member variable {\itshape time\+\_\+to\+\_\+reset} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sensor_node_aad7d54f519393ee78991a3358c02d942}\label{class_sensor_node_aad7d54f519393ee78991a3358c02d942}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!updateEnergy@{updateEnergy}}
+\index{updateEnergy@{updateEnergy}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{updateEnergy()}{updateEnergy()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::update\+Energy (\begin{DoxyParamCaption}\item[{const double \&}]{t,  }\item[{double \&}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Update sensor node energy according to spent time \mbox{[}s\mbox{]}. 
+
+Related formula\+: Energy consumption $ E = V* I* t $
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & time spent variable \mbox{[}s\mbox{]} \\
+\hline
+{\em e} & Energy to be updated \mbox{[}wh\mbox{]} \\
+\hline
+\end{DoxyParams}
+t -\/ unit\+: s\mbox{\Hypertarget{class_sensor_node_ace8d59be79e28b920aa8717fd712b33d}\label{class_sensor_node_ace8d59be79e28b920aa8717fd712b33d}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!updateEnergy@{updateEnergy}}
+\index{updateEnergy@{updateEnergy}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{updateEnergy()}{updateEnergy()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::update\+Energy (\begin{DoxyParamCaption}\item[{double \&}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Update energy according to current voltage. 
+
+Related formula\+: Energy level E = 0.\+5 $\ast$ C $\ast$ V$^\wedge$2
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Energy variable to be updated \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sensor_node_acafbda77634f042ae34ded4727f0162b}\label{class_sensor_node_acafbda77634f042ae34ded4727f0162b}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!updateVolt@{updateVolt}}
+\index{updateVolt@{updateVolt}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{updateVolt()}{updateVolt()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::update\+Volt (\begin{DoxyParamCaption}\item[{double \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Update voltage according to current energy. 
+
+Related formula\+: Voltage level $ V = \sqrt(2* \frac{E}{C}) $
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Voltage variable to be updated \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sensor_node_aff83eca579b69820bd60bba1b1999575}\label{class_sensor_node_aff83eca579b69820bd60bba1b1999575}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!updateWeight@{updateWeight}}
+\index{updateWeight@{updateWeight}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{updateWeight()}{updateWeight()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::update\+Weight (\begin{DoxyParamCaption}\item[{const double \&}]{v,  }\item[{int \&}]{w }\end{DoxyParamCaption})}
+
+
+
+Update weight according to current voltage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Current volatge \\
+\hline
+{\em w} & Weight to be updated \\
+\hline
+\end{DoxyParams}
+$<$ Be considered as full voltage
+
+$<$ Be considered as the lowest voltage
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_sensor_node_a3d807d40920d4e4340d05a30bba1c122}\label{class_sensor_node_a3d807d40920d4e4340d05a30bba1c122}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!comm\_cycle@{comm\_cycle}}
+\index{comm\_cycle@{comm\_cycle}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{comm\_cycle}{comm\_cycle}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::comm\+\_\+cycle = 0.\+5\hspace{0.3cm}{\ttfamily [protected]}}
+
+Communication cycle duration \mbox{[}s\mbox{]} \mbox{\Hypertarget{class_sensor_node_a6888b2875877b14a2481fef51c3abc21}\label{class_sensor_node_a6888b2875877b14a2481fef51c3abc21}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!fails@{fails}}
+\index{fails@{fails}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{fails}{fails}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::fails = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+Sensing fail times for a sensor node \mbox{\Hypertarget{class_sensor_node_ab90ce6344b21c2c72bb32125502e27f9}\label{class_sensor_node_ab90ce6344b21c2c72bb32125502e27f9}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!I\_idle@{I\_idle}}
+\index{I\_idle@{I\_idle}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{I\_idle}{I\_idle}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::I\+\_\+idle = 4e-\/6\hspace{0.3cm}{\ttfamily [protected]}}
+
+Current when in idle cycle \mbox{[}A\mbox{]} \mbox{\Hypertarget{class_sensor_node_aed6898d66fb9cdba59bcb025ac32143f}\label{class_sensor_node_aed6898d66fb9cdba59bcb025ac32143f}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!I\_sense@{I\_sense}}
+\index{I\_sense@{I\_sense}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{I\_sense}{I\_sense}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::I\+\_\+sense = 1.\+2e-\/3\hspace{0.3cm}{\ttfamily [protected]}}
+
+Current when sensing data \mbox{[}A\mbox{]} \mbox{\Hypertarget{class_sensor_node_a594b2c81c546bafb2b20337c5bd19f4a}\label{class_sensor_node_a594b2c81c546bafb2b20337c5bd19f4a}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!idle\_cycle@{idle\_cycle}}
+\index{idle\_cycle@{idle\_cycle}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{idle\_cycle}{idle\_cycle}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::idle\+\_\+cycle = 9.\+498\hspace{0.3cm}{\ttfamily [protected]}}
+
+Idle cycle duration \mbox{[}s\mbox{]} \mbox{\Hypertarget{class_sensor_node_a1fcf21fb71b14c3b8d5aacb17c694bee}\label{class_sensor_node_a1fcf21fb71b14c3b8d5aacb17c694bee}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!p\_sensor\_type@{p\_sensor\_type}}
+\index{p\_sensor\_type@{p\_sensor\_type}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{p\_sensor\_type}{p\_sensor\_type}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::p\+\_\+sensor\+\_\+type = true}
+
+Flag to determine pressure or temperature sensor \mbox{\Hypertarget{class_sensor_node_ac7b2981e9a44364e6bd5cf0e3998ebfb}\label{class_sensor_node_ac7b2981e9a44364e6bd5cf0e3998ebfb}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!pos@{pos}}
+\index{pos@{pos}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pos}{pos}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_point}{Point}}$<$T$>$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::pos}
+
+A {\itshape \mbox{\hyperlink{class_point}{Point}}} object with data type {\ttfamily T} for sensor node position \mbox{[}m\mbox{]} \mbox{\Hypertarget{class_sensor_node_a805d4252580a18799526cab9a37db2cf}\label{class_sensor_node_a805d4252580a18799526cab9a37db2cf}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!SC\_C@{SC\_C}}
+\index{SC\_C@{SC\_C}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SC\_C}{SC\_C}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::S\+C\+\_\+C = 3\hspace{0.3cm}{\ttfamily [protected]}}
+
+Super Capacitor capacitance \mbox{[}F\mbox{]} \mbox{\Hypertarget{class_sensor_node_ac81bb284b27b916fbcbc4d05a156b581}\label{class_sensor_node_ac81bb284b27b916fbcbc4d05a156b581}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!SC\_E@{SC\_E}}
+\index{SC\_E@{SC\_E}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SC\_E}{SC\_E}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::S\+C\+\_\+E = 17.\+34}
+
+Energy of the super capacitor \mbox{[}J\mbox{]} \mbox{\Hypertarget{class_sensor_node_a5835ec0a730fa7def02960adee10250f}\label{class_sensor_node_a5835ec0a730fa7def02960adee10250f}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!SC\_V@{SC\_V}}
+\index{SC\_V@{SC\_V}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SC\_V}{SC\_V}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::S\+C\+\_\+V = 3.\+4}
+
+Voltage of the super capacitor \mbox{[}v\mbox{]} \mbox{\Hypertarget{class_sensor_node_a570451e987ecf5510975408fb082af99}\label{class_sensor_node_a570451e987ecf5510975408fb082af99}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!SC\_Vcritical@{SC\_Vcritical}}
+\index{SC\_Vcritical@{SC\_Vcritical}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SC\_Vcritical}{SC\_Vcritical}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::S\+C\+\_\+\+Vcritical = 3.\+3\hspace{0.3cm}{\ttfamily [protected]}}
+
+Critical voltage of super capacitor \mbox{[}V\mbox{]} \mbox{\Hypertarget{class_sensor_node_ab8644c06e2a27ca314816a88d6976025}\label{class_sensor_node_ab8644c06e2a27ca314816a88d6976025}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!SC\_Vmax@{SC\_Vmax}}
+\index{SC\_Vmax@{SC\_Vmax}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SC\_Vmax}{SC\_Vmax}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::S\+C\+\_\+\+Vmax = 5.\hspace{0.3cm}{\ttfamily [protected]}}
+
+Maximum voltage of super capacitor \mbox{[}V\mbox{]} \mbox{\Hypertarget{class_sensor_node_a800ebdaaec94b9ad79d9a339ab7b7c55}\label{class_sensor_node_a800ebdaaec94b9ad79d9a339ab7b7c55}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!SC\_Vmin@{SC\_Vmin}}
+\index{SC\_Vmin@{SC\_Vmin}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SC\_Vmin}{SC\_Vmin}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::S\+C\+\_\+\+Vmin = 3.\+5\hspace{0.3cm}{\ttfamily [protected]}}
+
+Minimum voltage of super capacitor \mbox{[}V\mbox{]} \mbox{\Hypertarget{class_sensor_node_ab94759253ecf056ab81a9110d83b1a7f}\label{class_sensor_node_ab94759253ecf056ab81a9110d83b1a7f}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!sense\_cycle@{sense\_cycle}}
+\index{sense\_cycle@{sense\_cycle}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{sense\_cycle}{sense\_cycle}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::sense\+\_\+cycle = 2e-\/3\hspace{0.3cm}{\ttfamily [protected]}}
+
+Sense cycle duration \mbox{[}s\mbox{]} \mbox{\Hypertarget{class_sensor_node_aa04b2c7d88f20034286b616d88e7d3b0}\label{class_sensor_node_aa04b2c7d88f20034286b616d88e7d3b0}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!time\_to\_change@{time\_to\_change}}
+\index{time\_to\_change@{time\_to\_change}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{time\_to\_change}{time\_to\_change}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::time\+\_\+to\+\_\+change = 1}
+
+Sense cycle duration \mbox{[}s\mbox{]} \mbox{\Hypertarget{class_sensor_node_a7c4d038433718ca4aeea6c7b09ab812e}\label{class_sensor_node_a7c4d038433718ca4aeea6c7b09ab812e}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!time\_to\_reset@{time\_to\_reset}}
+\index{time\_to\_reset@{time\_to\_reset}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{time\_to\_reset}{time\_to\_reset}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::time\+\_\+to\+\_\+reset = 1\hspace{0.3cm}{\ttfamily [protected]}}
+
+Sensing cycle to reset \mbox{[}s\mbox{]} \mbox{\Hypertarget{class_sensor_node_ab8b60808e3caad85a11939d27760f422}\label{class_sensor_node_ab8b60808e3caad85a11939d27760f422}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!V\_sense@{V\_sense}}
+\index{V\_sense@{V\_sense}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{V\_sense}{V\_sense}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::V\+\_\+sense = 3.\+3\hspace{0.3cm}{\ttfamily [protected]}}
+
+Voltage when sensing data \mbox{[}V\mbox{]} \mbox{\Hypertarget{class_sensor_node_a822472a47175d916fbc962ac1d86616f}\label{class_sensor_node_a822472a47175d916fbc962ac1d86616f}} 
+\index{SensorNode$<$ T $>$@{SensorNode$<$ T $>$}!weight@{weight}}
+\index{weight@{weight}!SensorNode$<$ T $>$@{SensorNode$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{weight}{weight}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$\+::weight = 10}
+
+Recharge weight, 3\+: low, 10\+: full 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sensornode_8h}{sensornode.\+h}}\item 
+\mbox{\hyperlink{sensornode_8cpp}{sensornode.\+cpp}}\end{DoxyCompactItemize}

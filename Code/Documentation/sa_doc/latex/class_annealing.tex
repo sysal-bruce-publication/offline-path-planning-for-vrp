@@ -1,0 +1,493 @@
+\hypertarget{class_annealing}{}\doxysection{Annealing$<$ T $>$ Class Template Reference}
+\label{class_annealing}\index{Annealing$<$ T $>$@{Annealing$<$ T $>$}}
+
+
+Implementation of {\itshape \mbox{\hyperlink{class_annealing}{Annealing}}} class.  
+
+
+
+
+{\ttfamily \#include \char`\"{}annealing.\+h\char`\"{}}
+
+Inheritance diagram for Annealing$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_annealing}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_annealing_aeb7f1868ef6cd1a0a5379a7709169205}\label{class_annealing_aeb7f1868ef6cd1a0a5379a7709169205}} 
+\mbox{\hyperlink{class_annealing_aeb7f1868ef6cd1a0a5379a7709169205}{Annealing}} ()
+\begin{DoxyCompactList}\small\item\em A default constructer with {\itshape origin} (0, 0) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_annealing_a8bce44795fd07e88cb6300e1eaf58cd7}\label{class_annealing_a8bce44795fd07e88cb6300e1eaf58cd7}} 
+\mbox{\hyperlink{class_annealing_a8bce44795fd07e88cb6300e1eaf58cd7}{$\sim$\+Annealing}} ()
+\begin{DoxyCompactList}\small\item\em A default destructer which will delete {\itshape origin}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_annealing_a99493c3598ecc2b037da89a817c697b1}{init\+Params}} (vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ $\ast$ $>$ \&req\+\_\+sn\+\_\+ptr)
+\begin{DoxyCompactList}\small\item\em Initialize public member variables. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_annealing_aee28b108034c8be3ce4955ef69a61cce}{save\+Guess\+To\+Txt}} (int pop\+\_\+num, int pdv\+\_\+num, int sn\+\_\+num, vector$<$ int $>$ path\+\_\+to\+\_\+save)
+\begin{DoxyCompactList}\small\item\em Save initial guess to csv file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_annealing_aeb9a904ad1d3448ff6f5e3b6b19f5fdc}{calc\+Opt\+Pdv\+Num}} (vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ sn\+\_\+list, vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ $\ast$ $>$ req\+\_\+sn\+\_\+ptr, vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$ temp\+\_\+req\+\_\+p)
+\begin{DoxyCompactList}\small\item\em Calculate the minimum required number of needed P\+D\+Vs. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_annealing_a05a9005a72274fed889b277f28503cd5}{calc\+Init\+Guess}} (const int \&r\+\_\+num, const int \&pdv\+\_\+num, const int \&pop\+\_\+num, vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ sn\+\_\+list, vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ $\ast$ $>$ req\+\_\+sn\+\_\+ptr, vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$ \mbox{\hyperlink{class_annealing_ac899f9d8fad95f9d7acd71c001b3b759}{req\+\_\+ps}})
+\begin{DoxyCompactList}\small\item\em Initialize all target and trail vectors randomly with clusters solution from all sensors. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_annealing_a14aec656cdc0fab211e67ac91fd5b175}{calc\+Far\+Neigh\+Dist}} (vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$ init\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Calculate the flight distance through finding the farest neighbour everytime. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_annealing_a8d93ff09518cd32c5764d0269d439cb0}{calc\+Near\+Neigh\+Dist}} (vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$ init\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Calculate the flight distance through finding the nearest neighbour everytime. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_annealing_ae7a42293964c9f8051ccd87b92d80a13}{fitness\+Func}} (vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ sn\+\_\+list, vector$<$ int $>$ clst\+\_\+list)
+\begin{DoxyCompactList}\small\item\em Calculate the fitness of the possible solution. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_annealing_a1e6780e0c93febb549f822b05d89fe29}{get\+Best\+Sol}} (const int \&pdv\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Find the index of the best solution with the highest fitness metric value. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \mbox{\hyperlink{class_annealing_ab4c63e6862c69631b6392be6ed9a0210}{read\+Guess\+Data}} (int pop\+\_\+num, int pdv\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Read the data from stored initial guess. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_annealing_a5e93acc58f2d76ae5276e9821c4a2644}{save\+Sub\+Path\+To\+Csv}} (vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ sn\+\_\+list, vector$<$ vector$<$ int $>$$>$ path\+\_\+to\+\_\+save)
+\begin{DoxyCompactList}\small\item\em Save sub paths with best metric. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_annealing_aaedb506f45edb4230572103d86fc1256}{init\+One\+Sol}} (const int \&cur\+\_\+pdv, vector$<$ vector$<$ int $>$$>$ \&idx\+\_\+list, vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$ \mbox{\hyperlink{class_annealing_ac899f9d8fad95f9d7acd71c001b3b759}{req\+\_\+ps}}, vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ sn\+\_\+list)
+\begin{DoxyCompactList}\small\item\em Save initial guess to csv file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_annealing_a66fb46a1048d0b68afd5726e46ce1217}{calc\+Final\+Path}} (vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ \&sn\+\_\+list, vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ $\ast$ $>$ candidates)
+\begin{DoxyCompactList}\small\item\em Initialize all target and trail vectors randomly with clusters solution from all sensors. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_annealing_a68558a6f4dd3bd09b6d80c23c99b5b42}{check\+Task}} (vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ \&sn\+\_\+list)
+\begin{DoxyCompactList}\small\item\em Check if the number of requested sensor nodes is larger than {\itshape M\+I\+N\+\_\+\+R\+E\+Q\+U\+E\+S\+TS} . \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_point}{Point}}$<$ T $>$ $\ast$ \mbox{\hyperlink{class_annealing_ad560143331a956e89cf809b2afbc8b9c}{origin}} = nullptr
+\item 
+vector$<$ vector$<$ vector$<$ int $>$ $>$ $>$ \mbox{\hyperlink{class_annealing_a3f5aa2a1ba882090597c0487e9789c97}{tars\+\_\+idx}}
+\item 
+vector$<$ vector$<$ int $>$ $>$ \mbox{\hyperlink{class_annealing_a5c327d0de104609e1ec82e3cf00597ee}{trails\+\_\+idx}}
+\item 
+vector$<$ vector$<$ double $>$ $>$ \mbox{\hyperlink{class_annealing_a5262d09b08ada18dc74825a7701f23e5}{tars\+\_\+met}}
+\item 
+vector$<$ double $>$ \mbox{\hyperlink{class_annealing_ae923975f1ab9d0658329a3b512e01028}{trails\+\_\+met}}
+\item 
+vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$ $>$ \mbox{\hyperlink{class_annealing_ac899f9d8fad95f9d7acd71c001b3b759}{req\+\_\+ps}}
+\item 
+double \mbox{\hyperlink{class_annealing_a0ccebd16e1bd41637a9299dbe5926f26}{alg\+\_\+time}} = 0.
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Annealing$<$ T $>$}
+
+Implementation of {\itshape \mbox{\hyperlink{class_annealing}{Annealing}}} class. 
+
+The {\itshape Genetic} class includes basic attributes like target, trail vectors, metric vectors, etc. and actions like reduce temperature, calculate fitness function etc.
+
+\begin{DoxyAuthor}{Author}
+Qiuchen Qian 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+5 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2020 
+\end{DoxyDate}
+\begin{DoxyWarning}{Warning}
+C4996 \textquotesingle{}strerror\textquotesingle{}\+: This function or variable may be unsafe. Consider using strerror\+\_\+s instead. 
+\end{DoxyWarning}
+\begin{DoxyCopyright}{Copyright}
+M\+IT Public License 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_annealing_a14aec656cdc0fab211e67ac91fd5b175}\label{class_annealing_a14aec656cdc0fab211e67ac91fd5b175}} 
+\index{Annealing$<$ T $>$@{Annealing$<$ T $>$}!calcFarNeighDist@{calcFarNeighDist}}
+\index{calcFarNeighDist@{calcFarNeighDist}!Annealing$<$ T $>$@{Annealing$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{calcFarNeighDist()}{calcFarNeighDist()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_annealing}{Annealing}}$<$ T $>$\+::calc\+Far\+Neigh\+Dist (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$}]{init\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Calculate the flight distance through finding the farest neighbour everytime. 
+
+Please note that this solution is used to convert the flight distance calculated in {\ttfamily fitness\+Fun()} around 0 or 1. The returned result should not be considered as the longest one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em init\+\_\+path} & The path to be calculated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the worst distance (predicted) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_annealing_a66fb46a1048d0b68afd5726e46ce1217}\label{class_annealing_a66fb46a1048d0b68afd5726e46ce1217}} 
+\index{Annealing$<$ T $>$@{Annealing$<$ T $>$}!calcFinalPath@{calcFinalPath}}
+\index{calcFinalPath@{calcFinalPath}!Annealing$<$ T $>$@{Annealing$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{calcFinalPath()}{calcFinalPath()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_annealing}{Annealing}}$<$ T $>$\+::calc\+Final\+Path (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ \&}]{sn\+\_\+list,  }\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ $\ast$ $>$}]{candidates }\end{DoxyParamCaption})}
+
+
+
+Initialize all target and trail vectors randomly with clusters solution from all sensors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sn\+\_\+list} & A vector of all sensor nodes. \\
+\hline
+{\em candidates} & A vector of pointers to all sensor nodes to be recharged. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the number of nodes to be recharged can be divided exactly by {\itshape pdv\+\_\+num}, return true. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_annealing_a05a9005a72274fed889b277f28503cd5}\label{class_annealing_a05a9005a72274fed889b277f28503cd5}} 
+\index{Annealing$<$ T $>$@{Annealing$<$ T $>$}!calcInitGuess@{calcInitGuess}}
+\index{calcInitGuess@{calcInitGuess}!Annealing$<$ T $>$@{Annealing$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{calcInitGuess()}{calcInitGuess()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{class_annealing}{Annealing}}$<$ T $>$\+::calc\+Init\+Guess (\begin{DoxyParamCaption}\item[{const int \&}]{r\+\_\+num,  }\item[{const int \&}]{pdv\+\_\+num,  }\item[{const int \&}]{pop\+\_\+num,  }\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$}]{sn\+\_\+list,  }\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ $\ast$ $>$}]{req\+\_\+sn\+\_\+ptr,  }\item[{vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$}]{req\+\_\+ps }\end{DoxyParamCaption})}
+
+
+
+Initialize all target and trail vectors randomly with clusters solution from all sensors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r\+\_\+num} & The number of shortest point index. \\
+\hline
+{\em pdv\+\_\+num} & The number of P\+D\+Vs. \\
+\hline
+{\em pop\+\_\+num} & The number of total population. \\
+\hline
+{\em sn\+\_\+list} & A vector of all sensor nodes. \\
+\hline
+{\em req\+\_\+sn\+\_\+ptr} & A vector of pointers to all sensor nodes to be recharged. \\
+\hline
+{\em req\+\_\+ps} & A vector of {\itshape \mbox{\hyperlink{class_point}{Point}}} objects of all sensor nodes to be recharged. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+If the number of nodes to be recharged can be divided exactly by {\itshape pdv\+\_\+num}, return true. 
+\end{DoxyReturn}
+The sub vector of {\itshape clsts\+\_\+list} 
+
+If not divisible, the last \mbox{\hyperlink{class_p_d_v}{P\+DV}} assignment should be different
+
+Find the index randomly (the {\ttfamily num}th shortest)
+
+Find the index randomly (the {\ttfamily num}th shortest)
+
+Re-\/initialize {\itshape temp\+\_\+req\+\_\+p} for each population\mbox{\Hypertarget{class_annealing_a8d93ff09518cd32c5764d0269d439cb0}\label{class_annealing_a8d93ff09518cd32c5764d0269d439cb0}} 
+\index{Annealing$<$ T $>$@{Annealing$<$ T $>$}!calcNearNeighDist@{calcNearNeighDist}}
+\index{calcNearNeighDist@{calcNearNeighDist}!Annealing$<$ T $>$@{Annealing$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{calcNearNeighDist()}{calcNearNeighDist()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_annealing}{Annealing}}$<$ T $>$\+::calc\+Near\+Neigh\+Dist (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$}]{init\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Calculate the flight distance through finding the nearest neighbour everytime. 
+
+Please note that this solution is used to convert the flight distance calculated in {\ttfamily fitness\+Fun()} around 0 or 1. The returned result should not be considered as the shortest one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em init\+\_\+path} & The path to be calculated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the best distance (predicted) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_annealing_aeb9a904ad1d3448ff6f5e3b6b19f5fdc}\label{class_annealing_aeb9a904ad1d3448ff6f5e3b6b19f5fdc}} 
+\index{Annealing$<$ T $>$@{Annealing$<$ T $>$}!calcOptPdvNum@{calcOptPdvNum}}
+\index{calcOptPdvNum@{calcOptPdvNum}!Annealing$<$ T $>$@{Annealing$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{calcOptPdvNum()}{calcOptPdvNum()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_annealing}{Annealing}}$<$ T $>$\+::calc\+Opt\+Pdv\+Num (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$}]{sn\+\_\+list,  }\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ $\ast$ $>$}]{req\+\_\+sn\+\_\+ptr,  }\item[{vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$}]{temp\+\_\+req\+\_\+p }\end{DoxyParamCaption})}
+
+
+
+Calculate the minimum required number of needed P\+D\+Vs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sn\+\_\+list} & A vector of all sensor nodes. \\
+\hline
+{\em req\+\_\+sn\+\_\+ptr} & A vector of pointers to all sensor nodes to be recharged. \\
+\hline
+{\em temp\+\_\+req\+\_\+p} & A vector of pointers to all {\itshape \mbox{\hyperlink{class_point}{Point}}} obejects of sensor nodes to be recharged. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+The optimised number of needed P\+D\+Vs. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_annealing_a68558a6f4dd3bd09b6d80c23c99b5b42}\label{class_annealing_a68558a6f4dd3bd09b6d80c23c99b5b42}} 
+\index{Annealing$<$ T $>$@{Annealing$<$ T $>$}!checkTask@{checkTask}}
+\index{checkTask@{checkTask}!Annealing$<$ T $>$@{Annealing$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{checkTask()}{checkTask()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{class_annealing}{Annealing}}$<$ T $>$\+::check\+Task (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$ \&}]{sn\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+Check if the number of requested sensor nodes is larger than {\itshape M\+I\+N\+\_\+\+R\+E\+Q\+U\+E\+S\+TS} . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sn\+\_\+list} & A vector of all sensor nodes. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em runtime\+\_\+error} & No such file or directory. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+If true, keep iterating until the requested number reaches the minimum value. If false, end iterating. 
+\end{DoxyReturn}
+Before genetic algorithm process, update weights of sensor nodes according to inputs.\mbox{\Hypertarget{class_annealing_ae7a42293964c9f8051ccd87b92d80a13}\label{class_annealing_ae7a42293964c9f8051ccd87b92d80a13}} 
+\index{Annealing$<$ T $>$@{Annealing$<$ T $>$}!fitnessFunc@{fitnessFunc}}
+\index{fitnessFunc@{fitnessFunc}!Annealing$<$ T $>$@{Annealing$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{fitnessFunc()}{fitnessFunc()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_annealing}{Annealing}}$<$ T $>$\+::fitness\+Func (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$}]{sn\+\_\+list,  }\item[{vector$<$ int $>$}]{clst\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+Calculate the fitness of the possible solution. 
+
+The criteria is based on the amount of recharged energy and the distance of flight. Related formula\+: Fitness M = alpha $\ast$ tanh(E\+\_\+\{wsn\}) + beta $\ast$ inv\+\_\+tanh(d\+\_\+\{pdv\}) + gamma $\ast$ inv\+\_\+tanh(E\+\_\+\{pdv\})
+
+
+\begin{DoxyParams}{Parameters}
+{\em sn\+\_\+list} & A vector of all sensor nodes. \\
+\hline
+{\em clst\+\_\+list} & A vector of clusters to be calculated (can be one target or trail vector). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+The fitness metric value. 
+\end{DoxyReturn}
+Calculate the total distance of a trusted bad and good solution
+
+Implement inductive power transfer to the center node.
+
+Update I\+PT energy cost
+
+Implement center node acoustic power trannsfer.
+
+Return to home process
+
+Wh
+
+km
+
+Wh\mbox{\Hypertarget{class_annealing_a1e6780e0c93febb549f822b05d89fe29}\label{class_annealing_a1e6780e0c93febb549f822b05d89fe29}} 
+\index{Annealing$<$ T $>$@{Annealing$<$ T $>$}!getBestSol@{getBestSol}}
+\index{getBestSol@{getBestSol}!Annealing$<$ T $>$@{Annealing$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getBestSol()}{getBestSol()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_annealing}{Annealing}}$<$ T $>$\+::get\+Best\+Sol (\begin{DoxyParamCaption}\item[{const int \&}]{pdv\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Find the index of the best solution with the highest fitness metric value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdv\+\_\+num} & The number of P\+D\+Vs. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The index of the best solution. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_annealing_aaedb506f45edb4230572103d86fc1256}\label{class_annealing_aaedb506f45edb4230572103d86fc1256}} 
+\index{Annealing$<$ T $>$@{Annealing$<$ T $>$}!initOneSol@{initOneSol}}
+\index{initOneSol@{initOneSol}!Annealing$<$ T $>$@{Annealing$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{initOneSol()}{initOneSol()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_annealing}{Annealing}}$<$ T $>$\+::init\+One\+Sol (\begin{DoxyParamCaption}\item[{const int \&}]{cur\+\_\+pdv,  }\item[{vector$<$ vector$<$ int $>$$>$ \&}]{idx\+\_\+list,  }\item[{vector$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$}]{req\+\_\+ps,  }\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$}]{sn\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+Save initial guess to csv file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cur\+\_\+pdv} & The number of pdv id. \\
+\hline
+{\em idx\+\_\+list} & The target vector to be re-\/generated. \\
+\hline
+{\em req\+\_\+ps} & A vector of {\itshape \mbox{\hyperlink{class_point}{Point}}} objects to be recharged. \\
+\hline
+{\em sn\+\_\+list} & A vector of all sensor nodes. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates. \\
+\hline
+\end{DoxyTemplParams}
+\mbox{\Hypertarget{class_annealing_a99493c3598ecc2b037da89a817c697b1}\label{class_annealing_a99493c3598ecc2b037da89a817c697b1}} 
+\index{Annealing$<$ T $>$@{Annealing$<$ T $>$}!initParams@{initParams}}
+\index{initParams@{initParams}!Annealing$<$ T $>$@{Annealing$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{initParams()}{initParams()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_annealing}{Annealing}}$<$ T $>$\+::init\+Params (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$ $\ast$ $>$ \&}]{req\+\_\+sn\+\_\+ptr }\end{DoxyParamCaption})}
+
+
+
+Initialize public member variables. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req\+\_\+sn\+\_\+ptr} & A vector of pointers to all sensor nodes to be recharged. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates. \\
+\hline
+\end{DoxyTemplParams}
+\mbox{\Hypertarget{class_annealing_ab4c63e6862c69631b6392be6ed9a0210}\label{class_annealing_ab4c63e6862c69631b6392be6ed9a0210}} 
+\index{Annealing$<$ T $>$@{Annealing$<$ T $>$}!readGuessData@{readGuessData}}
+\index{readGuessData@{readGuessData}!Annealing$<$ T $>$@{Annealing$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{readGuessData()}{readGuessData()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+vector$<$ int $>$ \mbox{\hyperlink{class_annealing}{Annealing}}$<$ T $>$\+::read\+Guess\+Data (\begin{DoxyParamCaption}\item[{int}]{pop\+\_\+num,  }\item[{int}]{pdv\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Read the data from stored initial guess. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pop\+\_\+num} & The population id. \\
+\hline
+{\em pdv\+\_\+num} & The \mbox{\hyperlink{class_p_d_v}{P\+DV}} id. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of solution (index of sensor nodes) with {\itshape pop\+\_\+num} and {\itshape pdv\+\_\+num} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_annealing_aee28b108034c8be3ce4955ef69a61cce}\label{class_annealing_aee28b108034c8be3ce4955ef69a61cce}} 
+\index{Annealing$<$ T $>$@{Annealing$<$ T $>$}!saveGuessToTxt@{saveGuessToTxt}}
+\index{saveGuessToTxt@{saveGuessToTxt}!Annealing$<$ T $>$@{Annealing$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{saveGuessToTxt()}{saveGuessToTxt()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_annealing}{Annealing}}$<$ T $>$\+::save\+Guess\+To\+Txt (\begin{DoxyParamCaption}\item[{int}]{pop\+\_\+num,  }\item[{int}]{pdv\+\_\+num,  }\item[{int}]{sn\+\_\+num,  }\item[{vector$<$ int $>$}]{path\+\_\+to\+\_\+save }\end{DoxyParamCaption})}
+
+
+
+Save initial guess to csv file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pop\+\_\+num} & The number of population in generation. \\
+\hline
+{\em pdv\+\_\+num} & The number of pdv id. \\
+\hline
+{\em sn\+\_\+num} & The number of S\+Ns. \\
+\hline
+{\em path\+\_\+to\+\_\+save} & The path to be saved. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates. \\
+\hline
+\end{DoxyTemplParams}
+\mbox{\Hypertarget{class_annealing_a5e93acc58f2d76ae5276e9821c4a2644}\label{class_annealing_a5e93acc58f2d76ae5276e9821c4a2644}} 
+\index{Annealing$<$ T $>$@{Annealing$<$ T $>$}!saveSubPathToCsv@{saveSubPathToCsv}}
+\index{saveSubPathToCsv@{saveSubPathToCsv}!Annealing$<$ T $>$@{Annealing$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{saveSubPathToCsv()}{saveSubPathToCsv()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_annealing}{Annealing}}$<$ T $>$\+::save\+Sub\+Path\+To\+Csv (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_sensor_node}{Sensor\+Node}}$<$ T $>$$>$}]{sn\+\_\+list,  }\item[{vector$<$ vector$<$ int $>$$>$}]{path\+\_\+to\+\_\+save }\end{DoxyParamCaption})}
+
+
+
+Save sub paths with best metric. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sn\+\_\+list} & A vector of all sensor nodes. \\
+\hline
+{\em path\+\_\+to\+\_\+save} & The 2-\/D vector to save. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to present point coordinates. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_annealing_a0ccebd16e1bd41637a9299dbe5926f26}\label{class_annealing_a0ccebd16e1bd41637a9299dbe5926f26}} 
+\index{Annealing$<$ T $>$@{Annealing$<$ T $>$}!alg\_time@{alg\_time}}
+\index{alg\_time@{alg\_time}!Annealing$<$ T $>$@{Annealing$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{alg\_time}{alg\_time}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+double \mbox{\hyperlink{class_annealing}{Annealing}}$<$ T $>$\+::alg\+\_\+time = 0.}
+
+Algorithm execution time \mbox{\Hypertarget{class_annealing_ad560143331a956e89cf809b2afbc8b9c}\label{class_annealing_ad560143331a956e89cf809b2afbc8b9c}} 
+\index{Annealing$<$ T $>$@{Annealing$<$ T $>$}!origin@{origin}}
+\index{origin@{origin}!Annealing$<$ T $>$@{Annealing$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{origin}{origin}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_point}{Point}}$<$T$>$$\ast$ \mbox{\hyperlink{class_annealing}{Annealing}}$<$ T $>$\+::origin = nullptr}
+
+The coordiante of BS \mbox{\Hypertarget{class_annealing_ac899f9d8fad95f9d7acd71c001b3b759}\label{class_annealing_ac899f9d8fad95f9d7acd71c001b3b759}} 
+\index{Annealing$<$ T $>$@{Annealing$<$ T $>$}!req\_ps@{req\_ps}}
+\index{req\_ps@{req\_ps}!Annealing$<$ T $>$@{Annealing$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{req\_ps}{req\_ps}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+vector$<$\mbox{\hyperlink{class_point}{Point}}$<$T$>$ $>$ \mbox{\hyperlink{class_annealing}{Annealing}}$<$ T $>$\+::req\+\_\+ps}
+
+{\itshape \mbox{\hyperlink{class_point}{Point}}} vector of S\+Ns to be recharged \mbox{\Hypertarget{class_annealing_a3f5aa2a1ba882090597c0487e9789c97}\label{class_annealing_a3f5aa2a1ba882090597c0487e9789c97}} 
+\index{Annealing$<$ T $>$@{Annealing$<$ T $>$}!tars\_idx@{tars\_idx}}
+\index{tars\_idx@{tars\_idx}!Annealing$<$ T $>$@{Annealing$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{tars\_idx}{tars\_idx}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+vector$<$vector$<$vector$<$int$>$ $>$ $>$ \mbox{\hyperlink{class_annealing}{Annealing}}$<$ T $>$\+::tars\+\_\+idx}
+
+Target vector, 3D\+: pop, pdv and sub path \mbox{\Hypertarget{class_annealing_a5262d09b08ada18dc74825a7701f23e5}\label{class_annealing_a5262d09b08ada18dc74825a7701f23e5}} 
+\index{Annealing$<$ T $>$@{Annealing$<$ T $>$}!tars\_met@{tars\_met}}
+\index{tars\_met@{tars\_met}!Annealing$<$ T $>$@{Annealing$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{tars\_met}{tars\_met}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+vector$<$vector$<$double$>$ $>$ \mbox{\hyperlink{class_annealing}{Annealing}}$<$ T $>$\+::tars\+\_\+met}
+
+Fitness metric vector of target vector \mbox{\Hypertarget{class_annealing_a5c327d0de104609e1ec82e3cf00597ee}\label{class_annealing_a5c327d0de104609e1ec82e3cf00597ee}} 
+\index{Annealing$<$ T $>$@{Annealing$<$ T $>$}!trails\_idx@{trails\_idx}}
+\index{trails\_idx@{trails\_idx}!Annealing$<$ T $>$@{Annealing$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{trails\_idx}{trails\_idx}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+vector$<$vector$<$int$>$ $>$ \mbox{\hyperlink{class_annealing}{Annealing}}$<$ T $>$\+::trails\+\_\+idx}
+
+Corresponding trail vector \mbox{\Hypertarget{class_annealing_ae923975f1ab9d0658329a3b512e01028}\label{class_annealing_ae923975f1ab9d0658329a3b512e01028}} 
+\index{Annealing$<$ T $>$@{Annealing$<$ T $>$}!trails\_met@{trails\_met}}
+\index{trails\_met@{trails\_met}!Annealing$<$ T $>$@{Annealing$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{trails\_met}{trails\_met}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+vector$<$double$>$ \mbox{\hyperlink{class_annealing}{Annealing}}$<$ T $>$\+::trails\+\_\+met}
+
+Fitness metric vector of trail vector 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{annealing_8h}{annealing.\+h}}\item 
+\mbox{\hyperlink{annealing_8cpp}{annealing.\+cpp}}\end{DoxyCompactItemize}

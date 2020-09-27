@@ -1,5 +1,7 @@
 # Optimal Drone Recharging Scheduling for Wireless Sensor Power Transfer and Data Collection
-This is the repo for recording and updating progress of the project:
+This project aims at solving Optimization Problem in scheduling recharing tasks for Unmanned Ariel Vehicles (UAVs) under the Wireless Sensor Network. 
+
+<img src='Figure/gif_demo.gif' width="700" height="600">
 
 *Brief Index*:
 - Source code can be found in [Code directory](Code).
@@ -53,6 +55,11 @@ The structure of directory to store code and input/output data should be: (Take 
 - Modifications of dierctory name or location are **NOT** recommanded. Please check algorithm I/O functions and I/O parameters in two `.ipynb` files if modifications are needed!
 
 - Because there are 3 algorithms, the output file names are different (i.e. `ga_path0.csv`, `bh_path0.csv`, etc.). Users may need to modify string names according to the algorithm name.      
+
+## Integrated system with user interface
+*New!!* All algorithms and system model are integrated within one project. Users can use that system with following steps:
+1. Use MSVC to build and run [source code](Code/ensemble_system).
+2. Enter commands in the console terminal (following given instructions).
 
 ## User Guidance
 This project adopted [MSVC 2019](https://visualstudio.microsoft.com/zh-hans/vs/) and C++17 language standard for the simulation.  
@@ -153,14 +160,12 @@ This project adopts the [Unit Test tool of Miscrosoft](https://docs.microsoft.co
 ## Further Updates
 Please note that this is a open-source project with continus updates. Currently, we consider the next step to:
 
-1.  Develop simple User Interface for all algorithms (based on console).
+1. Convert to 3D space
+2. Consider parallel computing of all algorithms
 
 ## Other Information
-- Author: Qiuchen Qian - qiuchen.qian19@imperial.ac.uk
-- Supervisors:   
-    Dr. David Boyle - david.boyle@imperial.ac.uk  
-    Dr. Adriana Paluszny - apaluszn@imperial.ac.uk
-- Special acknowledgement:  
-    Ms. Akshayaa Pandiyan - a.pandiyan@imperial.ac.uk    
-    Mr. Mingrui Zhang - mingrui.zhang18@imperial.ac.uk
+Author: 
+- Qiuchen Qian - qiuchen.qian19@imperial.ac.uk
+- Akshayaa Pandiyan - a.pandiyan@imperial.ac.uk
+- David Boyle - david.boyle@imperial.ac.uk
     

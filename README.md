@@ -1,5 +1,5 @@
 # Optimal Drone Recharging Scheduling for Wireless Sensor Power Transfer and Data Collection
-This project aims at solving Optimization Problem in scheduling recharing tasks for Unmanned Ariel Vehicles (UAVs) under the Wireless Sensor Network. 
+This project aims at solving Optimization Problem in scheduling recharing tasks for Unmanned Aerial Vehicles (UAVs) under the Wireless Sensor Network. 
 
 <img src='Figure/gif_demo.gif' width="700" height="600">
 

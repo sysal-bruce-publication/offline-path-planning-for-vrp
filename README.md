@@ -178,7 +178,7 @@ Note that the `Case` (x-axis) here means tested 9 scenarios (different scales of
 
 	The first figure is execution summary of all cases. For the case with the lowest average throughput (6 & 9), we can observe that assigning 6 PDVs to case 6 is the most efficient. For case 9, it may take 7 or even 8 PDVs to achieve the highest efficiency.
 
-2. To explore the impact of SA iterations, we also reduced the computational cost. Visualized results can be found in [SA_less_iters}(Result/SA_less_iters) directory.
+2. To explore the impact of SA iterations, we also reduced the computational cost. Visualized results can be found in [SA_less_iters](Result/SA_less_iters) directory.
 
 ## Execution time of algorithms
 The execution time of the optimization algorithm is counted through `std::chrono::high_resolution_clock` (unit: ms). The time counter starts after calculation of inital guesses and ends when finding the solution with best fitness metric. The duration time will be recorded to [final_info.csv](Code/output/final_info.csv) as well (`alg_time`).

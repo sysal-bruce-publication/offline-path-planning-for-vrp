@@ -290,6 +290,25 @@ void Cases<T>::executeSA(vector<SensorNode<T>>& sn_list, int w_rec, int w_pdv, i
 	delete[] flight_time;
 }
 
+template<class T>
+void Cases<T>::single_test(int n) {
+	for (int j = 0; j < 20; j++) {
+		cerr << "input " << to_string(n) << "\t iter " << to_string(j) << endl;
+
+		readInputs(n, this->in_sns);
+		executeGA(this->in_sns, 80, 20, 0, 50, 50, 50, 25, 5);
+		this->in_sns.clear();
+
+		readInputs(n, this->in_sns);
+		executeBH(this->in_sns, 80, 20, 0, 50, 50, 50, 25, 5);
+		this->in_sns.clear();
+
+		readInputs(n, this->in_sns);
+		executeSA(this->in_sns, 80, 20, 0, 1e3, 1e-4, 0.985, 25, 25, 5);
+		this->in_sns.clear();
+	}
+}
+
 template <class T>
 void Cases<T>::ensemble_test() {
 	for (int i = 0; i < 9; i++) {
@@ -305,7 +324,7 @@ void Cases<T>::ensemble_test() {
 			this->in_sns.clear();
 
 			readInputs(i, this->in_sns);
-			executeSA(this->in_sns, 80, 20, 0, 1e3, 1e-4, 0.985, 25, 25, 5);
+			executeSA(this->in_sns, 80, 20, 0, 1e3, 5e-3, 0.94, 25, 25, 5);
 			this->in_sns.clear();
 		}
 	}

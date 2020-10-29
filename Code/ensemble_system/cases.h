@@ -20,6 +20,9 @@ public:
 	void executeSA(std::vector<SensorNode<T>>& sn_list, int w_rec, int w_pdv, int w_dist,
 		double init_temp, double min_temp, double temp_factor, int pop_num,
 		int rec_num, int max_neigh);
+	
+	void single_test(int n);
+	
 	void ensemble_test();
 };
 

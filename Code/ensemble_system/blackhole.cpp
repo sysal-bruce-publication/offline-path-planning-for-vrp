@@ -479,6 +479,7 @@ template <class T>
 void BlackHole<T>::calcFinalPath(vector<SensorNode<T>> sn_list, vector<SensorNode<T>*> candidates) {
 	bool is_match = false;
 	int pdv_num = this->calcOptPdvNum(sn_list, candidates, this->req_ps);
+	//int pdv_num = 5;
 	is_match = this->calcInitGuess(this->max_num_r, pdv_num, this->pop, sn_list, candidates, this->req_ps);
 	
 	auto start = chrono::high_resolution_clock::now();

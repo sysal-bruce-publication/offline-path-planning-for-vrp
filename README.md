@@ -12,7 +12,6 @@ This project aims at solving Optimization Problem in scheduling recharing tasks 
 - Final report can be found in [FinalReport directory](FinalReport).
 - DEMO figures used for readme files can be found in [Figure directory](Figure).
 
----
 
 ## Quick Start with console user interface
 1. Create empty folder structure:
@@ -34,7 +33,6 @@ This project aims at solving Optimization Problem in scheduling recharing tasks 
 9. `Bulid` -> `Bulid sys` (or `Ctrl+B`)
 10. Run the executable file (.exe)
 
----
 
 ## Normal Procedure
 ### Execution Environment
@@ -48,32 +46,32 @@ To build the project successfully, the following folder structure are **recommen
 
 ```
 	|0--- project/
-	|1------- input/											# Place input files
-	|2----------- input<case_id>.csv							# Raw sensor info
-	|2----------- ...											# Other cases
-	|2----------- initial_guess/								# Place initial sub-path solutions
-	|3--------------- case<case_id>/							# Each case should have a separte directory 
+	|1------- input/						# Place input files
+	|2----------- input<case_id>.csv				# Raw sensor info
+	|2----------- ...						# Other cases
+	|2----------- initial_guess/					# Place initial sub-path solutions
+	|3--------------- case<case_id>/				# Each case should have a separte directory 
 	|4------------------- pop<population_id>_pdv<pdv_id>.txt	
 	|4------------------- ...
 	|3--------------- ...
 	|2----------- naive/
-	|3--------------- case<case_id>/							# Each case should have a separte directory  
+	|3--------------- case<case_id>/				# Each case should have a separte directory  
 	|4------------------- sub_path<pdv_id>.csv
 	|4------------------- ...
 	|3--------------- ...	
-	|1------- output/											# Place output files
+	|1------- output/						# Place output files
 	|2----------- final_info.csv								
 	|2----------- final_output.csv
-	|2----------- sub_path/										# Calculated sub-paths solutions
+	|2----------- sub_path/						# Calculated sub-paths solutions
 	|3--------------- ga_path<pdv_id>.csv						
 	|3--------------- ...
-	|1------- naive_sol/										# Place naive solution codes
-	|2----------- sim/											# Place system codes
+	|1------- naive_sol/						# Place naive solution codes
+	|2----------- sim/						# Place system codes
 	|3--------------- point.h							
 	|3--------------- ...
-	|2----------- output/										# Place generated output
+	|2----------- output/						# Place generated output
 	|3--------------- sum.csv
-	|1------- alg/												# Place optimization algorithm codes
+	|1------- alg/							# Place optimization algorithm codes
 	|2----------- 1_data_generation.ipynb
 	|2----------- genetic.h
 	|2----------- ...
@@ -91,7 +89,6 @@ All algorithms and system model are integrated within one project. Users can use
 1. Use MSVC to build and run [source code](Code/ensemble_system).
 2. Enter commands in the console terminal (following given instructions).
 
----
 
 ## Run Simulation Separately
 ### A NAIVE SOLUTION (OPTIONAL): Scikit-learn K-Means Clustering Method + Shortest Next Job (SJN) as Baseline
@@ -168,12 +165,12 @@ To better visualize summary of results, histograms can be generated as well in [
 
 Note that the `Case` (x-axis) here means tested 9 scenarios (different scales of networks). Details are stated in the report.
 
----
 
-## Execution time of algorithms
+## Additional Part
+### Execution time of algorithms
 The execution time of the optimization algorithm is counted through `std::chrono::high_resolution_clock` (unit: ms). The time counter starts after calculation of inital guesses and ends when finding the solution with best fitness metric. The duration time will be recorded to [final_info.csv](Code/output/final_info.csv) as well (`alg_time`).
 
-## Verification of code
+### Verification of code
 This project adopts the [Unit Test tool of Miscrosoft](https://docs.microsoft.com/en-us/visualstudio/test/unit-test-your-code?view=vs-2019) to verify code implementations. We provide [sample code](Code/unit_test/unit_test.cpp) to test algorithm module and system model. Please check [the tutorial from Miscrosoft Doc](https://docs.microsoft.com/en-us/visualstudio/test/getting-started-with-unit-testing?view=vs-2019) to run tests correctly. Notice that:
 
 - Because all included optimization algorithms share similar system model, in this case, author team only tested functionality of Genetic Algorithm and system model as the main example.
@@ -188,7 +185,6 @@ This project adopts the [Unit Test tool of Miscrosoft](https://docs.microsoft.co
 6. Build all solutions.
 7. Run all tests in `Test Explorer`.
 
----
 
 ## Complementary Experiments
 ### Test impact of PDV numbers
@@ -217,7 +213,6 @@ single PDV recharging efficiency is defined as *total recharged energy of WSN* d
 
 <img src='Figure/efficiency_compare.jpg'>
 
----
 
 ## Further Updates
 Please note that this is a open-source project with continus updates. Currently, we consider the next step to:
@@ -225,7 +220,6 @@ Please note that this is a open-source project with continus updates. Currently,
 2. Convert to 3D space
 3. Consider parallel computing of all algorithms
 
----
 
 ## Other Information
 ### Code Documentation
@@ -238,6 +232,6 @@ Please note that the original system model is based on [the research of A. Y. S.
 Presentation slides can be seen [here](irp_presentation.pptx).
 
 ### Contact Us: 
-Mr. Qiuchen Qian - qiuchen.qian19@imperial.ac.uk
+Mr. Qiuchen Qian - qiuchen.qian19@imperial.ac.uk  
 Ms. Akshayaa Pandiyan - a.pandiyan@imperial.ac.uk  
-Dr. David Boyle - david.boyle@imperial.ac.uk
+Dr. David Boyle - david.boyle@imperial.ac.uk  

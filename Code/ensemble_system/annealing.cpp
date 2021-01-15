@@ -103,6 +103,12 @@ int Annealing<T>::calcOptPdvNum(vector<SensorNode<T>> sn_list, vector<SensorNode
 
 	int pdv_num = 1;
 	do {
+		if (temp_pdv->f_eng <= 20) {
+			pdv_num++;
+			temp_pdv->resetPdvStatus();
+			continue;
+		}
+
 		vector<double> d_list = temp_pdv->pos.calcDist(temp_req_p);
 		int next = distance(d_list.begin(), min_element(d_list.begin(), d_list.end()));
 
@@ -114,8 +120,12 @@ int Annealing<T>::calcOptPdvNum(vector<SensorNode<T>> sn_list, vector<SensorNode
 			}
 		}
 
+		double ipt_eng = 0.;
+		temp_pdv->iptEnergyCost(sn_list[this_cn], ipt_eng);
+
 		if (temp_pdv->calcEnergyCost(temp_req_p[next].calcDist(Point<T>()) / temp_pdv->getPdvSpeed())
-			+ temp_pdv->calcEnergyCost(this->pos.calcDist(temp_req_p[next]) / temp_pdv->getPdvSpeed()) > temp_pdv->f_eng) {
+			+ temp_pdv->calcEnergyCost(temp_pdv->pos.calcDist(temp_req_p[next]) / temp_pdv->getPdvSpeed())
+			+ ipt_eng + 20 > temp_pdv->f_eng) {
 
 			pdv_num++;
 			temp_pdv->resetPdvStatus();
@@ -123,9 +133,6 @@ int Annealing<T>::calcOptPdvNum(vector<SensorNode<T>> sn_list, vector<SensorNode
 		}
 
 		temp_pdv->updatePdvStatus(temp_req_p[next]);
-		
-		double ipt_eng = 0.;
-		temp_pdv->iptEnergyCost(sn_list[this_cn], ipt_eng);
 		temp_pdv->f_eng -= ipt_eng;
 
 		temp_req_p.erase(temp_req_p.begin() + next);
@@ -237,9 +244,9 @@ double Annealing<T>::fitnessFunc(vector<SensorNode<T>> sn_list, vector<int> idx_
 			}
 		}
 
-		if (pdv->calcEnergyCost(this_flight_path[next].calcDist(Point<T>()) / pdv->getPdvSpeed())
-			+ pdv->calcEnergyCost(pdv->pos.calcDist(this_flight_path[next]) / pdv->getPdvSpeed()) > pdv->f_eng) {
-			return -1;
+		if (pdv->calcEnergyCost(this_flight_path[next].calcDist(Point<T>()) / pdv->getPdvSpeed()) + 
+			pdv->calcEnergyCost(pdv->pos.calcDist(this_flight_path[next]) / pdv->getPdvSpeed()) > pdv->f_eng) {
+			return -1000.;
 		}
 
 		pdv->updatePdvStatus(this_flight_path[next]);
@@ -330,8 +337,8 @@ void Annealing<T>::initOneSol(const int& cur_pdv, vector<vector<int>>& idx_list,
 }
 
 template <class T>
-vector<int> Annealing<T>::readGuessData(int pop_num, int pdv_num) {
-	string fname = "../input/initial_guess/pop" + to_string(pop_num) + "_pdv" + to_string(pdv_num) + ".txt";
+vector<int> Annealing<T>::readGuessData(int case_num, int pop_num, int pdv_num) {
+	string fname = "../input/initial_guess/case" + to_string(case_num) + "/pop" + to_string(pop_num) + "pdv" + to_string(pdv_num) + ".txt";
 	vector<int> idx_list;
 	fstream file;
 	try {
@@ -381,11 +388,10 @@ void Annealing<T>::saveSubPathToCsv(vector<SensorNode<T>> sn_list, vector<vector
 }
 
 template <class T>
-void Annealing<T>::calcFinalPath(vector<SensorNode<T>>& sn_list, vector<SensorNode<T>*> candidates) {
-	bool is_match = false;
+void Annealing<T>::calcFinalPath(int case_num, vector<SensorNode<T>>& sn_list, vector<SensorNode<T>*> candidates) {
+	//bool is_match = false;
 	int pdv_num = this->calcOptPdvNum(sn_list, candidates, this->req_ps);
-	//int pdv_num = 5;
-	is_match = this->calcInitGuess(this->max_num_r, pdv_num, this->pop, sn_list, candidates, this->req_ps);
+	//is_match = this->calcInitGuess(this->max_num_r, pdv_num, this->pop, sn_list, candidates, this->req_ps);
 
 	auto* funcs = new Funcs<double>();
 	auto start = chrono::high_resolution_clock::now();
@@ -399,7 +405,7 @@ void Annealing<T>::calcFinalPath(vector<SensorNode<T>>& sn_list, vector<SensorNo
 		
 		double tars_met_sum = -1.;
 		for (int j = 0; j < pdv_num; j++) {
-			this->tars_idx[i][j] = this->readGuessData(i, j);
+			this->tars_idx[i][j] = this->readGuessData(case_num, i, j);
 			this->tars_met[i][j] = this->fitnessFunc(sn_list, this->tars_idx[i][j]);
 			tars_met_sum += this->tars_met[i][j];
 		}
@@ -460,7 +466,7 @@ void Annealing<T>::calcFinalPath(vector<SensorNode<T>>& sn_list, vector<SensorNo
 }
 
 template <class T>
-bool Annealing<T>::checkTask(vector<SensorNode<T>>& sn_list) {
+bool Annealing<T>::checkTask(int case_num, vector<SensorNode<T>>& sn_list) {
 	//! Before genetic algorithm process, update weights of sensor nodes according to inputs. 
 	vector<SensorNode<T>*> requested_list;
 	for (unsigned i = 0; i < sn_list.size(); i++) {
@@ -469,7 +475,7 @@ bool Annealing<T>::checkTask(vector<SensorNode<T>>& sn_list) {
 
 	if (requested_list.size() > this->min_req_num) {
 		this->initParams(requested_list);
-		this->calcFinalPath(sn_list, requested_list);
+		this->calcFinalPath(case_num, sn_list, requested_list);
 		return true;
 	}
 

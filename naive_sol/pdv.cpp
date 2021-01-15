@@ -11,7 +11,6 @@
  */
 
 
-#include <iostream>
 #include <fstream>
 #include <algorithm>
 #include <cstdlib>
@@ -66,14 +65,14 @@ void PDV<T>::updatePdvStatus(const Point<T>& p) {
 	this->f_dist += temp_d;
 	this->f_time += temp_d / this->f_speed;
 	this->f_eng -= this->pdv_power * (this->f_time + 5.6e-3);
-	this->pos.setX(p.getX()); 
+	this->pos.setX(p.getX());
 	this->pos.setY(p.getY());
 }
 
 template <class T>
 void PDV<T>::iptEnergyCost(const SensorNode<T>& next_sn, double& e) {
 	double factor, pckt;
-	factor = 1. /(double) 1800.;			/*!< Convert J to Wh */
+	factor = 1. / (double)1800.;			/*!< Convert J to Wh */
 	pckt = 0.5 * next_sn.getCapacitance() * (pow(next_sn.getMaxVolt(), 2) - pow(next_sn.SC_V, 2));
 	e = factor * pckt;
 }
@@ -96,21 +95,6 @@ float PDV<T>::flightSimulation(double& charged_e, double& pdv_t, vector<SensorNo
 				break;
 			}
 		}
-
-		string fname = "../solsol/pop.txt";
-
-		fstream file;
-		try {
-			file.open(fname, fstream::app);
-			if (!file.is_open())
-				throw runtime_error(strerror(errno));
-		}
-		catch (const exception& e) {
-			cerr << e.what() << "\n";
-		}
-
-		file << this_cn << endl;
-		file.close();
 
 		if (this->calcEnergyCost(path[next].calcDist(Point<T>()) / this->f_speed) + 
 			this->calcEnergyCost(this->pos.calcDist(path[next]) / this->f_speed) > this->f_eng) {
@@ -152,21 +136,6 @@ float PDV<T>::flightSimulation(double& charged_e, double& pdv_t, vector<SensorNo
 	//! Return to home process
 	this->updatePdvStatus(Point<T>());
 	pdv_t = this->f_time;
-
-	string fname = "../solsol/pop.txt";
-
-	fstream file;
-	try {
-		file.open(fname, fstream::app);
-		if (!file.is_open())
-			throw runtime_error(strerror(errno));
-	}
-	catch (const exception& e) {
-		cerr << e.what() << "\n";
-	}
-
-	file << endl << endl << endl;
-	file.close();
 
 	return static_cast <float> ((charged / (float)path_len) * 100);
 }

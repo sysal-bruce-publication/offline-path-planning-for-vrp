@@ -107,6 +107,12 @@ int Genetic<T>::calcOptPdvNum(vector<SensorNode<T>> sn_list, vector<SensorNode<T
 
 	int pdv_num = 1;
 	do {
+		if (temp_pdv->f_eng <= 20) {
+			pdv_num++;
+			temp_pdv->resetPdvStatus();
+			continue;
+		}
+
 		vector<double> d_list = temp_pdv->pos.calcDist(temp_req_p);
 		int next = distance(d_list.begin(), min_element(d_list.begin(), d_list.end()));
 
@@ -118,8 +124,12 @@ int Genetic<T>::calcOptPdvNum(vector<SensorNode<T>> sn_list, vector<SensorNode<T
 			}
 		}
 
+		double ipt_eng = 0.;
+		temp_pdv->iptEnergyCost(sn_list[this_cn], ipt_eng);
+
 		if (temp_pdv->calcEnergyCost(temp_req_p[next].calcDist(Point<T>()) / temp_pdv->getPdvSpeed())
-			+ temp_pdv->calcEnergyCost(this->pos.calcDist(temp_req_p[next]) / temp_pdv->getPdvSpeed()) > temp_pdv->f_eng) {
+			+ temp_pdv->calcEnergyCost(temp_pdv->pos.calcDist(temp_req_p[next]) / temp_pdv->getPdvSpeed())
+			+ ipt_eng + 20 > temp_pdv->f_eng) {
 
 			pdv_num++;
 			temp_pdv->resetPdvStatus();
@@ -127,9 +137,6 @@ int Genetic<T>::calcOptPdvNum(vector<SensorNode<T>> sn_list, vector<SensorNode<T
 		}
 
 		temp_pdv->updatePdvStatus(temp_req_p[next]);
-
-		double ipt_eng = 0.;
-		temp_pdv->iptEnergyCost(sn_list[this_cn], ipt_eng);
 		temp_pdv->f_eng -= ipt_eng;
 
 		temp_req_p.erase(temp_req_p.begin() + next);
@@ -237,40 +244,67 @@ bool Genetic<T>::calcInitGuess(const int& r_num, const int& pdv_num, const int& 
 }
 
 template <class T>
-void Genetic<T>::crossover(int cross_ratio, int pop_num, const bool& is_match, vector<vector<vector<int>>> tar_vec, vector<vector<vector<int>>>& trail_vec, vector<SensorNode<T>> sn_list) {
+void Genetic<T>::crossover(int cross_ratio, int pop_num, vector<vector<vector<int>>> tar_vec, vector<vector<vector<int>>>& trail_vec, vector<SensorNode<T>> sn_list) {
 	int r1 = -1;
 	auto* funcs = new Funcs<double>();
 	for (int i = 0; i < pop_num; i++) {
 		r1 = funcs->getRandIndex(pop_num - 1);
 		trail_vec[i] = tar_vec[r1];
 
-		for (unsigned j = 0; j < tar_vec[i].size(); j++) {
-			for (unsigned k = 0; k < tar_vec[i][j].size(); k++) {
+		// for each node in trail vector
+		for (unsigned j = 0; j < trail_vec[i].size(); j++) {
+			for (unsigned k = 0; k < trail_vec[i][j].size(); k++) {
 				if (funcs->getRandIndex(100) > cross_ratio) {
 
 					//! Find the index randomly (the `num`th shortest)
+					// Calculate the distance between all other nodes and current node [i][j][k]
 					vector<double> d_list;
-					for (unsigned m = 0; m < tar_vec[r1].size(); m++) {
-						for (unsigned n = 0; n < tar_vec[r1][m].size(); n++) {
-							d_list.push_back(sn_list[tar_vec[i][j][k]].pos.calcDist(sn_list[tar_vec[r1][m][n]].pos));
+					for (unsigned m = 0; m < trail_vec[i].size(); m++) {
+						for (unsigned n = 0; n < trail_vec[i][m].size(); n++) {
+							d_list.push_back(sn_list[trail_vec[i][j][k]].pos.calcDist(sn_list[trail_vec[i][m][n]].pos));
 						}
 					}
 					int num = funcs->getRandIndex(9);
-					if (tar_vec[i][j].size() < 10) num = funcs->getRandIndex(tar_vec[i][j].size() - 1);
+					if (trail_vec[i][j].size() < 10) num = funcs->getRandIndex(trail_vec[i][j].size() - 1);
 					
 					unique_ptr<vector<double>> sort_ds = make_unique<vector<double>>(num + 1);
 					partial_sort_copy(d_list.begin(), d_list.end(), sort_ds->begin(), sort_ds->end());
 					auto it = find(d_list.begin(), d_list.end(), (*sort_ds)[num]);
 					int next = distance(d_list.begin(), it);
 
-					int temp_pdv_id = next / trail_vec[i][0].size();
-					int temp_num = next % trail_vec[i][0].size();
-					if (!is_match) {
-						if (temp_pdv_id == trail_vec[i].size()) {
-							temp_pdv_id -= 1;
-							temp_num += trail_vec[i][0].size();
+					int temp_pdv_id = 0, temp_num = 0, temp_pop_size = 0;
+					for (unsigned m = 0; m < tar_vec[r1].size(); m++) {
+						temp_pop_size += tar_vec[r1][m].size();
+						if (next == temp_pop_size) {
+							temp_pdv_id = m;
+							temp_num = tar_vec[r1][m].size() - 1;
+							break;
+						}
+
+						if (next < temp_pop_size) {
+							temp_pdv_id = m;
+							int over_pop_size = 0;
+							if (!m) temp_num = next; break;
+							for (int n = 0; n < m; n++) {
+								over_pop_size += n * tar_vec[r1][n].size();
+								if (over_pop_size >= temp_pop_size) {
+									temp_num = temp_pop_size - (over_pop_size - n * tar_vec[r1][n].size()) + 1;
+									break;
+								}
+							}
+							if (!temp_num) cerr << "Cannot find index number !" << endl; return;
+							break;
 						}
 					}
+					// OLD VERSION - IGNORE IT
+					//if (temp_pdv_id >= tar_vec[i].size() - 1) temp_pdv_id = tar_vec[i].size() - 1;
+					//int temp_num = next % trail_vec[i][0].size();
+					//if (!is_match) {
+					//	if (temp_pdv_id == trail_vec[i].size()) {
+					//		temp_pdv_id -= 1;
+					//		temp_num += trail_vec[i][0].size();
+					//	}
+					//}
 					
 					swap(trail_vec[i][j][k], trail_vec[i][temp_pdv_id][temp_num]);
 				}
@@ -304,9 +338,9 @@ double Genetic<T>::fitnessFunc(vector<SensorNode<T>> sn_list, vector<int> idx_li
 			}
 		}
 
-		if (pdv->calcEnergyCost(this_flight_path[next].calcDist(Point<T>()) / pdv->getPdvSpeed())
-			+ pdv->calcEnergyCost(pdv->pos.calcDist(this_flight_path[next]) / pdv->getPdvSpeed()) > pdv->f_eng) {
-			return -1;
+		if (pdv->calcEnergyCost(this_flight_path[next].calcDist(Point<T>()) / pdv->getPdvSpeed()) + 
+			pdv->calcEnergyCost(pdv->pos.calcDist(this_flight_path[next]) / pdv->getPdvSpeed()) > pdv->f_eng) {
+			return -1000.;
 		}
 
 		pdv->updatePdvStatus(this_flight_path[next]);
@@ -361,8 +395,8 @@ int Genetic<T>::getBestSol(const int& pdv_num) {
 }
 
 template <class T>
-vector<int> Genetic<T>::readGuessData(int pop_num, int pdv_num) {
-	string fname = "../input/initial_guess/pop" + to_string(pop_num) + "_pdv" + to_string(pdv_num) + ".txt";
+vector<int> Genetic<T>::readGuessData(int case_num, int pop_num, int pdv_num) {
+	string fname = "../input/initial_guess/case" + to_string(case_num) + "/pop" + to_string(pop_num) + "pdv" + to_string(pdv_num) + ".txt";
 	vector<int> idx_list;
 	fstream file;
 	try {
@@ -388,19 +422,19 @@ vector<int> Genetic<T>::readGuessData(int pop_num, int pdv_num) {
 }
 
 template <class T>
-void Genetic<T>::calcFinalPath(vector<SensorNode<T>>& sn_list, vector<SensorNode<T>*> candidates) {
-	bool is_match = false;
+void Genetic<T>::calcFinalPath(int case_num, vector<SensorNode<T>>& sn_list, vector<SensorNode<T>*> candidates) {
+	//bool is_match = false;
 	int pdv_num = this->calcOptPdvNum(sn_list, candidates, this->req_ps);
-	//int pdv_num = 5;
-	is_match = this->calcInitGuess(this->max_num_r, pdv_num, this->pop, sn_list, candidates, this->req_ps);
+	//is_match = this->calcInitGuess(this->max_num_r, pdv_num, this->pop, sn_list, candidates, this->req_ps);
 
 	auto start = chrono::high_resolution_clock::now();
 	for (int i = 0; i < this->pop; i++) {
 		this->tars_int[i].resize(pdv_num);
+		this->trail_int[i].resize(pdv_num);
 		this->targets_metric[i].resize(pdv_num + 1);
 		this->trails_metric[i].resize(pdv_num + 1);
 		for (int j = 0; j < pdv_num; j++) {
-			this->tars_int[i][j] = this->readGuessData(i, j);
+			this->tars_int[i][j] = this->readGuessData(case_num, i, j);
 			this->targets_metric[i][j] = -1.;
 			this->trails_metric[i][j] = -1.;
 		}
@@ -409,7 +443,7 @@ void Genetic<T>::calcFinalPath(vector<SensorNode<T>>& sn_list, vector<SensorNode
 	}
 
 	for (int i = 0; i < this->gen; i++) {
-		this->crossover(this->cr, this->pop, is_match, this->tars_int, this->trail_int, sn_list);
+		this->crossover(this->cr, this->pop, this->tars_int, this->trail_int, sn_list);
 
 		for (int j = 0; j < this->pop; j++) {
 			double targe_met_sum = -1.;
@@ -441,7 +475,7 @@ void Genetic<T>::calcFinalPath(vector<SensorNode<T>>& sn_list, vector<SensorNode
 }
 
 template <class T>
-bool Genetic<T>::checkTask(vector<SensorNode<T>>& sn_list) {
+bool Genetic<T>::checkTask(int case_num, vector<SensorNode<T>>& sn_list) {
 	//! Before genetic algorithm process, update weights of sensor nodes according to inputs. 
 	vector<SensorNode<T>*> requested_list;
 	for (unsigned i = 0; i < sn_list.size(); i++) {
@@ -450,7 +484,7 @@ bool Genetic<T>::checkTask(vector<SensorNode<T>>& sn_list) {
 
 	if (requested_list.size() > this->min_req_num) {
 		this->initParams(requested_list);
-		this->calcFinalPath(sn_list, requested_list);
+		this->calcFinalPath(case_num, sn_list, requested_list);
 		return true;
 	}
 

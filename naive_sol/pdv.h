@@ -38,7 +38,7 @@ class PDV : protected SensorNode<T>
 public:
 	Point<T> pos;	/*!< A @a Point object with data type @c T for sensor node position [m]*/
 	double f_time = 0.;			/*!< PDV flight time [h]*/
-	double f_eng = 187.;			/*!< PDV remain energy [Wh]*/
+	double f_eng = 0.;			/*!< PDV remain energy [Wh]*/
 	double f_dist = 0.;			/*!< PDV flight distance [m]*/
 
 	//! A default constructer with coordinate(0, 0), 0 flight time and full energy.

@@ -119,7 +119,7 @@ public:
 	*   @param pdv_num	The PDV id.
 	*   @return			A vector of solution (index of sensor nodes) with @a pop_num and @a pdv_num
 	*/
-	vector<int> readGuessData(int pop_num, int pdv_num);
+	vector<int> readGuessData(int case_num, int pop_num, int pdv_num);
 
 	/*! @brief			Save sub paths with best metric
 	*   @param sn_list	A vector of all sensor nodes.
@@ -142,7 +142,7 @@ public:
 	*   @param candidates	A vector of pointers to all sensor nodes to be recharged.
 	*   @return			If the number of nodes to be recharged can be divided exactly by @a pdv_num, return true.
 	*/
-	void calcFinalPath(vector<SensorNode<T>>& sn_list, vector<SensorNode<T>*> candidates);
+	void calcFinalPath(int case_num, vector<SensorNode<T>>& sn_list, vector<SensorNode<T>*> candidates);
 
 	/*! @brief			Check if the number of requested sensor nodes is larger than @a MIN_REQUESTS .
 	*   @param sn_list			A vector of all sensor nodes.
@@ -150,7 +150,7 @@ public:
 	*   @return			If true, keep iterating until the requested number reaches the minimum value.
 	*				If false, end iterating.
 	*/
-	bool checkTask(vector<SensorNode<T>>& sn_list);
+	bool checkTask(int case_num, vector<SensorNode<T>>& sn_list);
 };
 
 #endif // !ANNEALING_H_

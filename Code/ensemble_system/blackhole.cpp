@@ -70,6 +70,12 @@ int BlackHole<T>::calcOptPdvNum(vector<SensorNode<T>> sn_list, vector<SensorNode
 
 	int pdv_num = 1;
 	do {
+		if (temp_pdv->f_eng <= 20) {
+			pdv_num++;
+			temp_pdv->resetPdvStatus();
+			continue;
+		}
+
 		vector<double> d_list = temp_pdv->pos.calcDist(temp_req_p);
 		int next = distance(d_list.begin(), min_element(d_list.begin(), d_list.end()));
 
@@ -81,8 +87,12 @@ int BlackHole<T>::calcOptPdvNum(vector<SensorNode<T>> sn_list, vector<SensorNode
 			}
 		}
 
+		double ipt_eng = 0.;
+		temp_pdv->iptEnergyCost(sn_list[this_cn], ipt_eng);
+
 		if (temp_pdv->calcEnergyCost(temp_req_p[next].calcDist(Point<T>()) / temp_pdv->getPdvSpeed())
-			+ temp_pdv->calcEnergyCost(this->pos.calcDist(temp_req_p[next]) / temp_pdv->getPdvSpeed()) > temp_pdv->f_eng) {
+			+ temp_pdv->calcEnergyCost(temp_pdv->pos.calcDist(temp_req_p[next]) / temp_pdv->getPdvSpeed())
+			+ ipt_eng + 20 > temp_pdv->f_eng) {
 
 			pdv_num++;
 			temp_pdv->resetPdvStatus();
@@ -90,9 +100,6 @@ int BlackHole<T>::calcOptPdvNum(vector<SensorNode<T>> sn_list, vector<SensorNode
 		}
 
 		temp_pdv->updatePdvStatus(temp_req_p[next]);
-
-		double ipt_eng = 0.;
-		temp_pdv->iptEnergyCost(sn_list[this_cn], ipt_eng);
 		temp_pdv->f_eng -= ipt_eng;
 
 		temp_req_p.erase(temp_req_p.begin() + next);
@@ -344,9 +351,9 @@ double BlackHole<T>::fitnessFunc(vector<SensorNode<T>> sn_list, vector<int> idx_
 			}
 		}
 
-		if (pdv->calcEnergyCost(this_flight_path[next].calcDist(Point<T>()) / pdv->getPdvSpeed())
-			+ pdv->calcEnergyCost(pdv->pos.calcDist(this_flight_path[next]) / pdv->getPdvSpeed()) > pdv->f_eng) {
-			return -1;
+		if (pdv->calcEnergyCost(this_flight_path[next].calcDist(Point<T>()) / pdv->getPdvSpeed()) + 
+			pdv->calcEnergyCost(pdv->pos.calcDist(this_flight_path[next]) / pdv->getPdvSpeed()) > pdv->f_eng) {
+			return -1000.;
 		}
 
 		pdv->updatePdvStatus(this_flight_path[next]);
@@ -390,8 +397,8 @@ double BlackHole<T>::fitnessFunc(vector<SensorNode<T>> sn_list, vector<int> idx_
 }
 
 template <class T>
-vector<int> BlackHole<T>::readGuessData(int pop_num, int pdv_num) {
-	string fname = "../input/initial_guess/pop" + to_string(pop_num) + "_pdv" + to_string(pdv_num) + ".txt";
+vector<int> BlackHole<T>::readGuessData(int case_num, int pop_num, int pdv_num) {
+	string fname = "../input/initial_guess/case" + to_string(case_num) + "/pop" + to_string(pop_num) + "pdv" + to_string(pdv_num) + ".txt";
 	vector<int> idx_list;
 	fstream file;
 	try {
@@ -449,6 +456,32 @@ void BlackHole<T>::attraction(int cur_gen, int cur_pdv, const int& bh_num,
 	auto* funcs = new Funcs<double>();
 	for (unsigned z = 0; z < tar_vec[cur_pdv].size(); z++) {
 		if (funcs->getRandIndex(100) <= this->ar) continue;
+
+		// if current solution (of current PDV) doesn't have same size as bh solution (of current PDV)
+		if (z >= this->tars_idx[bh_num][cur_pdv].size()) {
+			if (funcs->getRandIndex(100) <= this->ar) break;
+			vector<double> d_list = sn_list[tar_vec[cur_pdv][z]].pos.calcDist(req_ps);
+			int next = distance(d_list.begin(), min_element(d_list.begin(), d_list.end()));
+
+			for (unsigned m = 0; m < sn_list.size(); m++) {
+				if (req_ps[next].isCoincide(sn_list[m].pos)) {
+					next = m;
+					break;
+				}
+			}
+
+			for (unsigned m = 0; m < tar_vec.size(); m++) {
+				for (unsigned n = 0; n < tar_vec[m].size(); n++) {
+					if (m == cur_pdv && n == z) continue;
+					if (tar_vec[m][n] == next) {
+						swap(tar_vec[cur_pdv][z], tar_vec[m][n]);
+					}
+				}
+			}
+
+			break;
+		}
+
 		rand_fac = funcs->getRandFloat();
 		delta_x = rand_fac * (sn_list[tar_vec[cur_pdv][z]].pos.getX() - sn_list[this->tars_idx[bh_num][cur_pdv][z]].pos.getX());
 		delta_y = rand_fac * (sn_list[tar_vec[cur_pdv][z]].pos.getY() - sn_list[this->tars_idx[bh_num][cur_pdv][z]].pos.getY());
@@ -476,14 +509,15 @@ void BlackHole<T>::attraction(int cur_gen, int cur_pdv, const int& bh_num,
 }
 
 template <class T>
-void BlackHole<T>::calcFinalPath(vector<SensorNode<T>> sn_list, vector<SensorNode<T>*> candidates) {
-	bool is_match = false;
+void BlackHole<T>::calcFinalPath(int case_num, vector<SensorNode<T>> sn_list, vector<SensorNode<T>*> candidates) {
+	//bool is_match = false;
 	int pdv_num = this->calcOptPdvNum(sn_list, candidates, this->req_ps);
-	//int pdv_num = 5;
-	is_match = this->calcInitGuess(this->max_num_r, pdv_num, this->pop, sn_list, candidates, this->req_ps);
+	//is_match = this->calcInitGuess(this->max_num_r, pdv_num, this->pop, sn_list, candidates, this->req_ps);
 	
-	auto start = chrono::high_resolution_clock::now();
+
 	auto* funcs = new Funcs<double>();
+	auto start = chrono::high_resolution_clock::now();
+
 	//! Initialization
 	for (int i = 0; i < this->pop; i++) {
 		this->tars_idx[i].resize(pdv_num);
@@ -491,7 +525,7 @@ void BlackHole<T>::calcFinalPath(vector<SensorNode<T>> sn_list, vector<SensorNod
 
 		double tar_met_sum = 0.;
 		for (int j = 0; j < pdv_num; j++) {
-			this->tars_idx[i][j] = this->readGuessData(i, j);
+			this->tars_idx[i][j] = this->readGuessData(case_num, i, j);
 			this->tars_metric[i][j] = this->fitnessFunc(sn_list, this->tars_idx[i][j]);
 			tar_met_sum += this->tars_metric[i][j];
 		}
@@ -555,7 +589,7 @@ void BlackHole<T>::calcFinalPath(vector<SensorNode<T>> sn_list, vector<SensorNod
 }
 
 template <class T>
-bool BlackHole<T>::checkTask(vector<SensorNode<T>>& sn_list) {
+bool BlackHole<T>::checkTask(int case_num, vector<SensorNode<T>>& sn_list) {
 	vector<SensorNode<T>*> requested_list;
 
 	for (unsigned i = 0; i < sn_list.size(); i++) {
@@ -564,7 +598,21 @@ bool BlackHole<T>::checkTask(vector<SensorNode<T>>& sn_list) {
 
 	if (requested_list.size() > this->min_req_num) {
 		this->initParams(requested_list);
-		this->calcFinalPath(sn_list, requested_list);
+		this->calcFinalPath(case_num, sn_list, requested_list);
+
+		//! Test if BH assigns all requested SNs to sub paths
+		//vector<int> test_arr(124);
+		//int x = 0;
+		//for (int m = 0; m < 6; m++) {
+		//	for (int n = 0; n < this->best_sol[m].size(); n++) {
+		//		test_arr[x] = this->best_sol[m][n];
+		//		x++;
+		//	}
+		//}
+		//auto* funcs = new Funcs<double>();
+		//bool xxx = funcs->checkDuplicates(test_arr);
+		//delete funcs;
+
 		return true;
 	}
 	

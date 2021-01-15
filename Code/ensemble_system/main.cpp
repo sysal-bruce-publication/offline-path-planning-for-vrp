@@ -36,18 +36,18 @@ using namespace std;
 
 int main() {
 	//! Uncomment following codes for user interface usage
-	auto* ui = new Interface<double>();
-	delete ui;
+	//auto* ui = new Interface<double>();
+	//delete ui;
 
 	//! Uncomment following codes for ensemble test
-	//auto* cases = new Cases<double>();
+	auto* cases = new Cases<double>();
 	
 	//！PDV number test
 	//cases->single_test(5);
 	//cases->single_test(8);
 
-	//cases->ensemble_test();
-	//delete cases;
+	cases->ensemble_test();
+	delete cases;
 
 	return 0;
 }

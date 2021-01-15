@@ -1,7 +1,16 @@
 # Optimal Drone Recharging Scheduling for Wireless Sensor Power Transfer and Data Collection
-This project aims at solving Optimization Problem in scheduling recharing tasks for Unmanned Aerial Vehicles (UAVs) under the Wireless Rechargeable Sensor Network. 
+This project aims at solving Optimization Problem in scheduling recharing tasks for Power Delivery Vehicles (PDVs) under the Wireless Rechargeable Sensor Network. 
 
 <img src='Figure/gif_demo.gif' width="700" height="600">
+
+## Brief Index
+- Source code can be found in [Code directory](Code).
+- Example input and output files are stored in [input](input) and [output](output).
+- Documentation of C++ code can be found in [Documentation directory](Code/Documentation).
+- Experimental results achieved by author team can be found in [Result directory](Result).
+- Visualization of complete flight paths can be found in [VisualResult directory](Result/VisualResult).
+- Final report can be found in [FinalReport directory](FinalReport).
+- DEMO figures used for readme files can be found in [Figure directory](Figure).
 
 ---
 
@@ -27,75 +36,65 @@ This project aims at solving Optimization Problem in scheduling recharing tasks 
 
 ---
 
-## Brief Index
-- Source code can be found in [Code directory](Code).
-- Example input and output files are stored in [input](input) and [output](output).
-- Documentation of C++ code can be found in [Documentation directory](Code/Documentation).
-- Experimental results achieved by author team can be found in [Result directory](Result).
-- Visualization of complete flight paths can be found in [VisualResult directory](Result/VisualResult).
-- Final report can be found in [FinalReport directory](FinalReport).
-- DEMO figures used for readme files can be found in [Figure directory](Figure).
+## Normal Procedure
+### Execution Environment
+This project adopted:
+- [MSVC 2019](https://visualstudio.microsoft.com/zh-hans/vs/) & C++17 language standard
+- [Jupyter Notebook](https://jupyter.org/) & Python3 
+*WARNING!! Lower language standard may lead to build errors. Please check your compiler and its version!* 
 
-## Code Documentation
-Documentation files are generated through [Doxygen](https://www.doxygen.nl/index.html). Through index file [ga_index](Code/Documentation/ga_doc/ga_index.lnk), [bh_index](Code/Documentation/bh_doc/bh_index.lnk) and [sa_index](Code/Documentation/sa_doc/sa_index.lnk), users can check the code structure, function usage, variable definitions, etc. If content of the index file cannot display properly, please check corresponding source file `index.lnk` in `html\` directory.
-
-## Model Selection
-Please note that the original system model is based on [the research of A. Y. S. Pandiyan et al](https://www.researchgate.net/publication/341077461_Optimal_Energy_Management_of_Two_Stage_Energy_Distribution_Systems_Using_Clustering_Algorithm). However, this project made several modifications to make the system model more practical. More details can be found in related paper and [introduction of model comparison](Model_Comparison.pdf). **Quick Start with console user interface** section adopts *original* model. Other sections will adopt *new* model. Note that in the paper, the system model adopts the original one. More technical descriptions can be found in the paper.
-
----
-
-## Folder Structure
-Due to different file names, the following folder structure are ***strongly recommended*** before implmenting all codes. *Otherwise, users are required to change default file directory in the codes!*
-
-The structure of directory to store code and input/output data should be: (Take implementing [GA](Code/iterated_GA) as an example)
+### Configure Folder Structure
+To build the project successfully, the following folder structure are **recommended**. Otherwise, users are required to change default file directory in the codes. The structure includes **all files may be required**. In pratice, some files may not be needed! The directory structure to store code and I/O data should be:
 
 ```
-	|---- project/
-	|-------- input/
-	|------------ inputs.csv
-	|------------ sub_path0.csv
-	|------------ sub_path1.csv
-	|------------ ...
-	|------------ initial_guess/
-	|----------------- pop0_pdv0.txt
-	|----------------- pop0_pdv1.txt
-	|----------------- pop1_pdv0.txt
-	|----------------- ...
-	|-------- output/
-	|------------ final_info.csv
-	|------------ final_output.csv
-	|------------ sub_path/
-	|----------------- ga_path0.csv
-	|----------------- ga_path1.csv
-	|----------------- ...
-	|-------- algorithm/
-	|------------ 1_data_generation.ipynb
-	|------------ 3_result_visualization.ipynb
-	|------------ genetic.cpp
-	|------------ genetic.h
-	|------------ main.cpp
-	|------------ pdv.cpp
-	|------------ ...
+	|0--- project/
+	|1------- input/											# Place input files
+	|2----------- input<case_id>.csv							# Raw sensor info
+	|2----------- ...											# Other cases
+	|2----------- initial_guess/								# Place initial sub-path solutions
+	|3--------------- case<case_id>/							# Each case should have a separte directory 
+	|4------------------- pop<population_id>_pdv<pdv_id>.txt	
+	|4------------------- ...
+	|3--------------- ...
+	|2----------- naive/
+	|3--------------- case<case_id>/							# Each case should have a separte directory  
+	|4------------------- sub_path<pdv_id>.csv
+	|4------------------- ...
+	|3--------------- ...	
+	|1------- output/											# Place output files
+	|2----------- final_info.csv								
+	|2----------- final_output.csv
+	|2----------- sub_path/										# Calculated sub-paths solutions
+	|3--------------- ga_path<pdv_id>.csv						
+	|3--------------- ...
+	|1------- naive_sol/										# Place naive solution codes
+	|2----------- sim/											# Place system codes
+	|3--------------- point.h							
+	|3--------------- ...
+	|2----------- output/										# Place generated output
+	|3--------------- sum.csv
+	|1------- alg/												# Place optimization algorithm codes
+	|2----------- 1_data_generation.ipynb
+	|2----------- genetic.h
+	|2----------- ...
 ```
-
-- The above structure includes all possible files. In pratice, some files may not exist! For example, if users want to re-implement GA, then `sub_path0.csv` in `input\` directory is not needed.
-
-- Both `.ipynb` file should be placed under the same directory with C++ header and source files. 
-
+Note that:
+- The left integer `|0---` means the depth level of the directory or file.  
+- Name with `/` is a directory name (i.e. `output/`).
+- Name with `...` means there are some similar directories or files.
+- [1_data_generation.ipynb](Code/1_data_generation.ipynb) and [3_result_visualization.ipynb](Code/3_result_visualization.ipynb) should be placed under the same directory with algorithm header and source files. 
 - Modifications of dierctory name or location are **NOT** recommanded. Please check algorithm I/O functions and I/O parameters in two `.ipynb` files if modifications are needed!
+- Because there are 3 algorithms, the output file names are different (i.e. `ga_path0.csv`, `bh_path0.csv`, etc.).     
 
-- Because there are 3 algorithms, the output file names are different (i.e. `ga_path0.csv`, `bh_path0.csv`, etc.). Users may need to modify string names according to the algorithm name.      
-
-## Integrated system with user interface
+### Integrated system with user interface
 All algorithms and system model are integrated within one project. Users can use that system with following steps:
 1. Use MSVC to build and run [source code](Code/ensemble_system).
 2. Enter commands in the console terminal (following given instructions).
 
-## User Guidance
-This project adopted [MSVC 2019](https://visualstudio.microsoft.com/zh-hans/vs/) and C++17 language standard for the simulation.  
-*!!! WARNING !!! Lower language standard may lead to build errors. Please check your compiler and its version!* 
+---
 
-### A NAIVE SOLUTION (OPTIONAL): Scikit-learn Clustering Method + Shortest Next Job (SJN) as Baseline
+## Run Simulation Separately
+### A NAIVE SOLUTION (OPTIONAL): Scikit-learn K-Means Clustering Method + Shortest Next Job (SJN) as Baseline
 The [data generation file](Code/1_data_generation.ipynb) also supports some typical clustering algorithms (i.e. K-Means, Spectral and Agglomerative Clustering) with scikit-learn library. The sub path file (i.e. [sub_path0.csv](Code/input/sub_path0.csv)) will be generated at `input/` directory for further usage. Then code in [pdv simulation](Code/pdv_simulation) is designed for recharging simulation of this situation.
 
 *Quick Start for Clustering + SJN*: 
@@ -171,15 +170,6 @@ Note that the `Case` (x-axis) here means tested 9 scenarios (different scales of
 
 ---
 
-## Complementary experiments
-1. To explore the impact of required number of PDVs to average throughput, we also did several complementary experiments with increasing number of assigned PDVs. Below 3 figures show the experiment result:
-
-	<img src='Figure/throughput-comp.png' width="550" height="1150">
-
-	The first figure is execution summary of all cases. For the case with the lowest average throughput (6 & 9), we can observe that assigning 6 PDVs to case 6 is the most efficient. For case 9, it may take 7 or even 8 PDVs to achieve the highest efficiency.
-
-2. To explore the impact of SA iterations, we also reduced the computational cost. Visualized results can be found in [SA_less_iters](Result/SA_less_iters) directory.
-
 ## Execution time of algorithms
 The execution time of the optimization algorithm is counted through `std::chrono::high_resolution_clock` (unit: ms). The time counter starts after calculation of inital guesses and ends when finding the solution with best fitness metric. The duration time will be recorded to [final_info.csv](Code/output/final_info.csv) as well (`alg_time`).
 
@@ -198,18 +188,56 @@ This project adopts the [Unit Test tool of Miscrosoft](https://docs.microsoft.co
 6. Build all solutions.
 7. Run all tests in `Test Explorer`.
 
+---
+
+## Complementary Experiments
+### Test impact of PDV numbers
+To explore the impact of required number of PDVs to average throughput, we also did several complementary experiments with increasing number of assigned PDVs. Below 3 figures show the experiment result:
+
+<img src='Figure/throughput-comp.png' width="550" height="1150">
+
+The first figure is execution summary of all cases. For the case with the lowest average throughput (6 & 9), we can observe that assigning 6 PDVs to case 6 is the most efficient. For case 9, it may take 7 or even 8 PDVs to achieve the highest efficiency. Thus, it's necessary to assign appropriate numbers of PDVs to execute the recharging task.
+
+### Test impact of iteration numbers
+To explore the impact of iterations, we also tried to reduce the computational cost. Visualized results can be found in [less_iters](Result/less_iters) directory. 
+
+Conclusion: As the number of iterations increases, the optimal degree of the calculated solution tends to be 'stable'. The algorithms don't need a large iteration number to be 'stable'.
+
+### Test impact of inital solution generation methods
+Based on [the research of R.-H Cheng et al.](https://www.researchgate.net/publication/330474652_A_Genetic_Approach_to_Solve_the_Emergent_Charging_Scheduling_Problem_Using_Multiple_Charging_Vehicles_for_Wireless_Rechargeable_Sensor_Networks), it was proven that different initialization methods can have different effects on final solutions. Thus, we designed two initialization methods to test:
+1. Random initialization: Define a threshold integer `k`, find a random integer `r < k`. Starting from the BS, add the r-th nearest target node into the sub-path of the PDV.
+2. Clustering initialization: Apply K-Means clustering first as initial guess solutions.
+The result shows solutions initialized by method 2 is *much better* than those initialized by method 1. See below tables for detail comparisons:
+
+<img src='Figure/rand_compare.png'>
+<img src='Figure/kmeans_compare.png'>
+
+### Define recharging efficiency of single PDV
+single PDV recharging efficiency is defined as *total recharged energy of WSN* divided by *PDV energy cost*. The recharging efficiency of PDV0 and PDV1 of 3 optimization algorithms and K-Means clustering is summarized as below figure:
+
+<img src='Figure/efficiency_compare.jpg'>
+
+---
+
 ## Further Updates
 Please note that this is a open-source project with continus updates. Currently, we consider the next step to:
-
-1. Develop an IDE
+1. Develop an IDE with GUI
 2. Convert to 3D space
 3. Consider parallel computing of all algorithms
 
+---
+
 ## Other Information
+### Code Documentation
+Documentation files are generated through [Doxygen](https://www.doxygen.nl/index.html). Through index file [ga_index](Code/Documentation/ga_doc/ga_index.lnk), [bh_index](Code/Documentation/bh_doc/bh_index.lnk) and [sa_index](Code/Documentation/sa_doc/sa_index.lnk), users can check the code structure, function usage, variable definitions, etc. If content of the index file cannot display properly, please check corresponding source file `index.lnk` in `html\` directory.
+
+### Model Selection
+Please note that the original system model is based on [the research of A. Y. S. Pandiyan et al](https://www.researchgate.net/publication/341077461_Optimal_Energy_Management_of_Two_Stage_Energy_Distribution_Systems_Using_Clustering_Algorithm). However, this project made several modifications to make the system model more practical. More details can be found in related paper and [introduction of model comparison](Model_Comparison.pdf). **Quick Start with console user interface** section adopts *original* model. Other sections will adopt *new* model. Note that in the paper, the system model adopts the original one. More technical descriptions can be found in the paper.
+
+### Slide Demonstration
 Presentation slides can be seen [here](irp_presentation.pptx).
 
-Author: 
-- Qiuchen Qian - qiuchen.qian19@imperial.ac.uk
-- Akshayaa Pandiyan - a.pandiyan@imperial.ac.uk
-- David Boyle - david.boyle@imperial.ac.uk
-    
+### Contact Us: 
+Mr. Qiuchen Qian - qiuchen.qian19@imperial.ac.uk
+Ms. Akshayaa Pandiyan - a.pandiyan@imperial.ac.uk  
+Dr. David Boyle - david.boyle@imperial.ac.uk

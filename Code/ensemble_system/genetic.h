@@ -108,7 +108,7 @@ public:
 	*   @param sn_list	A vector of all sensor nodes.
 	*   @tparam T		The type of data to present point coordinates.
 	*/
-	void crossover(int cross_ratio, int pop_num, const bool& is_match, vector<vector<vector<int>>> tar_vec, vector<vector<vector<int>>>& trail_vec, vector<SensorNode<T>> sn_list);
+	void crossover(int cross_ratio, int pop_num, vector<vector<vector<int>>> tar_vec, vector<vector<vector<int>>>& trail_vec, vector<SensorNode<T>> sn_list);
 
 	/*! @brief		      Calculate the fitness of the possible solution.
 	*
@@ -133,7 +133,7 @@ public:
 	*   @param pdv_num	The PDV id.
 	*   @return			A vector of solution (index of sensor nodes) with @a pop_num and @a pdv_num
 	*/
-	vector<int> readGuessData(int pop_num, int pdv_num);
+	vector<int> readGuessData(int case_num, int pop_num, int pdv_num);
 
 	/*! @brief			Implement all processes of the genetic algorithm.
 	*
@@ -149,7 +149,7 @@ public:
 	*   @tparam T		The type of data to present point coordinates.
 	*   @return			A vector of points (target flight position).
 	*/
-	void calcFinalPath(vector<SensorNode<T>>& sn_list, vector<SensorNode<T>*> candidates);
+	void calcFinalPath(int case_num, vector<SensorNode<T>>& sn_list, vector<SensorNode<T>*> candidates);
 
 	/*! @brief			Check if the number of requested sensor nodes is larger than @a MIN_REQUESTS .
 	*   @param sn_list			A vector of all sensor nodes.
@@ -157,7 +157,7 @@ public:
 	*   @return			If true, keep iterating until the requested number reaches the minimum value.
 	*				If false, end iterating.
 	*/
-	bool checkTask(vector<SensorNode<T>>& sn_list);
+	bool checkTask(int case_num, vector<SensorNode<T>>& sn_list);
 };					//! End of Genetic Class
 
 #endif // !GENETIC_H_

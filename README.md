@@ -25,36 +25,36 @@ If you are interested, please refer to this paper for more information:
 - Final report can be found in [FinalReport directory](FinalReport).
 - DEMO figures used for readme files can be found in [Figure directory](Figure).
 
+## Prerequisites
+This project adopted:
+- [MSVS 2019](https://visualstudio.microsoft.com/zh-hans/vs/) & ISO C++17 language standard
+- [Jupyter Notebook](https://jupyter.org/) & Python3 
+*WARNING!! Lower language standard may lead to build errors. Please check your compiler and its version!* 
 
 ## Quick Start with console user interface
-1. Create empty folder structure:
+1. Create empty folder structure: (Note that the left integer `|0---` means the depth level of the directory or file)
 ```
-	|---- project/
-	|-------- input/
-	|------------ initial_guess/
-	|-------- output/
-	|------------ sub_path/
-	|-------- sys/
+	|0---- project/
+	|1-------- input/
+	|2------------ initial_guess/
+	|1-------- output/
+	|2------------ sub_path/
+	|1-------- sys/
 ```
-2. Open MSVC 2019 -> `Create a new project` -> `Empty Project` -> select `Location` at `sys/`
-3. Place your input file (.csv) in `input/` folder and [source code](Code/ensemble_system) in `sys/` folder
-4. Open `Solution Explorer` in MSVC, `Add` -> `Existing Item` all files (.h) to `Header Files` 
+2. Open MSVS -> `Create a new project` -> `Empty Project` -> select `Location` at a created directory `project/`
+3. Place the input file (.csv) in `input/` and [source code](Code/ensemble_system) in `sys/`
+4. Open `Solution Explorer` in MSVS, `Add` -> `Existing Item` all files (.h) to `Header Files` 
 5. `Add` -> `Existing Item` all files (.cpp) to `Source Files`
 6. In `Solution Explorer`, open `Properties` of `sys`
 7. In `General`, set `C++ Language Standard` to `ISO C++17 Standard (std:c++17)`
 8. In `C/C++`, set `SDL checks` to `No (/sdl-)`
-9. `Bulid` -> `Bulid sys` (or `Ctrl+B`)
-10. Run the executable file (.exe)
+9. In `main.cpp`, uncomment user interface usage code in the main function
+10. `Bulid` this project
+11. Run the executable file (.exe)
 
 
 ## Normal Procedure
-### Execution Environment
-This project adopted:
-- [MSVC 2019](https://visualstudio.microsoft.com/zh-hans/vs/) & C++17 language standard
-- [Jupyter Notebook](https://jupyter.org/) & Python3 
-*WARNING!! Lower language standard may lead to build errors. Please check your compiler and its version!* 
-
-### Configure Folder Structure
+### Set up Folder Structure
 To build the project successfully, the following folder structure are **recommended**. Otherwise, users are required to change default file directory in the codes. The structure includes **all files may be required**. In pratice, some files may not be needed! The directory structure to store code and I/O data should be:
 
 ```
@@ -90,7 +90,6 @@ To build the project successfully, the following folder structure are **recommen
 	|2----------- ...
 ```
 Note that:
-- The left integer `|0---` means the depth level of the directory or file.  
 - Name with `/` is a directory name (i.e. `output/`).
 - Name with `...` means there are some similar directories or files.
 - [1_data_generation.ipynb](Code/1_data_generation.ipynb) and [3_result_visualization.ipynb](Code/3_result_visualization.ipynb) should be placed under the same directory with algorithm header and source files. 
@@ -99,7 +98,7 @@ Note that:
 
 ### Integrated system with user interface
 All algorithms and system model are integrated within one project. Users can use that system with following steps:
-1. Use MSVC to build and run [source code](Code/ensemble_system).
+1. Use MSVS to build and run [source code](Code/ensemble_system).
 2. Enter commands in the console terminal (following given instructions).
 
 
@@ -119,7 +118,7 @@ The [data generation file](Code/1_data_generation.ipynb) also supports some typi
     ```
     *!!! NOTICE !!! The output file will be placed in `input/` directory*
 
-2. Create a new project with MSVC and add all needed header and source files in [pdv_simulation](Code/pdv_simulation).
+2. Create a new project with MSVS and add all needed header and source files in [pdv_simulation](Code/pdv_simulation).
 3. Open `C/C++`, set `SDL checks` to `No (/sdl-)`.
 4. Match the marco `NODE_NUM` and `PDV_NUM` in [main.cpp of pdv_simulation](Code/pdv_simulation/main.cpp) with the number of sensor nodes.
 5. Set wanted minimum charge number for single PDV.
@@ -152,7 +151,7 @@ Before executing optimization algorithm codes, users can tune hyper-parameters a
 *Quick Start for Optimization Algorithms*: (Here take GA as an example)
 1. Empty all input and output files but remain folder structure.
 2. Implement *1. Input data generation* (**EXCLUDE OPTIONAL STEP**).
-3. Create a new project with MSVC and add all needed header and source files in [iterated_GA](Code/iterated_GA).
+3. Create a new project with MSVS and add all needed header and source files in [iterated_GA](Code/iterated_GA).
 4. Open `Configuration Properties`, set `C++ Language Standard` to `ISO C++17 Standard (std:c++17)`.
 5. Open `C/C++`, set `SDL checks` to `No (/sdl-)`.   
 6. Set wannted hyper-parameters and change the marco `NODE_NUM` in `main.cpp` to correct number.
@@ -190,7 +189,7 @@ This project adopts the [Unit Test tool of Miscrosoft](https://docs.microsoft.co
 - Because random number wil be used in all included optimization algorithms, small errors will be allowed in some particular tests (i.e. error = 5 when involving random number). Normally, if there is no random variable, the allowed tolerance should be 1e-10.
 
 *Quick Start for test code*: (Here take GA sample test as an example)
-1. Create a new project with MSVC and add all needed header and source files in [iterated_GA](Code/iterated_GA).
+1. Create a new project with MSVS and add all needed header and source files in [iterated_GA](Code/iterated_GA).
 2. Open `Solution Explorer` -> right click the first line `Solution 'xx'(your solution name)` -> `Add` -> `New Project` -> Select `Native Unit Test Project`.
 3. Add test code to source files (Note that MSCV may have self-loading `pch.h` and `pch.cpp`, which were not used in the sample test code)
 4. Include correct `.h` and `.cpp` at the top of test code

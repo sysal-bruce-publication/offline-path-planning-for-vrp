@@ -3,6 +3,19 @@ This project aims at solving Optimization Problem in scheduling recharing tasks 
 
 <img src='Figure/gif_demo.gif' width="700" height="600">
 
+If you are interested, please refer to this paper for more information:
+```
+@ARTICLE{9402261,
+  author={Qian, Qiuchen and Pandiyan, Akshayaa Y. S. and Boyle, David E.},
+  journal={IEEE Access}, 
+  title={Optimal Recharge Scheduler for Drone-to-Sensor Wireless Power Transfer}, 
+  year={2021},
+  volume={9},
+  number={},
+  pages={59301-59312},
+  doi={10.1109/ACCESS.2021.3073076}}
+```
+
 ## Brief Index
 - Source code can be found in [Code directory](Code).
 - Example input and output files are stored in [input](input) and [output](output).
